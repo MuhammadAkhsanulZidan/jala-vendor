@@ -8,12 +8,17 @@
    body {
             font-family: Arial, sans-serif;
             background-color: #3a3a3a;
+            height: 100vh;
             margin: 0;
-            padding: 0;
+            display: flex;
+        }
+        .main {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             background-color: white;
@@ -85,13 +90,13 @@
   </style>
  </head>
  <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="">
+        <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <div class="main" style="overflow-y: auto;">
+        
   <div class="container">
-   <div class="header">
-    <img alt="Company Logo" height="50" src="https://storage.googleapis.com/a1aa/image/276rXZZKP_cdv5RO7VNHsshyyYckYf3H8ZrZrq3r200.jpg" width="100"/>
+   <div class="header">   
     <div>
      <h2>
       Booking Order
@@ -214,5 +219,6 @@
     </button>
    </div>
   </div>
+    </div>
  </body>
 </html>

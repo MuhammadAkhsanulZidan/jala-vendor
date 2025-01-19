@@ -6,10 +6,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #4a4a4a;
-            margin: 0;
-            padding: 0;
+            background-color: #f0f2f5;
             height: 100vh;
+            margin: 0;
+            display: flex;
         }
         .container {
             background-color: #f9f9f9;
@@ -19,8 +19,16 @@
             max-width: 800px;
             padding: 20px;
         }
+        .main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
         .header {
-            background-color: #2a3f54;
+            background-color: #f0f2f5;
             color: white;
             padding: 10px;
             border-radius: 10px 10px 0 0;
@@ -104,11 +112,10 @@
     </style>
 </head>
 <body>
-    <div class="main">
-        <iframe 
-            src="./sidebar.html" >
-        </iframe>
-      <div>
+    <div class="">
+        <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <div class="main" style="overflow-y: auto;">
     <div class="container">
         <div class="header primary-color">Data Auditor</div>
         <div class="section">
@@ -274,4 +281,4 @@
     </div>
     </div>
 </body>
-</html>d
+</html>

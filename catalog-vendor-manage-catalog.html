@@ -54,7 +54,6 @@
             background-color: #f0f0f0;
         }
         .content {
-            margin-left: 250px;
             padding: 20px;
         }
         .content h1 {
@@ -150,16 +149,16 @@
     </style>
 </head>
 <body>
-
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div  style="flex-grow: 1;">
     <div class="header primary-color">
-        <div class="title">oops - VENDOR</div>
+        <div class="title">VENDOR</div>
         <button class="logout secondary-color">Logout</button>
     </div>
-    <div class="sidebar">
+    <div class="sidebar" style="display: none;">
         <ul>
             <li><a href="#">Dasbor</a></li>
             <li><a href="#">Catalog Vendor</a></li>
@@ -174,7 +173,7 @@
             <li><a href="#">Promise Forum</a></li>
         </ul>
     </div>
-    <div class="content">
+    <div class="content" style="width: 80vw;">
         <h1>Manage Catalog</h1>
         <div class="card">
             <div class="card-header primary-color">
@@ -219,5 +218,6 @@
             <button class="btn btn-save primary-color">Simpan</button>
         </div>
     </div>
+      </div>
 </body>
 </html>

@@ -23,6 +23,7 @@
             font-size: 24px;
         }
         .sidebar {
+            display: none;
             width: 250px;
             background-color: #ffffff;
             position: fixed;
@@ -52,7 +53,7 @@
             margin-right: 10px;
         }
         .content {
-            margin-left: 250px;
+            /* margin-left: 250px; */
             padding: 20px;
         }
         .content h1 {
@@ -120,17 +121,18 @@
     </style>
 </head>
 <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div style="flex-grow: 1;">
     <div class="header primary-color">
-        <div>
+        <!-- <div>
             <i class="fas fa-bars"></i>
         </div>
         <div>
             <i class="fas fa-home"></i>
-        </div>
+        </div> -->
     </div>
     <div class="sidebar">
         <h2>CONTRACT MANAGEMENT</h2>
@@ -204,8 +206,6 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        &copy; Contract Management 2016 - ProMSE
-    </div>
+    </div>  
 </body>
 </html>

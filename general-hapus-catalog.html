@@ -119,14 +119,15 @@
     </style>
 </head>
 <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div  style="flex-grow: 1;">
     <div class="navbar primary-color">
         <i class="fas fa-bars menu-icon"></i>
         <span class="title">Manage Catalog</span>
-        <span class="user-info">ops... VENDOR</span>
+        <span class="user-info">VENDOR</span>
     </div>
     <div class="breadcrumb">
         <a href="#" class="color-secondary-color">Home</a> &gt; <a href="#">Manage Catalog</a>
@@ -181,5 +182,6 @@
             </div>
         </div>
     </div>
+    </div>  
 </body>
 </html>

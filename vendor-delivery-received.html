@@ -134,12 +134,13 @@
   </style>
  </head>
  <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
-  <div class="container">
-   <div class="sidebar">
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div  style="flex-grow: 1;">
+  <div class="container" >
+   <div class="sidebar" style="display: none;">
     <h2>
      NAVIGASI UTAMA (NEW)
     </h2>
@@ -179,9 +180,8 @@
    <div class="content">
     <div class="header primary-color">
      <div>
-      <img alt="Company Logo" height="40" src="https://storage.googleapis.com/a1aa/image/9GgLfgU1X63mPicNBfSssJgmUCi5Di6JKzWqvWQAljy6lWGUA.jpg" width="40"/>
       <span>
-       Liberty Tour and Travel - VENDOR
+       VENDOR
       </span>
      </div>
      <button class="logout secondary-color">
@@ -316,5 +316,6 @@
     </div>
    </div>
   </div>
+      </div>
  </body>
 </html>

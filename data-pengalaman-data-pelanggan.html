@@ -6,9 +6,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f0f2f5;
             height: 100vh;
             margin: 0;
+            display: flex;
+        }
+        .main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             background-color: #ffffff;
@@ -74,11 +83,11 @@
     </style>
 </head>
 <body>
-    <div class="main">
-        <iframe 
-            src="./sidebar.html" >
-        </iframe>
-      <div>    <div class="container">
+    <div class="">
+        <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <div class="main" style="overflow-y: auto;">
+        <div class="container">
         <h2>Pengalaman Pekerjaan</h2>
         <div class="form-group">
             <label for="nama-pekerjaan">Nama Pekerjaan <span style="color: red;">*</span></label>

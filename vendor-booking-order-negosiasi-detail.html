@@ -38,6 +38,7 @@
             cursor: pointer;
         }
         .sidebar {
+            display: none;
             width: 200px;
             background-color: #ffffff;
             padding: 20px;
@@ -59,7 +60,7 @@
             font-weight: 500;
         }
         .content {
-            margin-left: 220px;
+            /* margin-left: 220px; */
             padding: 20px;
         }
         .section {
@@ -122,12 +123,13 @@
     </style>
 </head>
 <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div>
     <div class="header primary-color">
-        <h1>PROMISE</h1>
+        <h1>Vendor</h1>
         <button class="logout secondary-color">Logout</button>
     </div>
     <div class="sidebar">
@@ -246,5 +248,6 @@
             </div>
         </div>
     </div>
+      </div>
 </body>
 </html>

@@ -37,7 +37,7 @@
         }
         .content {
             flex: 1;
-            padding: 20px;
+            /* padding: 20px; */
         }
         .header {
             color: #ecf0f1;
@@ -146,12 +146,13 @@
     </style>
 </head>
 <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div style="flex-grow: 1;">
     <div class="container">
-        <div class="sidebar" style="color: black;">
+        <div class="sidebar"  style="display: none; color: black;">
             <h2>NAVIGASI UTAMA (MENU)</h2>
             <ul>
                 <li><a href="#">Dashboard</a></li>
@@ -340,5 +341,6 @@
             </div>
         </div>
     </div>
+      </div>
 </body>
 </html>

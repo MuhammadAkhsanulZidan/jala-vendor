@@ -10,9 +10,6 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        .container {
-            display: flex;
-        }
         .sidebar {
             width: 250px;
             background-color: #f8f9fa;
@@ -137,16 +134,17 @@
     </style>
 </head>
 <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div style="flex-grow: 1;">
     <div class="header primary-color">
-        <h1>oops - VENDOR</h1>
-        <button class="logout">Logout</button>
+        <h1>VENDOR</h1>
+        <button class="logout secondary-color">Logout</button>
     </div>
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar" style="display: none;">
             <h2>NAVIGASI UTAMA (NEW)</h2>
             <ul>
                 <li><a href="#">Dasbor</a></li>
@@ -210,5 +208,6 @@
             </div>
         </div>
     </div>
+    </div>  
 </body>
 </html>

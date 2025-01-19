@@ -15,6 +15,7 @@
             display: flex;
         }
         .sidebar {
+            display: none;
             width: 250px;
             background-color: #fff;
             border-right: 1px solid #ddd;
@@ -146,10 +147,11 @@
     </style>
 </head>
 <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div  style="flex-grow: 1;">
     <div class="header primary-color">
         <h1>Manage Catalog</h1>
         <button class="logout secondary-color">Logout</button>
@@ -230,6 +232,7 @@
             </div>
         </div>
     </div>
+      </div>
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;

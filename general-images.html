@@ -34,8 +34,8 @@
             font-weight: 500;
         }
         .content {
-            margin-left: 250px;
-            padding: 20px;
+            /* margin-left: 250px; */
+            /* padding: 20px; */
         }
         .header {
             background-color: #3f51b5;
@@ -178,11 +178,12 @@
   </style>
  </head>
  <body>
-    <iframe 
-    src="./sidebar.html" 
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
-  <div class="sidebar">
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div  style="flex-grow: 1;">
+  <div class="sidebar" style="display: none;">
    <div class="menu-title">
     NAVIGASI UTAMA (NEW)
    </div>
@@ -345,5 +346,6 @@
     </div>
    </div>
   </div>
+      </div>
  </body>
 </html>

@@ -14,9 +14,12 @@
 
 body {
     font-family: 'Poppins', sans-serif !important; 
+    width: 100vw !important;
   }
 
 body .main {
     display: flex;
     flex-direction: row;
+    width: 100vw !important;
+    min-height: 100vh !important;
 }

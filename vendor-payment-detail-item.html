@@ -14,6 +14,7 @@
             display: flex;
         }
         .sidebar {
+            display: none;
             width: 200px;
             background-color: #e7e7e7;
             padding: 20px;
@@ -99,11 +100,15 @@
     </style>
 </head>
 <body>
-    <iframe 
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+    <!-- <iframe 
     src="./sidebar.html" 
     style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
-    <div class="container">
+  </iframe> -->
+    <div class="container" style="flex-grow: 1;">
         <div class="sidebar">
             <h2>CONTRACT MANAGEMENT</h2>
             <ul>
@@ -209,6 +214,7 @@
                 <button class="save secondary-color"><i class="fas fa-save"></i> Simpan</button>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>
