@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-modal {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        .login-modal h2 {
+            margin-bottom: 20px;
+        }
+        .login-modal .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .login-modal .input-group input {
+            width: 100%;
+            padding: 10px 40px 10px 10px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .login-modal .input-group i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+        .login-modal .input-group input:focus {
+            outline: none;
+            border-bottom: 1px solid #007bff;
+        }
+        .login-modal .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .login-modal .remember-me input {
+            margin-right: 10px;
+        }
+        .login-modal .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .login-modal .buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-modal .buttons button:last-child {
+            background-color: #0056b3;
+        }
+        .login-modal .buttons button:hover {
+            background-color: #0056b3;
+        }
+        .login-modal .buttons button:last-child:hover {
+            background-color: #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <iframe 
+    src="./sidebar.html" 
+    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
+  </iframe>
+    <div class="login-modal">
+        <h2>Login</h2>
+        <div class="input-group">
+            <input type="email" placeholder="Email" value="vendor001@mmi-pt.com">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Password" value="********">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="remember-me">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+        </div>
+        <div class="buttons">
+            <button class="primary-color">Login</button>
+            <button class="secondary-color">Lupa Password Anda?</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<html>
+ <head>
+  <title>
+   Data Vendor Perusahaan
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            height: 50px;
+        }
+        .header .date {
+            font-size: 14px;
+            color: #333;
+        }
+        .header .home-link {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+        .header .logo img {
+            height: 50px;
+        }
+        .nav {
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 18px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #e0e0e0;
+            padding: 10px 0;
+        }
+        .tabs a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .tabs a.active {
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .content table, .content th, .content td {
+            border: 1px solid #ddd;
+        }
+        .content th, .content td {
+            padding: 10px;
+            text-align: center;
+        }
+        .content th {
+            background-color: #f4f4f4;
+        }
+        .content .actions i {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .content .actions .edit {
+            color: #4caf50;
+        }
+        .content .actions .delete {
+            color: #f44336;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pagination button {
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .pagination button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .add-button {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .add-button button {
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+  </style>
+ </head>
+ <body>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div>  <div class="header">
+   <div class="date">
+    Senin, 19 Februari 2018, 10:18:15
+   </div>
+   <a class="home-link" href="#">
+    HOME
+   </a>
+  </div>
+  <div class="nav primary-color">
+   DATA VENDOR PERUSAHAAN
+  </div>
+  <div class="tabs">
+   <a href="#">
+    DATA LOGIN
+   </a>
+   <a href="#">
+    DATA PERUSAHAAN
+   </a>
+   <a href="#">
+    DATA BANK
+   </a>
+   <a href="#">
+    DATA SEGMENTASI
+   </a>
+   <a href="#">
+    DATA DOKUMEN
+   </a>
+   <a href="#">
+    PERALATAN
+   </a>
+   <a class="active" href="#">
+    DATA KEUANGAN
+   </a>
+   <a href="#">
+    DATA PENGALAMAN
+   </a>
+  </div>
+  <div class="content">
+   <div class="add-button">
+    <button class="primary-color">
+     + Tambah
+    </button>
+   </div>
+   <table>
+    <thead>
+     <tr>
+      <th>
+       No
+      </th>
+      <th>
+       Tahun Keuangan
+      </th>
+      <th>
+       Kas
+      </th>
+      <th>
+       Total Aktiva
+      </th>
+      <th>
+       Total Kewajiban
+      </th>
+      <th>
+       Rugi Laba
+      </th>
+      <th>
+       Aktiva Lancar
+      </th>
+      <th>
+       Hutang Lancar
+      </th>
+      <th>
+       Rasio Likuiditas
+      </th>
+      <th>
+       Aksi
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       2018
+      </td>
+      <td>
+       100,000.00
+      </td>
+      <td>
+       52,267,433.00
+      </td>
+      <td>
+       91,122.00
+      </td>
+      <td>
+       52,176,311.00
+      </td>
+      <td>
+       43,546,453.00
+      </td>
+      <td>
+       86,582.00
+      </td>
+      <td>
+       590.64
+      </td>
+      <td class="actions">
+       <i class="fas fa-edit edit">
+       </i>
+       <i class="fas fa-trash delete">
+       </i>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <div class="pagination">
+    <button disabled="">
+     Sebelumnya
+    </button>
+    <button class="primary-color">
+     Selanjutnya
+    </button>
+   </div>
+  </div>
+  </div>    
+ </body>
+</html>

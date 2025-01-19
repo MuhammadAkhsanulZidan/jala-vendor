@@ -1,0 +1,255 @@
+<html>
+ <head>
+  <title>
+   Data Vendor Perusahaan
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            height: 50px;
+        }
+        .header .date-time {
+            font-size: 14px;
+            color: #333;
+        }
+        .header .home-link {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+        .header .home-link:hover {
+            text-decoration: underline;
+        }
+        .nav {
+            padding: 10px 20px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 500;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        .tabs a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            background-color: #f5f5f5;
+            margin-right: 5px;
+        }
+        .tabs a.active {
+            background-color: #fff;
+            border-top: 2px solid #3f51b5;
+            font-weight: 500;
+        }
+        .table-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .actions button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .actions .edit {
+            color: #4caf50;
+        }
+        .actions .delete {
+            color: #f44336;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination button {
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .pagination button:hover {
+            background-color: #303f9f;
+        }
+        .add-button {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .add-button button {
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .add-button button:hover {
+            background-color: #303f9f;
+        }
+  </style>
+ </head>
+ <body>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div>
+  <div class="header">
+   <div class="date-time">
+    Senin, 19 Februari 2018, 9:40:45
+   </div>
+   <a class="home-link" href="#">
+    HOME
+   </a>
+  </div>
+  <div class="nav primary-color">
+   <a href="#">
+    DATA VENDOR PERUSAHAAN
+   </a>
+  </div>
+  <div class="container">
+   <div class="tabs">
+    <a href="#">
+     DATA LOGIN
+    </a>
+    <a href="#">
+     DATA PERUSAHAAN
+    </a>
+    <a class="active" href="#">
+     DATA BANK
+    </a>
+    <a href="#">
+     DATA SEGMENTASI
+    </a>
+    <a href="#">
+     DATA DOKUMEN
+    </a>
+    <a href="#">
+     PERALATAN
+    </a>
+    <a href="#">
+     DATA KEUANGAN
+    </a>
+    <a href="#">
+     DATA PENGALAMAN
+    </a>
+   </div>
+   <div class="table-container">
+    <div class="add-button">
+     <button class="primary-color">
+      + Tambah
+     </button>
+    </div>
+    <table>
+     <thead>
+      <tr>
+       <th>
+        No
+       </th>
+       <th>
+        Nama Bank
+       </th>
+       <th>
+        Nomor Rekening
+       </th>
+       <th>
+        Nama Nasabah
+       </th>
+       <th>
+        Mata Uang
+       </th>
+       <th>
+        Aksi
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        PT BANK MANDIRI (PERSERO) Tbk
+       </td>
+       <td>
+        9876543212
+       </td>
+       <td>
+        Prima
+       </td>
+       <td>
+        Rupiah
+       </td>
+       <td class="actions">
+        <button class="edit">
+         <i class="fas fa-edit">
+         </i>
+        </button>
+        <button class="delete">
+         <i class="fas fa-trash">
+         </i>
+        </button>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <div class="pagination">
+     <button class="primary-color">
+      Sebelumnya
+     </button>
+     <button class="primary-color">
+      Selanjutnya
+     </button>
+    </div>
+   </div>
+  </div>
+  </div>   
+ </body>
+</html>

@@ -1,0 +1,446 @@
+<html>
+ <head>
+  <title>
+   Data Vendor Perusahaan
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 50px;
+        }
+        .header .date {
+            font-size: 14px;
+        }
+        .header .home {
+            color: black;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .nav {
+            padding: 10px 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .nav a:hover {
+            background-color: #002080;
+        }
+        .section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .section h2 {
+            color: white;
+            padding: 10px;
+            margin: -20px -20px 20px -20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .form-group .check-btn {
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-group .check-btn:hover {
+            background-color: #002080;
+        }
+        .form-group .add-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-group .add-btn:hover {
+            background-color: #218838;
+        }
+        .form-group .remove-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-group .remove-btn:hover {
+            background-color: #c82333;
+        }
+        .form-group .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group .btn-group button {
+            width: 48%;
+        }
+  </style>
+ </head>
+ <body>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div>  <div class="header ">
+   <div class="date">
+    Senin, 19 Februari 2018, 9:37:21
+   </div>
+   <a class="home" href="#">
+    HOME
+   </a>
+  </div>
+  <div class="nav primary-color">
+   <a href="#">
+    DATA LOGIN
+   </a>
+   <a href="#">
+    DATA PERUSAHAAN
+   </a>
+   <a href="#">
+    DATA BANK
+   </a>
+   <a href="#">
+    DATA SEGMENTASI
+   </a>
+   <a href="#">
+    DATA DOKUMEN
+   </a>
+   <a href="#">
+    PERALATAN
+   </a>
+   <a href="#">
+    DATA KEUANGAN
+   </a>
+   <a href="#">
+    DATA PENGALAMAN
+   </a>
+  </div>
+  <div class="container">
+   <div class="section">
+    <h2 class="primary-color">
+     Data Perusahaan
+    </h2>
+    <div class="form-group">
+     <label>
+      PKP / Non PKP
+     </label>
+     <input name="pkp" type="radio" value="pkp"/>
+     PKP
+     <input name="pkp" type="radio" value="non-pkp"/>
+     Non PKP
+    </div>
+    <div class="form-group">
+     <label>
+      Title
+     </label>
+     <input type="text" value="Company"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Kualifikasi
+     </label>
+     <input type="text" value="besar"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Mendaftar di Unit
+     </label>
+     <select>
+      <option value="unit1">
+       Unit 1
+      </option>
+      <option value="unit2">
+       Unit 2
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label>
+      Business Area
+     </label>
+     <input type="text" value="Prima Hospitality"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Nama Perusahaan
+     </label>
+     <input type="text" value="PT Prima Hospitality"/>
+    </div>
+    <div class="form-group">
+     <label>
+      NPWP Perusahaan
+     </label>
+     <input type="text" value="0123456789"/>
+     <button class="check-btn primary-color">
+      Check NPWP
+     </button>
+    </div>
+    <div class="form-group">
+     <label>
+      Nama NPWP
+     </label>
+     <input type="text" value="PT Prima Hospitality"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Alamat NPWP
+     </label>
+     <input type="text" value="Jalan Tebet Raya No 45"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Provinsi NPWP
+     </label>
+     <select>
+      <option value="prov1">
+       Provinsi 1
+      </option>
+      <option value="prov2">
+       Provinsi 2
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label>
+      Kota NPWP
+     </label>
+     <select>
+      <option value="kota1">
+       Kota 1
+      </option>
+      <option value="kota2">
+       Kota 2
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label>
+      Nama Singkatan
+     </label>
+     <input type="text" value="PT PH"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Jumlah Karyawan
+     </label>
+     <input type="text" value="123"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Nomor Akta Pendirian
+     </label>
+     <input type="text" value="789456123"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Tanggal Berdiri
+     </label>
+     <input type="date" value="2018-02-19"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Deskripsi
+     </label>
+     <textarea>PT Prima Hospitality merupakan perusahaan jasa pemasok barang peralatan kerja &amp; peralatan kantor</textarea>
+    </div>
+   </div>
+   <div class="section">
+    <h2>
+     Alamat Perusahaan
+    </h2>
+    <div class="form-group">
+     <label>
+      Alamat Perusahaan
+     </label>
+     <textarea>Jalan Ahmad Yani No.40 Blok V, Jakarta Selatan</textarea>
+    </div>
+    <div class="form-group">
+     <label>
+      Provinsi
+     </label>
+     <select>
+      <option value="prov1">
+       Provinsi 1
+      </option>
+      <option value="prov2">
+       Provinsi 2
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label>
+      Kota
+     </label>
+     <select>
+      <option value="kota1">
+       Kota 1
+      </option>
+      <option value="kota2">
+       Kota 2
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label>
+      Kode Pos
+     </label>
+     <input type="text" value="12345"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Telepon Perusahaan
+     </label>
+     <input type="text" value="123456"/>
+    </div>
+    <div class="form-group">
+     <label>
+      No. Fax
+     </label>
+     <input type="text" value="123456"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Email
+     </label>
+     <input type="email" value="email@domain.com"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Website
+     </label>
+     <input type="text" value="www.website.com"/>
+    </div>
+   </div>
+   <div class="section">
+    <h2>
+     Contact Person
+    </h2>
+    <div class="form-group">
+     <label>
+      Nama
+     </label>
+     <input type="text" value="Gerry"/>
+    </div>
+    <div class="form-group">
+     <label>
+      No. HP
+     </label>
+     <input type="text" value="08123456789"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Email
+     </label>
+     <input type="email" value="email@domain.com"/>
+    </div>
+    <div class="form-group">
+     <label>
+      No. KTP
+     </label>
+     <input type="text" value="1234567890123456"/>
+    </div>
+    <div class="form-group">
+     <label>
+      No. KK
+     </label>
+     <input type="text" value="1234567890123456"/>
+    </div>
+   </div>
+   <div class="section">
+    <h2>
+     Data Penanggung Jawab
+    </h2>
+    <div class="form-group">
+     <label>
+      Nama
+     </label>
+     <input type="text" value="Gerry"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Jabatan
+     </label>
+     <select>
+      <option value="gm">
+       General Manager
+      </option>
+      <option value="mgr">
+       Manager
+      </option>
+     </select>
+    </div>
+    <div class="form-group">
+     <label>
+      Email
+     </label>
+     <input type="email" value="email@domain.com"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Aksi
+     </label>
+     <button class="add-btn">
+      <i class="fas fa-plus">
+      </i>
+     </button>
+     <button class="remove-btn">
+      <i class="fas fa-minus">
+      </i>
+     </button>
+    </div>
+   </div>
+   <div class="form-group btn-group">
+    <button class="check-btn">
+     Sebelumnya
+    </button>
+    <button class="check-btn">
+     Selanjutnya
+    </button>
+   </div>
+  </div></div>
+ </body>
+</html>

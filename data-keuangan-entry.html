@@ -1,0 +1,277 @@
+<html>
+<head>
+    <title>Data Auditor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2a3f54;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section-title {
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .form-group label {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .form-group input, .form-group select {
+            flex: 2;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .footer button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer button:hover {
+            background-color: #1a2a3b;
+        }
+        @media (max-width: 600px) {
+            .form-group {
+                flex-direction: column;
+            }
+            .form-group label, .form-group input, .form-group select {
+                flex: 1;
+                margin: 5px 0;
+            }
+            .footer {
+                flex-direction: column;
+            }
+            .footer button {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div>
+    <div class="container">
+        <div class="header primary-color">Data Auditor</div>
+        <div class="section">
+            <div class="section-title">Data Auditor</div>
+            <div class="form-group">
+                <label for="nomor-audit">Nomor Audit <span style="color: red;">*</span></label>
+                <input type="text" id="nomor-audit" name="nomor-audit">
+            </div>
+            <div class="form-group">
+                <label for="tanggal-audit">Tanggal Audit <span style="color: red;">*</span></label>
+                <input type="date" id="tanggal-audit" name="tanggal-audit">
+            </div>
+            <div class="form-group">
+                <label for="nama-audit">Nama Audit <span style="color: red;">*</span></label>
+                <input type="text" id="nama-audit" name="nama-audit">
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title primary-color">Data Keuangan Perusahaan</div>
+            <div class="form-group">
+                <label for="tahun-keuangan">Tahun Keuangan <span style="color: red;">*</span></label>
+                <select id="tahun-keuangan" name="tahun-keuangan">
+                    <option value="">Pilih Tahun</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>AKTIVA</th>
+                            <th>PASIVA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>I</td>
+                                        <td>Aktiva Lancar, terdiri dari :</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Kas</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Bank</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Total Piutang</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Persediaan Barang</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Pekerjaan dalam proses</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Total (I)</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>II</td>
+                                        <td>Aktiva Tetap, terdiri dari :</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Peralatan dan mesin</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Inventaris</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Gedung - gedung</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Total (II)</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>III</td>
+                                        <td>Aktiva Lainnya</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Total</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>IV</td>
+                                        <td>Hutang Jangka Pendek, terdiri dari :</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Hutang Dagang</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Hutang Pajak</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Hutang Lainnya</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Total (IV)</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>V</td>
+                                        <td>Hutang Jangka Panjang</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>VI</td>
+                                        <td>Kekayaan bersih (I + II + III) - (IV + V)</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Total</td>
+                                        <td><input type="text" value="0.00"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="primary-color">Kembali</button>
+            <button class="primary-color">Simpan</button>
+        </div>
+    </div>
+    </div>
+</body>
+</html>d

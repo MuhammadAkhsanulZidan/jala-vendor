@@ -1,0 +1,211 @@
+<html>
+<head>
+    <title>Pembayaran Vendor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #f4511e;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header i {
+            font-size: 24px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 60px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar h2 {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 20px;
+            color: #333;
+        }
+        .sidebar ul li.active {
+            background-color: #f4511e;
+            color: white;
+        }
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .content h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .content .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .content .card h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+        .content .card table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .content .card table th, .content .card table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .content .card table th {
+            background-color: #f5f5f5;
+        }
+        .content .card table td i {
+            color: #f4511e;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px);
+            left: 250px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .sidebar ul li {
+                flex: 1 1 50%;
+                text-align: center;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .footer {
+                width: 100%;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe 
+    src="./sidebar.html" 
+    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
+  </iframe>
+    <div class="header primary-color">
+        <div>
+            <i class="fas fa-bars"></i>
+        </div>
+        <div>
+            <i class="fas fa-home"></i>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>CONTRACT MANAGEMENT</h2>
+        <ul>
+            <li><i class="fas fa-home"></i> Home</li>
+            <li><i class="fas fa-folder"></i> Core</li>
+            <li class="active primary-color"><i class="fas fa-file-alt"></i> Vendor Payment</li>
+            <li><i class="fas fa-file-alt"></i> Vendor Revision Payment</li>
+            <li><i class="fas fa-file-alt"></i> Vendor Memo</li>
+            <li><i class="fas fa-cogs"></i> Procurement Management</li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1 class="">Pembayaran Vendor</h1>
+        <div class="card">
+            <h2 class="color-primary-color">Pembayaran Vendor</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Show 
+                            <select>
+                                <option>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select> entries
+                        </th>
+                        <th colspan="3">
+                            Search: <input type="text">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>No</th>
+                        <th>PO Number</th>
+                        <th>PO Date</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>PO-Perabot/2017-05-08/AI/1654</td>
+                        <td>08/05/2017</td>
+                        <td>Proses release</td>
+                        <td><i class="fas fa-edit"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>PO/2017-05-10/AI/4790</td>
+                        <td>10/05/2017</td>
+                        <td>Review Permintaan Pembayaran</td>
+                        <td><i class="fas fa-edit"></i></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>PO/2017-05-12/AI/4925</td>
+                        <td>12/05/2017</td>
+                        <td>Belum Diproses</td>
+                        <td><i class="fas fa-edit"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                Showing 1 to 3 of 3 entries
+                <div style="float: right;">
+                    <button>Previous</button>
+                    <button>1</button>
+                    <button>Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; Contract Management 2016 - ProMSE
+    </div>
+</body>
+</html>

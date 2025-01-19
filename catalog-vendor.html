@@ -1,0 +1,226 @@
+<html>
+<head>
+    <title>Manage Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .title {
+            font-size: 20px;
+        }
+        .navbar .logout {
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding-top: 60px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        .sidebar ul li a:hover {
+            background-color: #f0f0f0;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #3f51b5;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            color: white;
+            padding: 10px 20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-header .title {
+            font-size: 18px;
+        }
+        .card-header .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .card-header .actions button {
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #f0f0f0;
+        }
+        table td.actions {
+            display: flex;
+            gap: 10px;
+        }
+        table td.actions button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        table td.actions button.delete {
+            background-color: #f44336;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe 
+    src="./sidebar.html" 
+    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
+  </iframe>
+    <div class="navbar primary-color">
+        <div class="title">oops - VENDOR</div>
+        <button class="logout secondary-color">Logout</button>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">NAMAGSA UTAMA (NEW)</a></li>
+            <li><a href="#">Dasbor</a></li>
+            <li><a href="#">Catalog Vendor</a></li>
+            <li><a href="#">Manage Catalog</a></li>
+            <li><a href="#">View Catalog</a></li>
+            <li><a href="#">View Vendor</a></li>
+            <li><a href="#">Proses Pengadaan Vendor</a></li>
+            <li><a href="#">Order</a></li>
+            <li><a href="#">Delivery Received</a></li>
+            <li><a href="#">Setting</a></li>
+            <li><a href="#">Contract Management</a></li>
+            <li><a href="#">Promise Forum</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="breadcrumb">
+            <a href="#">Home</a> &gt; <a href="#">Manage Catalog</a>
+        </div>
+        <div class="card">
+            <div class="card-header primary-color">
+                <div class="title">Manage Catalog</div>
+                <div class="actions">
+                    <button class="import secondary-color">Import</button>
+                    <button class="add secondary-color">Tambah</button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Attribute Set</th>
+                            <th>Price</th>
+                            <th>Satuan</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Camera Niken D320</td>
+                            <td>Camera</td>
+                            <td>4,880,504.00</td>
+                            <td>BUAH</td>
+                            <td>Active</td>
+                            <td class="actions">
+                                <button class="edit"><i class="fas fa-edit"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mobil Listrik</td>
+                            <td>Catalog</td>
+                            <td>899,000.00</td>
+                            <td>BUAH</td>
+                            <td>Active</td>
+                            <td class="actions">
+                                <button class="edit"><i class="fas fa-edit"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<html>
+ <head>
+  <title>
+   Data Vendor Perusahaan
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 40px;
+        }
+        .header .date {
+            font-size: 14px;
+        }
+        .header .home {
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+        }
+        .header .home:hover {
+            text-decoration: underline;
+        }
+        .nav {
+            padding: 10px 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-header {
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .section-content {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .section-content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .section-content table, .section-content th, .section-content td {
+            border: 1px solid #ddd;
+        }
+        .section-content th, .section-content td {
+            padding: 8px;
+            text-align: left;
+        }
+        .section-content th {
+            background-color: #f2f2f2;
+        }
+        .add-button {
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .add-button:hover {
+            background-color: #002080;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: red;
+            margin-top: 20px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .buttons button {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        .buttons button:hover {
+            background-color: #002080;
+        }
+        @media (max-width: 768px) {
+            .header, .nav, .container {
+                padding: 10px;
+            }
+            .section-content table, .section-content th, .section-content td {
+                font-size: 12px;
+            }
+            .buttons button {
+                padding: 5px 10px;
+                margin: 5px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+    <div class="main">
+        <div class="main">
+            <iframe 
+                src="./sidebar.html" >
+            </iframe>
+          <div>  <div class="header" style="color: black;">
+   <div class="date">
+    Senin, 19 Februari 2018, 10:20:58
+   </div>
+   <a class="home" href="#">
+    HOME
+   </a>
+  </div>
+  <div class="nav primary-color">
+   <a href="#">
+    DATA LOGIN
+   </a>
+   <a href="#">
+    DATA PERUSAHAAN
+   </a>
+   <a href="#">
+    DATA BANK
+   </a>
+   <a href="#">
+    DATA SEGMENTASI
+   </a>
+   <a href="#">
+    DATA DOKUMEN
+   </a>
+   <a href="#">
+    PERALATAN
+   </a>
+   <a href="#">
+    DATA KELUARAN
+   </a>
+   <a href="#">
+    DATA PENGALAMAN
+   </a>
+  </div>
+  <div class="container">
+   <div class="section">
+    <div class="section-header primary-color">
+     Data Pengalaman
+    </div>
+    <div class="section-content">
+     <input id="no-experience" type="checkbox"/>
+     <label for="no-experience">
+      Tanpa Pengalaman
+     </label>
+    </div>
+   </div>
+   <div class="section">
+    <div class="section-header primary-color">
+     Daftar Pelelangan Aktif selama 5 tahun terakhir
+    </div>
+    <div class="section-content">
+     <table>
+      <tr>
+       <th>
+        No
+       </th>
+       <th>
+        Nama
+       </th>
+       <th>
+        Alamat
+       </th>
+       <th>
+        Bidang Usaha
+       </th>
+       <th>
+        Mulai Kerjasama
+       </th>
+       <th>
+        Nilai Kontrak
+       </th>
+       <th>
+        Bukti Kerjasama
+       </th>
+       <th>
+        Aksi
+       </th>
+      </tr>
+     </table>
+     <a class="add-button primary-color" href="#">
+      + Tambah Data Pelelangan
+     </a>
+    </div>
+   </div>
+   <div class="section">
+    <div class="section-header primary-color">
+     Daftar Mitra Dagang / Mitra Usaha
+    </div>
+    <div class="section-content">
+     <table>
+      <tr>
+       <th>
+        No
+       </th>
+       <th>
+        Nama
+       </th>
+       <th>
+        Alamat
+       </th>
+       <th>
+        Bidang Usaha
+       </th>
+       <th>
+        Mulai Kerjasama
+       </th>
+       <th>
+        Nilai Kontrak
+       </th>
+       <th>
+        Bukti Kerjasama
+       </th>
+       <th>
+        Aksi
+       </th>
+      </tr>
+     </table>
+     <a class="add-button primary-color" href="#">
+      + Tambah Data Mitra
+     </a>
+    </div>
+   </div>
+   <div class="section">
+    <div class="section-header primary-color">
+     Daftar Pekerjaan yang sedang berjalan
+    </div>
+    <div class="section-content">
+     <table>
+      <tr>
+       <th>
+        No
+       </th>
+       <th>
+        Nama
+       </th>
+       <th>
+        Alamat
+       </th>
+       <th>
+        Bidang Usaha
+       </th>
+       <th>
+        Mulai Kerjasama
+       </th>
+       <th>
+        Nilai Kontrak
+       </th>
+       <th>
+        Bukti Kerjasama
+       </th>
+       <th>
+        Aksi
+       </th>
+      </tr>
+     </table>
+     <a class="add-button primary-color" href="#">
+      + Tambah Data Pekerjaan Berjalan
+     </a>
+    </div>
+   </div>
+   <div class="footer">
+    *) Dengan mengisi formulir registrasi ini anda telah menyetujui TERM OF CONDITION E-PROCUREMENT
+   </div>
+   <div class="buttons">
+    <button class="primary-color">
+     Selanjutnya
+    </button>
+    <button class="primary-color">
+     Simpan
+    </button>
+   </div>
+  </div></div>
+  </div>
+ </body>
+</html>
