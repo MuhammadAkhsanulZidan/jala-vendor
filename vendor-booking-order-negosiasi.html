@@ -11,6 +11,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        body a {
+            color: black;
+        }
         .header {
             background-color: #3F51B5;
             color: white;
@@ -38,25 +41,7 @@
         .container {
             display: flex;
         }
-        .sidebar {
-            display: none;
-            width: 200px;
-            background-color: #F5F5F5;
-            padding: 20px;
-            height: 100vh;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin-bottom: 10px;
-        }
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-        }
+        
         .content {
             flex-grow: 1;
             padding: 20px;
@@ -151,23 +136,12 @@
         </iframe>
       <div  style="flex-grow: 1;">
     <div class="header primary-color">
-        <div class="title">VENDOR</div>
+        <div class="title"></div>
         <div class="user-info">
         </div>
         <button class="logout secondary-color">Logout</button>
     </div>
     <div class="container">
-        <div class="sidebar">
-            <ul>
-                <li><a href="#">Desbor</a></li>
-                <li><a href="#">Catalog Vendor</a></li>
-                <li><a href="#">Delivery Received</a></li>
-                <li><a href="#">Proses Pengadaan Vendor</a></li>
-                <li><a href="#">Setting</a></li>
-                <li><a href="#">Contract Management</a></li>
-                <li><a href="#">Promise Forum</a></li>
-            </ul>
-        </div>
         <div class="content">
             <h2>Negosiasi</h2>
             <div class="table-container">
@@ -195,7 +169,7 @@
                             <td>hardware</td>
                             <td>Pasca Kualifikasi</td>
                             <td>24/10/2017</td>
-                            <td><div class="action"><i class="fas fa-pencil-alt"></i></div></td>
+                            <td style="row-gap: 5px"><a style="color: #00ad56; padding-right: 5px;"><i class="fa fa-pencil-alt"></i></a> <a href="vendor-booking-order-negosiasi-detail.html" style="color: #007cad;"><i class="fa fa-info-circle"></i></a></td>                            
                         </tr>
                     </tbody>
                 </table>

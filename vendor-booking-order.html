@@ -16,8 +16,11 @@
             background-color: #f5f5f5;
         }
 
+        body a{
+            color: black;
+        }
+
         .header {
-            background-color: #3f51b5;
             color: white;
             padding: 10px 20px;
             display: flex;
@@ -49,46 +52,7 @@
             cursor: pointer;
         }
 
-        .sidebar {
-            display: none;
-            width: 250px;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar h3 {
-            margin-top: 0;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 10px 0;
-        }
-
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 10px;
-            border-radius: 3px;
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #f0f0f0;
-        }
-
         .content {
-            /* margin-left: 270px; */
             padding: 20px;
         }
 
@@ -193,66 +157,12 @@
             <div class="header primary-color">
                 <div class="title">
                     <span>
-                        VENDOR
+                        
                     </span>
                 </div>
                 <button class="logout secondary-color">
                     Logout
                 </button>
-            </div>
-            <div class="sidebar">
-                <h3>
-                    NAVIGASI UTAMA (NEW)
-                </h3>
-                <ul>
-                    <li>
-                        <a href="#">
-                            Dasbor
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Catalog Vendor
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Proses Pengadaan Vendor
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Order
-                        </a>
-                    </li>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Purchase Order Vendor
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Booking Order
-                            </a>
-                        </li>
-                    </ul>
-                    <li>
-                        <a href="#">
-                            Delivery Received
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Setting
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Contract Management
-                        </a>
-                    </li>
-                </ul>
             </div>
             <div class="content">
                 <h2>
@@ -297,10 +207,9 @@
                                     PT. Astra International Tbk
                                 </td>
                                 <td>
-                                    <button>
-                                        <i class="fas fa-eye">
-                                        </i>
-                                    </button>
+                                    <a href="">
+                                        <i class="fa fa-info-circle"></i>
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
