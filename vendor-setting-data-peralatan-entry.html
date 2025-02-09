@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>Peralatan / Asset</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+        }
+        .main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: white;
+            width: 600px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group a {
+            color: #3f51b5;
+            text-decoration: none;
+        }
+        .form-group a:hover {
+            text-decoration: underline;
+        }
+        .form-group .file-input {
+            display: flex;
+            align-items: center;
+        }
+        .form-group .file-input input[type="text"] {
+            flex: 1;
+        }
+        .form-group .file-input button {
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .form-group .file-input button i {
+            margin-right: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .buttons button i {
+            margin-right: 5px;
+        }
+        .buttons button:hover {
+            background-color: #303f9f;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <div class="main" style="overflow-y: auto;">
+        
+    <div class="container">
+        <div class="header primary-color">Peralatan / Asset</div>
+        <div class="form-group">
+            <label for="jenis">Jenis <span style="color: red;">*</span></label>
+            <input type="text" id="jenis" value="Barang">
+        </div>
+        <div class="form-group">
+            <label for="jumlah">Jumlah <span style="color: red;">*</span></label>
+            <input type="number" id="jumlah" value="500">
+        </div>
+        <div class="form-group">
+            <label for="kapasitas">Kapasitas <span style="color: red;">*</span></label>
+            <input type="number" id="kapasitas" value="250">
+        </div>
+        <div class="form-group">
+            <label for="merk">Merk / Tipe <span style="color: red;">*</span></label>
+            <input type="text" id="merk" value="Simbada">
+        </div>
+        <div class="form-group">
+            <label for="tahun">Tahun Pembuatan <span style="color: red;">*</span></label>
+            <input type="number" id="tahun" value="2018">
+        </div>
+        <div class="form-group">
+            <label for="kondisi">Kondisi <span style="color: red;">*</span></label>
+            <input type="text" id="kondisi" value="BARU">
+        </div>
+        <div class="form-group">
+            <label for="lokasi">Lokasi <span style="color: red;">*</span></label>
+            <input type="text" id="lokasi" value="JakartaSelatan">
+        </div>
+        <div class="form-group">
+            <label for="bukti">Bukti Kepemilikan <span style="color: red;">*</span></label>
+            <input type="text" id="bukti" value="MILIK">
+        </div>
+        <div class="form-group">
+            <label for="dokumen">Dokumen Bukti Kepemilikan</label>
+            <a href="#">ReportMemo (9).pdf</a>
+        </div>
+        <div class="form-group">
+            <label for="gambar">Gambar Peralatan / Aset</label>
+            <a href="#">KTP.jpeg</a>
+        </div>
+        <div class="form-group file-input">
+            <input type="text" placeholder="Cari File">
+            <button><i class="fas fa-folder-open"></i> Cari File</button>
+        </div>
+        <div class="form-group file-input">
+            <input type="text" placeholder="Cari File">
+            <button><i class="fas fa-folder-open"></i> Cari File</button>
+        </div>
+        <div class="buttons">
+            <button class="primary-color"><i class="fas fa-arrow-left"></i> Kembali</button>
+            <button class="primary-color"><i class="fas fa-save"></i> Simpan</button>
+        </div>
+    </div>
+</body>
+</html>

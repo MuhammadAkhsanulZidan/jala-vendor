@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Penawaran Lelang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .table-container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .table-container {
+      background-color: white;
+
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-container .table-header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-container table th,
+    .table-container table td {
+      padding: 10px;
+      /* border: 1px solid #ddd; */
+      text-align: left;
+    }
+
+    .table-container table th {
+      background-color: #f0f0f0;
+    }
+
+    .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .table-container .pagination .info {
+      font-size: 14px;
+    }
+
+    .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
+
+    .table-container .pagination .pages button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 2px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .table-container .pagination .pages button:hover {
+      background-color: #303f9f;
+    }
+
+    .table-container .pagination .pages button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Style for odd rows */
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .title {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .title img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .header .title span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .header .logout {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .dashboard {
+      padding: 20px;
+    }
+
+    .dashboard-header {
+      margin-bottom: 30px;
+    }
+
+    .dashboard-header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #444;
+    }
+
+    .image-container {
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-container .button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #ffc107;
+      color: #000;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .pagination .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+    }
+
+    .pagination .dot.active {
+      background-color: #ffc107;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <iframe src="./sidebar.html">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="header primary-color">
+        <div class="title">
+          <span>
+          </span>
+        </div>
+        <button class="logout secondary-color" style="color: white; padding: 4px;">
+          Logout
+        </button>
+      </div>
+      <div class="dashboard" style="display: flex; flex-direction: column;">
+        <div class="">
+          <!-- <h3>Penawaran Lelang</h3> -->
+        </div>
+        <div class="image-container" style="display: flex; justify-content: center;">
+          <img alt="Front view of a red car"
+            src="https://storage.googleapis.com/a1aa/image/4GCn773xN4aLMFFC9iBRHmsPrUF2lzgf2JUhrG0dXeoAryHUA.jpg"
+            style="align-self: center; width: 350px; border-radius: 10px;" />
+        </div>
+        <div class="pagination">
+          <span class="dot active">
+          </span>
+          <span class="dot">
+          </span>
+          <span class="dot">
+          </span>
+          <span class="dot">
+          </span>
+          <span class="dot">
+          </span>
+          <span class="dot">
+          </span>
+          <span class="dot">
+          </span>
+          <span class="dot">
+          </span>
+          <span class="dot">
+          </span>
+        </div>
+        <div class="table-container"
+          style="flex-grow: 1; width: 90%; box-sizing: border-box; justify-self: center; align-self: center; padding: 15px; max-width: 100%;">
+          <table style="border: solid 1px #ddd; border-radius: 3px; ">
+            <thead>
+              <!-- Empty Header -->
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align:center;">Brand</td>
+                <td style="text-align:center;">DAIHATSU</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Tipe</td>
+                <td style="text-align:center;">M A/T</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Model</td>
+                <td style="text-align:center;">AYLA</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Harga Dasar</td>
+                <td style="text-align:center;">Rp.40,000,000.00</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Sisa Deposit</td>
+                <td style="text-align:center;">Rp.90,000,000.00</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Warna</td>
+                <td style="text-align:center;">Hitam</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Tahun</td>
+                <td style="text-align:center;">2022</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">No Pol</td>
+                <td style="text-align:center;">KL9087</td>
+              </tr>
+
+              <tr>
+                <td style="text-align:center;">Lokasi</td>
+                <td style="text-align:center;">Bandung</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Keterangan</td>
+                <td style="text-align:center;">-</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Start Bid</td>
+                <td style="text-align:center;">22-01-2025</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">End Bid</td>
+                <td style="text-align:center;">23-01-2025</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Status</td>
+                <td style="text-align:center;">Aktif</td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+              onclick="document.getElementById('dialog').style.display='block';"
+              style="margin-top: 20px; width: 100%; flex-grow: 1; background-color: #333; cursor: pointer; padding: 10px; color: white; border: none; border-radius: 3px;">Penawaran
+              Lelang</button>
+          <!-- <div style="">
+            <input
+              style="flex-grow: 1; margin-top: 10px; padding: 10px; text-align: center; border-radius: 3px; border: solid 1px #ddd; font-family: 'Poppins', sans-serif;"
+              inputmode="numeric"
+              placeholder="Dalam Rupiah" />
+            <p style="margin-top: 4px; margin-bottom: 16px; font-size: 0.75rem;">* Penawaran harga yang disampaikan
+              belum termasuk nilai PPN sebagaimana ketentuan PMK No. 41 Tahun 2023 dan akan menjadi tanggungan/beban
+              yang wajib dibayarkan jika pembeli sebagai pemenang lelang atas kendaraan ini.
+            </p> -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="dialog" style="display: none;">
+    <div id="dialog-overlay" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;"
+      onclick="document.getElementById('dialog').style.display='none';">
+      </div>
+    <div id="dialog-box" style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;">
+      <h4 style="margin: 0 0 10px; align-self:flex-start;">Warning</h4>
+      <p style="font-size: 0.85rem; margin: 0 0 20px; align-self: flex-start; text-align: start;">Foto Deposit Anda Sedang di Cek Admin, Silahkan Tunggu Untuk Diverifikasi</p>
+      <button onclick="
+        document.getElementById('dialog').style.display='none';"
+        class="primary-color"
+        style="
+          align-self: flex-end;
+          padding: 10px 20px;
+          border: none;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;">
+        Ok
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('button').addEventListener('click', function () {
+      document.getElementById('dialog-overlay').style.display = 'block';
+      document.getElementById('dialog-box').style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>

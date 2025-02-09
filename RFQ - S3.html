@@ -1,0 +1,297 @@
+<html>
+
+<head>
+  <title>
+    Suppliers
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background-color: #f5f5f5;
+    }
+
+    .actions select {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .actions .pagination {
+      display: flex;
+      align-items: center;
+    }
+
+    .actions .pagination span {
+      margin: 0 8px;
+    }
+
+    .actions .pagination i {
+      cursor: pointer;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .footer button {
+      padding: 12px 24px;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer button i {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container" style="padding: 20px;">
+        <h1 style="border-bottom: 2px solid #976841; padding-bottom: 12px;">Suppliers</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Company
+              </th>
+              <th>
+                Contact
+              </th>
+              <th>
+                Currency
+              </th>
+              <th style="text-align: center;">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Exelon
+              </td>
+              <td>
+                Roy Lopez
+              </td>
+              <td>
+                USD
+              </td>
+              <td>
+                <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                  <button class="app-button green-color" onclick="location.href='#'">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="app-button blue-color" onclick="location.href='#'">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="app-button red-color" onclick="location.href='#'">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Nationwide
+              </td>
+              <td>
+                Betty Jones
+              </td>
+              <td>
+                USD
+              </td>
+              <td>
+                <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                  <button class="app-button green-color" onclick="location.href='#'">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="app-button blue-color" onclick="location.href='#'">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="app-button red-color" onclick="location.href='#'">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Nucor
+              </td>
+              <td>
+                Arlene White
+              </td>
+              <td>
+                USD
+              </td>
+              <td>
+                <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                  <button class="app-button green-color" onclick="location.href='#'">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="app-button blue-color" onclick="location.href='#'">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="app-button red-color" onclick="location.href='#'">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Progressive
+              </td>
+              <td>
+                Jill Smith
+              </td>
+              <td>
+                USD
+              </td>
+              <td>
+                <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                  <button class="app-button green-color" onclick="location.href='#'">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="app-button blue-color" onclick="location.href='#'">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="app-button red-color" onclick="location.href='#'">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                StoneX Group
+              </td>
+              <td>
+                Jon Roper
+              </td>
+              <td>
+                USD
+              </td>
+              <td>
+                <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                  <button class="app-button green-color" onclick="location.href='#'">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="app-button blue-color" onclick="location.href='#'">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="app-button red-color" onclick="location.href='#'">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Sysco
+              </td>
+              <td>
+                Brad Cantara
+              </td>
+              <td>
+                USD
+              </td>
+              <td>
+                <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                  <button class="app-button green-color" onclick="location.href='#'">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </button>
+                  <button class="app-button blue-color" onclick="location.href='#'">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="app-button red-color" onclick="location.href='#'">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="footer">
+          <button class="app-button2 primary-color">
+            <i class="fas fa-plus">
+            </i>
+            CHOOSE SUPPLIERS
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

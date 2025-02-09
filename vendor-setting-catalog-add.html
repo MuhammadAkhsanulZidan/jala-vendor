@@ -1,0 +1,650 @@
+<html>
+
+<head>
+  <title>Vendor Information</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    select, input {
+      border-radius: 5px !important;
+      border: 1px solid #b1b1b1 !important;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .nav {
+      display: flex;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .nav a {
+      padding: 10px 10px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .nav a.active {
+      border-bottom: 3px solid #976841;
+      color: #976841;
+    }
+
+    .section {
+      /* border-bottom: 1px solid #ddd; */
+    }
+
+    .section h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      border-bottom: 2px solid #976841;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #f5f5f5;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+        .tabs button.active {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-bottom: none;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+        .form-group .row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-group .row .col {
+            flex: 1;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-actions .btn-primary {
+            color: #fff;
+        }
+        .form-actions .btn-secondary {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+    .table-container {
+            background-color: white;
+
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container .table-header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-container table th,
+        .table-container table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .table-container table th {
+            background-color: #f0f0f0;
+        }
+
+        .table-container .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .table-container .pagination .info {
+            font-size: 14px;
+        }
+
+        .table-container .pagination .pages {
+            display: flex;
+            align-items: center;
+        }
+
+        .table-container .pagination .pages button {
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .table-container .pagination .pages button:hover {
+            background-color: #303f9f;
+        }
+
+        .table-container .pagination .pages button.disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            color: white;
+            padding: 10px 20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-header .title {
+            font-size: 18px;
+        }
+        .card-header .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .card-header .actions button {
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #f0f0f0;
+        }
+        table td.actions {
+            display: flex;
+            gap: 10px;
+        }
+        table td.actions button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        table td.actions button.delete {
+            background-color: #f44336;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+
+  </style>
+</head>
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container" >
+        <div class="header">
+          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <h1>Manage Catalog</h1>
+        </div>
+        <div class="nav">
+          <!-- <a href="vendor-data.html">General Info</a>
+          <a href="vendor-data-contact.html">Contacts</a>
+          <a href="vendor-data-documents.html">Documents</a>
+          <a href="vendor-data-finance.html">Finance</a>
+          <a href="vendor-data-banks.html">Banks</a>
+          <a href="vendor-data-experience.html">Experience</a>
+          <a href="vendor-data-equipment.html">Equipment</a> -->
+          <!-- <a href="vendor-setting-user.html">User</a> -->
+          <!-- <a href="vendor-data-catalog.html" class="active">Catalog</a> -->
+        </div>
+
+
+        <div class="container">
+            <div class="content">
+                <!-- <div class="breadcrumb"> -->
+                    <!-- <a href="#">Home</a> &gt; <a href="#">Manage Catalog</a> -->
+                <!-- </div> -->
+                <div class="card">
+                    <div class="card-header primary-color">
+                        <div class="title">Add New Product</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="attribute-group">Attribute Group</label>
+                            <select id="attribute-group">
+                                <option>Camera</option>
+                            </select>
+                        </div>
+                        <div class="tabs">
+                            <button class="active" onclick="openTab(event, 'general')">GENERAL</button>
+                            <button onclick="openTab(event, 'categories')">CATEGORIES</button>
+                            <button onclick="openTab(event, 'inventory')">INVENTORY</button>
+                            <button onclick="openTab(event, 'images')">IMAGES</button>
+                            <button onclick="openTab(event, 'specification')">SPECIFICATION</button>
+                        </div>
+                        <div id="general" class="tab-content active">
+                            <div class="form-group">
+                                <div>
+                                    <label for="name">Nama</label>
+                                    <input type="text" id="name" value="Mobil Listrik">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="description">Deskripsi</label>
+                                    <textarea id="description" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="product-code">Product Code</label>
+                                    <input type="text" id="product-code" value="HP-XJR5A">
+                                </div>
+                                <div>
+                                    <label for="price">Price</label>
+                                    <input type="text" id="price" value="999000">
+                                </div>
+                                <div>
+                                    <label for="price-e-proc">Price E_proc</label>
+                                    <input type="text" id="price-e-proc">
+                                </div>
+                                <div>
+                                    <label for="currency">Mata Uang</label>
+                                    <select id="currency">
+                                        <option value="pilih">-- Pilih --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="weight">Weight</label>
+                                    <input type="text" id="weight" value="500">
+                                </div>
+                                <div>
+                                    <label for="weight-unit">Gram</label>
+                                    <select id="weight-unit">
+                                        <option value="gram">Gram</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="uom">UOM</label>
+                                    <select id="uom">
+                                        <option value="buah">BUAH</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="length">Length</label>
+                                    <input type="text" id="length" value="10">
+                                </div>
+                                <div>
+                                    <label for="length-unit">CM</label>
+                                    <select id="length-unit">
+                                        <option value="cm">CM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="width">Width</label>
+                                    <input type="text" id="width" value="1">
+                                </div>
+                                <div>
+                                    <label for="width-unit">CM</label>
+                                    <select id="width-unit">
+                                        <option value="cm">CM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="height">Height</label>
+                                    <input type="text" id="height" value="20">
+                                </div>
+                                <div>
+                                    <label for="height-unit">CM</label>
+                                    <select id="height-unit">
+                                        <option value="cm">CM</option>
+                                    </select>
+                                </div>
+                            </div>
+                
+                        </div>
+
+                        <div id="categories" class="tab-content">
+                            <!-- Categories content -->
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="barang" checked>
+                                <label for="barang">Barang</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="jasa" checked>
+                                <label for="jasa">Jasa</label>
+                            </div>
+                        </div>
+
+                        <div id="inventory" class="tab-content">
+                            <!-- Inventory content -->
+                        </div>
+
+                        <div id="images" class="tab-content">
+                            <!-- Images content -->
+                            <div class="form-group">
+                                <label for="image-upload">
+                                 Upload Antiran
+                                </label>
+                                <input id="image-upload" type="text" value="christie-dlp-1500-3-lcd-digital-projector-main-6.png"/>
+                                <button class="btn-upload">
+                                 File Upload
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                 Images
+                                </label>
+                                <table class="table">
+                                 <thead>
+                                  <tr>
+                                   <th>
+                                    Images
+                                   </th>
+                                   <th>
+                                    Nama File
+                                   </th>
+                                   <th>
+                                    Ukuran
+                                   </th>
+                                   <th>
+                                    Proses
+                                   </th>
+                                   <th>
+                                    Aksi
+                                   </th>
+                                  </tr>
+                                 </thead>
+                                 <tbody>
+                                  <tr>
+                                   <td>
+                                    <img alt="Image of a digital projector" height="100" src="https://storage.googleapis.com/a1aa/image/9ygEKZD3DpBG6rRVyXCzl6jEvAoHBsUKDhiF_6d_S8Y.jpg" width="100"/>
+                                   </td>
+                                   <td>
+                                    christie-dlp-1500-3-lcd-digital-projector-main-6.png
+                                   </td>
+                                   <td>
+                                    0.10 MB
+                                   </td>
+                                   <td>
+                                    <i class="fas fa-check">
+                                    </i>
+                                   </td>
+                                   <td>
+                                    <button class="btn-upload">
+                                     Upload
+                                    </button>
+                                    <button class="btn-delete">
+                                     Hapus
+                                    </button>
+                                   </td>
+                                  </tr>
+                                 </tbody>
+                                </table>
+                            </div>
+                           
+                            <div class="progress-bar">
+                                <div>
+                                </div>
+                            </div>
+                                                       
+                            <div class="btn-group">
+                                <a class="btn btn-upload-all" href="#">
+                                 Upload Semua
+                                </a>
+                                <a class="btn btn-submit" href="#">
+                                 Submit Semua
+                                </a>
+                                <a class="btn btn-delete-all" href="#">
+                                 Hapus Semua
+                                </a>
+                            </div>
+                           
+                            <div class="btn-group">
+                                <a class="btn btn-back" href="#">
+                                 Kembali
+                                </a>
+                                <a class="btn btn-save " href="#">
+                                 Simpan
+                                </a>
+                            </div>
+                           
+
+                        </div>
+
+                        <div id="specification" class="tab-content">
+                            <!-- Specification content -->
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <div class="row">
+                                    <div class="col"><button class="btn-secondary">Bahasa</button></div>
+                                    <div class="col"><button class="btn-secondary">English</button></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Nama</label>
+                                <input type="text" id="name" value="Camera Nikon D320">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Deskripsi</label>
+                                <textarea id="description">Camera Nikon</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-code">Product Code</label>
+                                <input type="text" id="product-code" value="NKN-D32005">
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" id="price" value="4800504">
+                            </div>
+                            <div class="form-group">
+                                <label for="price-e-proc">Price E_proc</label>
+                                <input type="text" id="price-e-proc" value="4006765">
+                            </div>
+                            <div class="form-group">
+                                <label for="currency">Mata Uang</label>
+                                <select id="currency">
+                                    <option>Rupiah</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Weight</label>
+                                <input type="text" id="weight" value="876">
+                            </div>
+                            <div class="form-group">
+                                <label for="uom">UOM</label>
+                                <select id="uom">
+                                    <option>BUAH</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Dimension</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="length">Length</label>
+                                        <input type="text" id="length" value="27">
+                                    </div>
+                                    <div class="col">
+                                        <label for="length-unit">Unit</label>
+                                        <select id="length-unit">
+                                            <option>CM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="width">Width</label>
+                                        <input type="text" id="width" value="27">
+                                    </div>
+                                    <div class="col">
+                                        <label for="width-unit">Unit</label>
+                                        <select id="width-unit">
+                                            <option>CM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="height">Height</label>
+                                        <input type="text" id="height" value="27">
+                                    </div>
+                                    <div class="col">
+                                        <label for="height-unit">Unit</label>
+                                        <select id="height-unit">
+                                            <option>CM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                  
+
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="cancel secondary-color">Kembali</button>
+                            <button class="save primary-color">Simpan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+      
+        <!-- <div class="section"> -->
+          <!-- <h2>Vendor Data</h2>
+          <div class="content">
+
+          </div> -->
+        <!-- </div> -->
+
+
+        <script>
+          function openTab(evt, tabName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tab-content");
+              for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tabs")[0].getElementsByTagName("button");
+              for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
+          }
+      </script>
+
+      </div>
+    </div>
+</body>
+</html>

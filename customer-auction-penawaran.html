@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Penawaran Lelang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .table-container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .table-container {
+      background-color: white;
+
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-container .table-header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-container table th,
+    .table-container table td {
+      padding: 10px;
+      /* border: 1px solid #ddd; */
+      text-align: left;
+    }
+
+    .table-container table th {
+      background-color: #f0f0f0;
+    }
+
+    .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .table-container .pagination .info {
+      font-size: 14px;
+    }
+
+    .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
+
+    .table-container .pagination .pages button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 2px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .table-container .pagination .pages button:hover {
+      background-color: #303f9f;
+    }
+
+    .table-container .pagination .pages button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Style for odd rows */
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .title {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .title img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .header .title span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .header .logout {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .dashboard {
+      padding: 20px;
+    }
+
+    .dashboard-header {
+      margin-bottom: 30px;
+    }
+
+    .dashboard-header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #444;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .stat-box {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .stat-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .chart-container {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 40px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .icon-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: white;
+    }
+
+    .chart-container h3 {
+      margin-bottom: 20px;
+    }
+
+    canvas {
+      width: 100%;
+      max-height: 400px;
+    }
+
+    .bar-chart-container {
+      width: 80%;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main" style="width: 100vw;">
+    <iframe src="./sidebar.html">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="header primary-color">
+        <div class="title">
+          <span>
+          </span>
+        </div>
+        <button class="logout secondary-color" style="color: white; padding: 4px;">
+          Logout
+        </button>
+      </div>
+      <div class="dashboard">
+        <div class="">
+          <h3>Penawaran Lelang</h3>
+        </div>
+        <div class="table-container"
+          style="justify-self: center; align-self: center; padding: 15px; max-width: fit-content;">
+          <table style="border: solid 1px #ddd; border-radius: 3px;">
+            <thead>
+              <!-- Empty Header -->
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align:center;">No Lot</td>
+                <td style="text-align:center;">60599</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Brand</td>
+                <td style="text-align:center;">DAIHATSU</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Tipe</td>
+                <td style="text-align:center;">M A/T</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Model</td>
+                <td style="text-align:center;">AYLA</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Harga Dasar</td>
+                <td style="text-align:center;">Rp.40,000,000.00</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Jumlah penawaran</td>
+                <td id="jumlah-penawaran" style="text-align:center;">0</td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">Penawaran Terakhir</td>
+                <td id="penawaran-terakhir" style="text-align:center;">Rp.0</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="display: flex; flex-direction: column;">
+            <input
+              id="input-penawaran"
+              style="flex-grow: 1; margin-top: 10px; padding: 10px; text-align: center; border-radius: 3px; border: solid 1px #ddd; font-family: 'Poppins', sans-serif;"
+              type="text" placeholder="Dalam Rupiah" />
+            <p style="margin-top: 4px; margin-bottom: 16px; font-size: 0.75rem;">* Penawaran harga yang disampaikan
+              belum termasuk nilai PPN sebagaimana ketentuan PMK No. 41 Tahun 2023 dan akan menjadi tanggungan/beban
+              yang wajib dibayarkan jika pembeli sebagai pemenang lelang atas kendaraan ini.
+            </p>
+            <button class="primary-color" onclick="document.getElementById('dialog').style.display='block'; document.getElementById('dialog-confirmation-box').style.display='block';"
+              style="cursor: pointer; padding: 10px; color: white; border: none; border-radius: 3px;">Penawaran
+              Lelang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="dialog" style="display: none;">
+    <!-- Overlay -->
+    <div id="dialog-overlay" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;" onclick="document.getElementById('dialog').style.display='none';">
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div id="dialog-confirmation-box" style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+      z-index: 1000;">
+      <p style="font-size: 0.85rem; margin: 0 0 20px; align-self: flex-start; text-align: start;">
+        Apakah Anda Yakin?</p>
+      <div style="display: flex; gap: 20px; justify-content: end;">
+        <button onclick="
+        document.getElementById('dialog').style.display='none';" style="
+          background-color: #444;
+          align-self: flex-end;
+          padding: 10px 20px;
+          border: none;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;">
+          Batal
+        </button>
+        <button onclick="
+        document.getElementById('dialog-success-box').style.display='block';
+        document.getElementById('dialog-confirmation-box').style.display='none';
+        document.getElementById('penawaran-terakhir').innerText = 'Rp'+document.getElementById('input-penawaran').value;
+        document.getElementById('jumlah-penawaran').innerText = '1';
+        document.getElementById('input-penawaran').value = '0'" 
+        class="primary-color" style="
+          align-self: flex-end;
+          padding: 10px 20px;
+          border: none;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;">
+          Iya
+        </button>
+      </div>
+    </div>
+
+    <!-- Success Dialog -->
+    <div id="dialog-success-box" style="
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+      z-index: 1000;">
+      <h4 style="margin: 0 0 10px; text-align: start;">Success</h4>
+      <p style="font-size: 0.85rem; margin: 0 0 20px; align-self: flex-start; text-align: start;">
+        Penawaran Telah Diterima
+      </p>
+      <div style="display: flex; gap: 20px; justify-content: end;">
+        <button onclick="
+          document.getElementById('dialog').style.display='none';
+          document.getElementById('dialog-success-box').style.display='none';" class="primary-color" style="
+          align-self: flex-end;
+          padding: 10px 20px;
+          border: none;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;">
+          Ok
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- <script>
+    document.querySelector('button').addEventListener('click', function () {
+      document.getElementById('dialog-overlay').style.display = 'block';
+      document.getElementById('dialog-box').style.display = 'block';
+    });
+  </script> -->
+</body>
+
+</html>

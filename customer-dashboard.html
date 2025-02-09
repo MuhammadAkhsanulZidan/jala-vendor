@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Customer Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .title {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .title img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .header .title span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .header .logout {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .dashboard {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .dashboard-header {
+      margin-bottom: 30px;
+    }
+
+    .dashboard-header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #444;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .stat-box {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .stat-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .chart-container {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 40px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .icon-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: white;
+    }
+
+    .chart-container h3 {
+      margin-bottom: 20px;
+    }
+
+    canvas {
+      width: 100%;
+      max-height: 400px;
+    }
+
+    .bar-chart-container {
+      width: 80%;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main" style="width: 100vw;">
+    <iframe src="./sidebar.html">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="header primary-color">
+        <div class="title">
+          <span>
+          </span>
+        </div>
+        <button class="logout secondary-color" style="color: white; padding: 4px;">
+          Logout
+        </button>
+      </div>
+      <div class="dashboard">
+        <div class="">
+          <h3>Customer Dashboard</h3>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <h5 class="" style="margin: 0; padding-bottom: 8px;">Total Bids Submitted</h5>
+                <h2 style="margin: 0;">15</h2>
+              </div>
+              <div class="icon-circle" style="background-color: red; font-size: larger;">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; font-size: 0.85rem;">
+              <span style="display: flex; align-items: center; gap: 3px; color: green;"><i
+                  class="fa-solid fa-arrow-up"></i>
+                <p>5.58%</p>
+              </span>
+              <p>Since last month</p>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <h5 class="" style="margin: 0; padding-bottom: 8px;">Total Bids Won</h5>
+                <h2 style="margin: 0;">8</h2>
+              </div>
+              <div class="icon-circle" style="background-color: orange; font-size: larger;">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; font-size: 0.85rem;">
+              <span style="display: flex; align-items: center; gap: 3px; color: green;"><i
+                  class="fa-solid fa-arrow-up"></i>
+                <p>5.58%</p>
+              </span>
+              <p>Since last month</p>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <h5 class="" style="margin: 0; padding-bottom: 8px;">Average Bid Value</h5>
+                <h2 style="margin: 0;">Rp237.870.500</h2>
+              </div>
+              <div class="icon-circle" style="background-color: lightcoral; font-size: larger;">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; font-size: 0.85rem;">
+              <span style="display: flex; align-items: center; gap: 3px; color: green;"><i
+                  class="fa-solid fa-arrow-up"></i>
+                <p>64.87%</p>
+              </span>
+              <p>Since last month</p>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <h5 class="" style="margin: 0; padding-bottom: 8px;">Bid Success Rate</h5>
+                <h2 style="margin: 0;">53.33%</h2>
+              </div>
+              <div class="icon-circle" style="background-color: blue; font-size: larger;">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; font-size: 0.85rem;">
+              <span style="display: flex; align-items: center; gap: 3px; color: green;"><i
+                  class="fa-solid fa-arrow-up"></i>
+                <p>5.58%</p>
+              </span>
+              <p>Since last month</p>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <div class="chart-container" style="flex: 1;">
+            <h3>Bids Over Time</h3>
+            <canvas id="bidsChart"></canvas>
+          </div>
+          <div class="chart-container" style="flex: 1; display: flex; flex-direction: column;">
+            <h3>Top 5 Bid Won</h3>
+            <canvas id="biddingChart" style="flex-grow: 1;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('bidsChart').getContext('2d');
+    const bidsChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [
+          {
+            label: 'Bids Submitted',
+            data: [10, 20, 15, 25, 30, 45],
+            borderColor: '#007bff',
+            fill: false,
+          },
+          {
+            label: 'Bids Won',
+            data: [5, 10, 8, 15, 18, 25],
+            borderColor: '#28a745',
+            fill: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Months',
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Count',
+            },
+          },
+        },
+      },
+    });
+
+    const ctx2 = document.getElementById('biddingChart').getContext('2d');
+
+    const biddingChart = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Product A', 'Product B', 'Product C', 'Product D', 'Vendor E'],
+        datasets: [{
+          label: 'Bid Amount ($)',
+          data: [12000, 15000, 10000, 18000, 17000],
+          backgroundColor: [
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(153, 102, 255, 0.8)',
+            'rgba(255, 159, 64, 0.8)',
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(54, 162, 235, 0.8)'
+          ],
+          borderColor: [
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+          },
+          tooltip: {
+            enabled: true
+          }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Products'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Bid Amount ($)'
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

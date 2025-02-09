@@ -1,0 +1,350 @@
+<html>
+
+<head>
+  <title>Vendor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    select, input {
+      border-radius: 5px !important;
+      border: 1px solid #b1b1b1 !important;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .nav {
+      display: flex;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .nav a {
+      padding: 10px 10px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .nav a.active {
+      border-bottom: 3px solid #976841;
+      color: #976841;
+    }
+
+    .section {
+      /* border-bottom: 1px solid #ddd; */
+    }
+
+    .section h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      border-bottom: 2px solid #976841;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+
+    .form-group input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .form-group .radio-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-group .radio-group input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .form-group .radio-group label {
+      margin-right: 20px;
+    }
+
+    .table-container {
+            background-color: white;
+
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container .table-header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-container table th,
+        .table-container table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .table-container table th {
+            background-color: #f0f0f0;
+        }
+
+        .table-container .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .table-container .pagination .info {
+            font-size: 14px;
+        }
+
+        .table-container .pagination .pages {
+            display: flex;
+            align-items: center;
+        }
+
+        .table-container .pagination .pages button {
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .table-container .pagination .pages button:hover {
+            background-color: #303f9f;
+        }
+
+        .table-container .pagination .pages button.disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .content .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .content .card .card-header {
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            font-size: 16px;
+        }
+        .content .card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .content .card table th, .content .card table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .content .card table th {
+            background-color: #f0f0f0;
+        }
+        .content .card .table-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .content .card .table-actions .btn {
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .content .card .table-actions .pagination {
+            display: flex;
+            align-items: center;
+        }
+        .content .card .table-actions .pagination select {
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .content .card .table-actions .pagination button {
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .content .card .table-actions .pagination button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .content .card .table-actions .pagination button i {
+            margin: 0;
+        }
+        .content .card .table-actions .pagination select {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .content .card .table-actions .pagination select:focus {
+            outline: none;
+        }
+        .content .card .table-actions .pagination button:focus {
+            outline: none;
+        }
+
+</style>
+</head>
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container" >
+        <div class="header">
+          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <h1>Vendor Information</h1>
+        </div>
+        <div class="nav">
+          <a href="vendor-data.html">General Info</a>
+          <a href="vendor-data-contact.html">Contacts</a>
+          <a href="vendor-data-documents.html">Documents</a>
+          <a href="vendor-data-finance.html">Finance</a>
+          <a href="vendor-data-banks.html">Banks</a>
+          <a href="vendor-data-experience.html">Experience</a>
+          <a href="vendor-data-equipment.html" class="active">Equipment</a>
+          <a href="vendor-data-segmentation.html">Segmentation</a>
+       </div>
+
+
+       <div class="main" style="overflow-y: auto;">
+        <div class="container">
+            <h2>Peralatan / Asset</h2>
+            <form>
+                <div class="form-group">
+                    <label for="jenis">Jenis <span style="color: red;">*</span></label>
+                    <input type="text" id="jenis" name="jenis" required>
+                </div>
+                <div class="form-group">
+                    <label for="jumlah">Jumlah <span style="color: red;">*</span></label>
+                    <input type="number" id="jumlah" name="jumlah" required>
+                </div>
+                <div class="form-group">
+                    <label for="kapasitas">Kapasitas <span style="color: red;">*</span></label>
+                    <input type="text" id="kapasitas" name="kapasitas" required>
+                </div>
+                <div class="form-group">
+                    <label for="merk">Merk / Tipe <span style="color: red;">*</span></label>
+                    <input type="text" id="merk" name="merk" required>
+                </div>
+                <div class="form-group">
+                    <label for="tahun">Tahun Pembuatan <span style="color: red;">*</span></label>
+                    <input type="number" id="tahun" name="tahun" required>
+                </div>
+                <div class="form-group">
+                    <label for="kondisi">Kondisi <span style="color: red;">*</span></label>
+                    <select id="kondisi" name="kondisi" required>
+                        <option value="">Pilih Kondisi</option>
+                        <option value="baik">Baik</option>
+                        <option value="rusak">Rusak</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lokasi">Lokasi <span style="color: red;">*</span></label>
+                    <input type="text" id="lokasi" name="lokasi" required>
+                </div>
+                <div class="form-group">
+                    <label for="bukti">Bukti Kepemilikan <span style="color: red;">*</span></label>
+                    <select id="bukti" name="bukti" required>
+                        <option value="">Pilih Kondisi</option>
+                        <option value="sertifikat">Sertifikat</option>
+                        <option value="kwitansi">Kwitansi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Dokumen Bukti Kepemilikan</label>
+                    <div class="upload-btn">
+                        <input type="file" id="upload-dokumen" name="upload-dokumen">
+                        <label for="upload-dokumen" class="primary-color">Upload Dokumen</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Gambar Peralatan / Asset</label>
+                    <div class="upload-btn">
+                        <input type="file" id="upload-gambar" name="upload-gambar">
+                        <label for="upload-gambar" class="primary-color">Upload Gambar</label>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="back-btn" onclick="location.href='./vendor-data-equipment.html'">Kembali</button>
+                    <button type="submit" class="save-btn primary-color" onclick="location.href='./vendor-data-equipment.html'">Simpan</button>
+                </div>
+            </form>
+        </div>
+        </div>
+           
+
+
+        <!-- <div class="section"> -->
+          <!-- <h2>Vendor Data</h2>
+          <div class="content">
+
+          </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+</body>
+</html>

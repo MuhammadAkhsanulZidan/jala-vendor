@@ -1,0 +1,188 @@
+<html>
+<head>
+    <title>Promise - Negosiasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body a {
+            color: black;
+        }
+        .header {
+            background-color: #3F51B5;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .header .user-info {
+            font-size: 14px;
+            text-align: right;
+        }
+        .header .logout {
+            background-color: #00BCD4;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .container {
+            display: flex;
+        }
+        
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .table-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .table-header {
+            background-color: #3F51B5;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .table-header .title {
+            font-weight: 500;
+        }
+        .table-header .search {
+            display: flex;
+            align-items: center;
+        }
+        .table-header .search input {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f5f5f5;
+        }
+        table td .action {
+            color: white;
+            background-color: #4CAF50;
+            padding: 5px 10px;
+            border-radius: 3px;
+            text-align: center;
+        }
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+        .pagination .info {
+            font-size: 14px;
+        }
+        .pagination .controls {
+            display: flex;
+            align-items: center;
+        }
+        .pagination .controls button {
+            background-color: #3F51B5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <iframe 
+            src="./sidebar.html" >
+        </iframe>
+      <div  style="flex-grow: 1;">
+    <div class="header primary-color">
+        <div class="title"></div>
+        <div class="user-info">
+        </div>
+        <button class="logout secondary-color">Logout</button>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h2>Negosiasi</h2>
+            <div class="table-container">
+                <div class="table-header primary-color">
+                    <div class="title">Data Negosiasi</div>
+                    <div class="search">
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nomor Pengadaan</th>
+                            <th>Nama Pengadaan</th>
+                            <th>Tahapan saat ini</th>
+                            <th>Tanggal Buat</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>24102017-min</td>
+                            <td>hardware</td>
+                            <td>Pasca Kualifikasi</td>
+                            <td>24/10/2017</td>
+                            <td style="row-gap: 5px"><a style="color: #00ad56; padding-right: 5px;"><i class="fa fa-pencil-alt"></i></a> <a href="vendor-booking-order-negosiasi-detail.html" style="color: #007cad;"><i class="fa fa-info-circle"></i></a></td>                            
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <div class="info">Showing 0 to 0 of 0 entries</div>
+                    <div class="controls">
+                        <button class="primary-color">Previous</button>
+                        <button class="primary-color">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Penawaran Lelang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .table-container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .table-container {
+      background-color: white;
+
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-container .table-header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-container table th,
+    .table-container table td {
+      padding: 10px;
+      /* border: 1px solid #ddd; */
+      text-align: left;
+    }
+
+    .table-container table th {
+      background-color: #f0f0f0;
+    }
+
+    .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .table-container .pagination .info {
+      font-size: 14px;
+    }
+
+    .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
+
+    .table-container .pagination .pages button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 2px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .table-container .pagination .pages button:hover {
+      background-color: #303f9f;
+    }
+
+    .table-container .pagination .pages button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Style for odd rows */
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .title {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .title img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .header .title span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .header .logout {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .dashboard {
+      padding: 20px;
+    }
+
+    .dashboard-header {
+      margin-bottom: 30px;
+    }
+
+    .dashboard-header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #444;
+    }
+
+    .image-container {
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-container .button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #ffc107;
+      color: #000;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .pagination .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+    }
+
+    .pagination .dot.active {
+      background-color: #ffc107;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <iframe src="./sidebar.html">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="header primary-color">
+        <div class="title">
+          <span>
+          </span>
+        </div>
+        <button class="logout secondary-color" style="color: white; padding: 4px;">
+          Logout
+        </button>
+      </div>
+      <div class="dashboard" style=" display: flex; flex-direction: column;">
+        <div class="table-container"
+          style="width: 90%; box-sizing: border-box; justify-self: center; align-self: center; padding: 15px; margin-bottom: 20px;">
+          <div style="display: flex; gap: 10px;">
+            <div style="width: 20%; max-width: 100px; border-radius: 5px;">
+              <img width="100%" src="https://rpnalaw.com/wp-content/uploads/2021/02/male-avatar.png"/>
+            </div>
+            <div style="align-self: center; display: flex; flex-direction: column;">
+              <p style="margin: 0;">Bagas</p>
+              <p style="margin: 0;">Bagasrafaela@gmail.com</p>
+              <p style="margin: 0;">0812345678</p>
+            </div>
+          </div>
+          <div style="margin-top: 10px; display: flex; justify-content: space-between;">
+            <div style="display: flex; gap: 5px; align-items: center;"><i class="fa-solid fa-credit-card"></i> <p style="margin: 0;">Total Deposit</p></div>
+            <div>Rp.90,000,000</div>
+          </div>
+        </div>
+
+        <div class="table-container"
+          style="flex-grow: 1; width: 90%; max-width: 800px; box-sizing: border-box; justify-self: center; align-self: center; padding: 15px; max-width: 100%;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <h3 style="margin: 0;">Katalog Kendaraan</h3>
+            <p class="color-primary-color" style="margin: 0;">Lihat Semua</p>
+          </div>
+          <div class="image-container"
+            style="align-items: center; justify-content: center; gap: 10px; display: flex; justify-content: center;">
+
+            <div style="width: 30%; 
+                     max-width: 200px; overflow: hidden; position: relative; height: auto;">
+              <img alt="Front view of a red car" src="https://wallpapercave.com/wp/wp9109219.jpg" style="
+                     position: relative;
+                     left: -50%;
+                     width: 200%;
+                     height: auto;" />
+              <i class="fa-xl fa-solid fa-arrow-circle-left" style="margin-left: 10px; position: absolute; top: 50%; left: 0; color: white;"></i>
+            </div>
+            <div style="width: 40%; max-width: 300px;">
+              <img alt="Front view of a red car"
+                src="https://storage.googleapis.com/a1aa/image/4GCn773xN4aLMFFC9iBRHmsPrUF2lzgf2JUhrG0dXeoAryHUA.jpg"
+                style="position: relative; align-self: center; border-radius: 5px;" />
+              <div
+                style="font-size: 0.85rem; margin: 5px; padding: 5px; border-radius: 5px; position: absolute; top: 0; background-color: orangered; color: white;">
+                00 : 21 : 32 : 34
+              </div>
+            </div>
+            <div style="width: 30%; max-width: 200px; overflow: hidden; position: relative; height: auto;">
+              <img alt="Front view of a red car" src="https://www.wallpapersshare.com/img/big/red-bentley-car-inside-view.jpg" style="
+                     position: relative;
+                     left: -50%;
+                     width: 200%;
+                     height: auto;" />
+              <i class="fa-xl fa-solid fa-arrow-circle-right" style="margin-right: 10px; position: absolute; top: 50%; right: 0; color: white;"></i>
+            </div>
+          </div>
+          <div style="margin-top: 20px;">
+            <p style="margin: 0; color: #333; font-weight: bold; font-size: 0.85rem;">DAIHATSU - M A/T - AYLA</p>
+            <p style="margin: 0; color: red; font-size: 0.85rem;">Rp. 40,000,000.00</p>
+          </div>
+          <button onclick="location.href='penawaran-lelang-verifikasi.html'" class="primary-color"
+            style="margin-top: 20px; width: 100%; flex-grow: 1; cursor: pointer; padding: 10px; color: white; border: none; border-radius: 3px;">Detail
+            Kendaraan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

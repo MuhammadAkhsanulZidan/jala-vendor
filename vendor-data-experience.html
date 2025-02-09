@@ -1,0 +1,521 @@
+<html>
+
+<head>
+  <title>Vendor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    select, input {
+      border-radius: 5px !important;
+      border: 1px solid #b1b1b1 !important;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .nav {
+      display: flex;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .nav a {
+      padding: 10px 10px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .nav a.active {
+      border-bottom: 3px solid #976841;
+      color: #976841;
+    }
+
+    .section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: white;
+            padding: 10px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 5px 5px 0 0;
+        }
+        .section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .section table, .section th, .section td {
+            border: 1px solid #ddd;
+        }
+        .section th, .section td {
+            padding: 8px;
+            text-align: left;
+        }
+        .section th {
+            background-color: #f2f2f2;
+        }
+        .section .btn {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .section .btn:hover {
+            background-color: #0055ff;
+        }
+        .section .actions i {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .section .actions i:hover {
+            color: #0055ff;
+        }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+
+    .form-group input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .form-group .radio-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-group .radio-group input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .form-group .radio-group label {
+      margin-right: 20px;
+    }
+
+    .table-container {
+            background-color: white;
+
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container .table-header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-container table th,
+        .table-container table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .table-container table th {
+            background-color: #f0f0f0;
+        }
+
+        .table-container .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .table-container .pagination .info {
+            font-size: 14px;
+        }
+
+        .table-container .pagination .pages {
+            display: flex;
+            align-items: center;
+        }
+
+        .table-container .pagination .pages button {
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .table-container .pagination .pages button:hover {
+            background-color: #303f9f;
+        }
+
+        .table-container .pagination .pages button.disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .content .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .content .card .card-header {
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            font-size: 16px;
+        }
+        .content .card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .content .card table th, .content .card table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .content .card table th {
+            background-color: #f0f0f0;
+        }
+        .content .card .table-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .content .card .table-actions .btn {
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .content .card .table-actions .pagination {
+            display: flex;
+            align-items: center;
+        }
+        .content .card .table-actions .pagination select {
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .content .card .table-actions .pagination button {
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .content .card .table-actions .pagination button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .content .card .table-actions .pagination button i {
+            margin: 0;
+        }
+        .content .card .table-actions .pagination select {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .content .card .table-actions .pagination select:focus {
+            outline: none;
+        }
+        .content .card .table-actions .pagination button:focus {
+            outline: none;
+        }
+
+</style>
+</head>
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container" >
+        <div class="header">
+          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <h1>Vendor Information</h1>
+        </div>
+        <div class="nav">
+          <a href="vendor-data.html">General Info</a>
+          <a href="vendor-data-contact.html">Contacts</a>
+          <a href="vendor-data-documents.html">Documents</a>
+          <a href="vendor-data-finance.html">Finance</a>
+          <a href="vendor-data-banks.html">Banks</a>
+          <a href="vendor-data-experience.html" class="active">Experience</a>
+          <a href="vendor-data-equipment.html">Equipment</a>
+          <a href="vendor-data-segmentation.html">Segmentation</a>
+       </div>
+
+
+
+       <div class="container">
+        <div class="section">
+         <h2 class="primary-color">
+          Data Pengalaman
+         </h2>
+         <input type="checkbox"/>
+         Tanpa Pengalaman
+        </div>
+        <div class="section">
+         <h2 class="primary-color">
+          Daftar Pelelangan Aktif selama 5 tahun terakhir
+         </h2>
+         <table>
+          <tr>
+           <th>
+            No
+           </th>
+           <th>
+            Nama
+           </th>
+           <th>
+            Alamat
+           </th>
+           <th>
+            Bidang Usaha
+           </th>
+           <th>
+            Mulai Kerjasama
+           </th>
+           <th>
+            Nilai Kontrak
+           </th>
+           <th>
+            Bukti Kerjasama
+           </th>
+           <th>
+            Aksi
+           </th>
+          </tr>
+          <tr>
+           <td>
+            1
+           </td>
+           <td>
+            kontruksi
+           </td>
+           <td>
+            jakarta
+           </td>
+           <td>
+            UNIT
+           </td>
+           <td>
+            28/01/2018
+           </td>
+           <td>
+            13,332,444.00 IDR
+           </td>
+           <td>
+            update_Skenario Registrasi Vendor OK.doc
+           </td>
+           <td class="actions">
+            <i class="fas fa-edit">
+            </i>
+            <i class="fas fa-trash-alt">
+            </i>
+           </td>
+          </tr>
+         </table>
+         <a class="btn primary-color" href="vendor-data-experience-data-pelanggan.html">
+             + Tambah Data Pelelangan</a>
+         </a>
+        </div>
+        <div class="section">
+         <h2 class="primary-color">
+          Daftar Mitra Dagang / Mitra Usaha
+         </h2>
+         <table>
+          <tr>
+           <th>No</th>
+           <th>Nama</th>
+           <th>Alamat</th>
+           <th>Bidang Usaha</th>
+           <th>Mulai Kerjasama</th>
+           <th>Nilai Kontrak</th>
+           <th>Bukti Kerjasama</th>
+           <th>Aksi</th>
+          </tr>
+          <tr>
+           <td>
+            1
+           </td>
+           <td>
+            kerja sama
+           </td>
+           <td>
+            jakarta
+           </td>
+           <td>
+            SPARE PARTS
+           </td>
+           <td>
+            29/01/2018
+           </td>
+           <td>
+            5,543,533,554.00 IDR
+           </td>
+           <td>
+            Template Manual Book.doc
+           </td>
+           <td class="actions">
+            <i class="fas fa-edit">
+            </i>
+            <i class="fas fa-trash-alt">
+            </i>
+           </td>
+          </tr>
+         </table>
+         <a class="btn primary-color" href="vendor-data-experience-data-mitra-kerja.html">
+          + Tambah Data Mitra
+         </a>
+        </div>
+        <div class="section">
+         <h2 class="primary-color">
+          Daftar Pekerjaan yang sedang berjalan
+         </h2>
+         <table>
+          <tr>
+           <th>
+            No
+           </th>
+           <th>
+            Nama
+           </th>
+           <th>
+            Alamat
+           </th>
+           <th>
+            Bidang Usaha
+           </th>
+           <th>
+            Mulai Kerjasama
+           </th>
+           <th>
+            Nilai Kontrak
+           </th>
+           <th>
+            Bukti Kerjasama
+           </th>
+           <th>
+            Aksi
+           </th>
+          </tr>
+          <tr>
+           <td>
+            1
+           </td>
+           <td>
+            Kontruksi
+           </td>
+           <td>
+            Bekasi
+           </td>
+           <td>
+            UNIT
+           </td>
+           <td>
+            21/02/2018
+           </td>
+           <td>
+            10,000,393.00 IDR
+           </td>
+           <td>
+            ReportMemo (B) pdf
+           </td>
+           <td class="actions">
+            <i class="fas fa-edit">
+            </i>
+            <i class="fas fa-trash-alt">
+            </i>
+           </td>
+          </tr>
+         </table>
+         <a class="btn primary-color" href="vendor-data-experience-data-pekerjaan.html">
+          + Tambah Data Pekerjaan Berjalan
+         </a>
+        </div>
+        <div class="footer">
+         <p>
+          *) Dengan mengisi formulir registrasi ini anda telah mengetahui TERM OF CONDITION E-PROCUREMENT
+         </p>
+         <div class="pagination">
+          <a href="#" class="primary-color">
+           Sebelumnya
+          </a>
+          <a href="#" class="primary-color">
+           Simpan
+          </a>
+         </div>
+         </div>
+        </div>
+     
+          
+
+        <!-- <div class="section"> -->
+          <!-- <h2>Vendor Data</h2>
+          <div class="content">
+
+          </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+</body>
+</html>

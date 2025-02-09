@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting Parameter Kriteria Penentuan Pemenang</title>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .header {
+      background-color: #976841;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .table-container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #976841;
+      color: white;
+      font-weight: bold;
+    }
+
+    .subheader {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .checkbox {
+      width: 20px;
+      height: 20px;
+    }
+
+    .criteria {
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .description {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .description ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .description li {
+      position: relative;
+      /* Untuk menempatkan ::before secara absolut */
+      margin-right: 15px;
+      /* Spacing antara item */
+      margin-bottom: 10px;
+      /* Space jika terbungkus */
+      padding-left: 25px;
+      /* Untuk memberi ruang bagi kotak sebelum teks */
+    }
+
+    .description li::before {
+      content: "";
+      /* Menghasilkan elemen kotak */
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      /* Lebar kotak */
+      height: 15px;
+      /* Tinggi kotak */
+      background-color: #8b4513;
+      /* Warna cokelat */
+      border-radius: 2px;
+      /* Opsional, untuk sudut kotak */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <iframe src="./sidebar.html">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="header">
+        <h3 style="margin: 0;"> Form Penilaian Vendor</h3>
+      </div>
+      <div class="description">
+        <h4 style="margin-left: 10px; margin-bottom: 0;">
+          Keterangan skala penilaian:
+        </h4>
+        <ul style="padding: 10px;">
+          <li>1: Sama penting</li>
+          <li>3: Relatif lebih dari ...</li>
+          <li>5: Lebih dari ...</li>
+          <li>7: Sangat lebih dari ...</li>
+          <li>9: Mutlak lebih dari ...</li>
+          <li>2, 4, 6, 8: Nilai rata-rata di antara kedua nilai</li>
+        </ul>
+      </div>
+      <div class="description">
+        <h4 style="margin-left: 10px; margin-bottom: 0;">
+          Penilaian Vendor:
+        </h4>
+        <ul style="padding: 10px;">
+          <li>Vendor 1: PT. ABC, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; terhadap</li>
+          <li>Vendor 2: PT. XYZ</li>
+        </ul>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Vendor</th>
+              <th>Kriteria</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Biaya -->
+            <tr class="subheader">
+              <td colspan="12">Biaya</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Harga</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Fluktuasi Harga</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Cara Pembayaran</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Pengurangan Harga</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr class="subtotal">
+              <td colspan="11">Subtotal Biaya</td>
+              <td class="subtotal-value">0</td>
+            </tr>
+            <!-- Kualitas -->
+            <tr class="subheader">
+              <td colspan="11">Kualitas</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Kesesuaian Material dengan Spesifikasi Yang Diminta/Ditentukan</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Konsistensi Kualitas</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Tingkat Cacat/Gagal Rendah</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr class="subtotal">
+              <td colspan="10">Subtotal Kualitas</td>
+              <td class="subtotal-value">0</td>
+            </tr>
+
+            <!-- Service -->
+            <tr class="subheader">
+              <td colspan="11">Service</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Garansi</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Layanan Pengaduan</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Responsifitas</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Kemudahan Komunikasi</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr class="subtotal">
+              <td colspan="10">Subtotal Service</td>
+              <td class="subtotal-value">0</td>
+            </tr>
+
+            <!-- Delivery -->
+            <tr class="subheader">
+              <td colspan="11">Delivery</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Rendahnya Biaya Pengiriman</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Ketepatan Waktu</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Ketepatan Jumlah Pengiriman</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Kapasitas Kemampuan Pengiriman</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr>
+              <td class="criteria">
+                <select name="pil1" id="pil1">
+                  <option value="V1-V2">Vdr 1 thd Vdr 2</option>
+                  <option value="V1-V2">Vdr 2 thd Vdr 1</option>
+                </select>
+              </td>
+              <td class="criteria">Fleksibilitas Pengiriman</td>
+              <td><input type="checkbox" class="checkbox" data-value="1"></td>
+              <td><input type="checkbox" class="checkbox" data-value="2"></td>
+              <td><input type="checkbox" class="checkbox" data-value="3"></td>
+              <td><input type="checkbox" class="checkbox" data-value="4"></td>
+              <td><input type="checkbox" class="checkbox" data-value="5"></td>
+              <td><input type="checkbox" class="checkbox" data-value="6"></td>
+              <td><input type="checkbox" class="checkbox" data-value="7"></td>
+              <td><input type="checkbox" class="checkbox" data-value="8"></td>
+              <td><input type="checkbox" class="checkbox" data-value="9"></td>
+              <td class="total">0</td>
+            </tr>
+            <tr class="subtotal">
+              <td colspan="10">Subtotal Delivery</td>
+              <td class="subtotal-value">0</td>
+            </tr>
+            <tr>
+              <td colspan="10" class="subheader">Total</td>
+              <td id="grandTotal">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const rows = document.querySelectorAll("table tbody tr:not(.subheader):not(.subtotal)");
+
+        rows.forEach((row) => {
+          const checkboxes = row.querySelectorAll(".checkbox");
+          const totalCell = row.querySelector(".total");
+
+          checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", () => {
+              const selectedValues = Array.from(checkboxes)
+                .filter((box) => box.checked)
+                .map((box) => parseInt(box.dataset.value, 10));
+              const rowTotal = selectedValues.reduce((acc, val) => acc + val, 0);
+
+              totalCell.textContent = rowTotal;
+
+              // Update subtotals
+              updateSubtotals();
+            });
+          });
+        });
+
+        function updateSubtotals() {
+          // Update Subtotal Biaya
+          const biayaRows = document.querySelectorAll(
+            "table tbody tr:not(.subheader):not(.subtotal)"
+          );
+          let subtotalBiaya = 0;
+
+          biayaRows.forEach((row, index) => {
+            if (index < 4) {
+              subtotalBiaya += parseInt(row.querySelector(".total").textContent || 0, 10);
+            }
+          });
+
+          document.querySelector(".subtotal-value").textContent = subtotalBiaya;
+        }
+      });
+
+      document.querySelectorAll('.checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', updateTotal);
+      });
+
+      function updateTotal() {
+        let grandTotal = 0;
+
+        document.querySelectorAll('tr').forEach(row => {
+          let rowTotal = 0;
+          row.querySelectorAll('.checkbox').forEach(checkbox => {
+            if (checkbox.checked) {
+              rowTotal += parseInt(checkbox.getAttribute('data-value'));
+            }
+          });
+
+          let totalCell = row.querySelector('.total');
+          if (totalCell) {
+            totalCell.textContent = rowTotal;
+          }
+
+          grandTotal += rowTotal;
+        });
+
+        document.getElementById('grandTotal').textContent = grandTotal;
+      }
+    </script>
+</body>
+
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const rows = document.querySelectorAll("table tbody tr:not(.subheader):not(.subtotal)");
+
+    rows.forEach((row) => {
+      const checkboxes = row.querySelectorAll(".checkbox");
+      const totalCell = row.querySelector(".total");
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          const selectedValues = Array.from(checkboxes)
+            .filter((box) => box.checked)
+            .map((box) => parseInt(box.dataset.value, 10));
+          const rowTotal = selectedValues.reduce((acc, val) => acc + val, 0);
+
+          totalCell.textContent = rowTotal;
+
+          // Update subtotals
+          updateSubtotals();
+        });
+      });
+    });
+
+    function updateSubtotals() {
+      // Update Subtotal Biaya
+      const biayaRows = document.querySelectorAll(
+        "table tbody tr:not(.subheader):not(.subtotal)"
+      );
+      let subtotalBiaya = 0;
+
+      biayaRows.forEach((row, index) => {
+        if (index < 4) {
+          subtotalBiaya += parseInt(row.querySelector(".total").textContent || 0, 10);
+        }
+      });
+
+      document.querySelector(".subtotal-value").textContent = subtotalBiaya;
+    }
+  });
+</script>

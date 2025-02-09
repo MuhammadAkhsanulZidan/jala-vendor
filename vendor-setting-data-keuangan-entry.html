@@ -1,0 +1,268 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Auditor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+        }
+        .main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .section {
+            padding: 20px;
+        }
+        .section-title {
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            flex: 1 1 100%;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            flex: 1 1 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group input[type="date"] {
+            padding: 8px;
+        }
+        .form-group input[type="text"] {
+            width: calc(100% - 22px);
+        }
+        .form-group .input-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-group .input-group input {
+            flex: 1;
+        }
+        .form-group .input-group i {
+            padding: 10px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-left: -1px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .table th, .table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f9f9f9;
+        }
+        .table td input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background-color: #34495e;
+        }
+        @media (max-width: 600px) {
+            .form-group {
+                flex-direction: column;
+            }
+            .form-group input, .form-group select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <div class="main" style="overflow-y: auto;">
+        <div class="container">
+        <div class="header primary-color">Data Auditor</div>
+        <div class="section">
+            <div class="section-title primary-color">Data Auditor</div>
+            <div class="form-group">
+                <label for="nomor-audit">Nomor Audit *</label>
+                <input type="text" id="nomor-audit" value="RET-12J-KHS">
+            </div>
+            <div class="form-group">
+                <label for="tanggal-audit">Tanggal Audit *</label>
+                <div class="input-group">
+                    <input type="date" id="tanggal-audit" value="2018-01-26">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nama-audit">Nama Audit *</label>
+                <input type="text" id="nama-audit" value="Primarasa">
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title primary-color">Data Keuangan Perusahaan</div>
+            <div class="form-group">
+                <label for="tahun-keuangan">Tahun Keuangan *</label>
+                <select id="tahun-keuangan">
+                    <option value="2018" selected>2018</option>
+                </select>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>AKTIVA</th>
+                        <th>PASIVA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="kas">Kas</label>
+                                <input type="text" id="kas" value="10000000C">
+                            </div>
+                            <div class="form-group">
+                                <label for="bank">Bank</label>
+                                <input type="text" id="bank" value="1122230">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-piutang">Total Piutang</label>
+                                <input type="text" id="total-piutang" value="33333">
+                            </div>
+                            <div class="form-group">
+                                <label for="persediaan-barang">Persediaan Barang</label>
+                                <input type="text" id="persediaan-barang" value="11111">
+                            </div>
+                            <div class="form-group">
+                                <label for="pekerjaan-dalam-proses">Pekerjaan dalam proses</label>
+                                <input type="text" id="pekerjaan-dalam-proses" value="333333">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-i">Total (I)</label>
+                                <input type="text" id="total-i" value="1015000C">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="hutang-dagang">Hutang Dagang</label>
+                                <input type="text" id="hutang-dagang" value="3333">
+                            </div>
+                            <div class="form-group">
+                                <label for="hutang-pajak">Hutang Pajak</label>
+                                <input type="text" id="hutang-pajak" value="33330">
+                            </div>
+                            <div class="form-group">
+                                <label for="hutang-lainnya">Hutang Lainnya</label>
+                                <input type="text" id="hutang-lainnya" value="33330">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-iv">Total (IV)</label>
+                                <input type="text" id="total-iv" value="80903">
+                            </div>
+                            <div class="form-group">
+                                <label for="hutang-jangka-panjang">Hutang Jangka Panjang</label>
+                                <input type="text" id="hutang-jangka-panjang" value="3333">
+                            </div>
+                            <div class="form-group">
+                                <label for="kekayaan-bersih">Kekayaan bersih (I + II + III) - (IV + V)</label>
+                                <input type="text" id="kekayaan-bersih" value="10198777">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="peralatan-dan-mesin">Peralatan dan mesin</label>
+                                <input type="text" id="peralatan-dan-mesin" value="444444">
+                            </div>
+                            <div class="form-group">
+                                <label for="inventaris">Inventaris</label>
+                                <input type="text" id="inventaris" value="5555">
+                            </div>
+                            <div class="form-group">
+                                <label for="gedung-gedung">Gedung - gedung</label>
+                                <input type="text" id="gedung-gedung" value="56555">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-ii">Total (II)</label>
+                                <input type="text" id="total-ii" value="500544">
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="aktiva-lainnya">Aktiva Lainnya (III)</label>
+                                <input type="text" id="aktiva-lainnya" value="55555">
+                            </div>
+                            <div class="form-group">
+                                <label for="total">Total</label>
+                                <input type="text" id="total" value="1020111">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="total-pasiva">Total</label>
+                                <input type="text" id="total-pasiva" value="1020111">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttons">
+                <button class="primary-color">Kembali</button>
+                <button class="primary-color">Simpan</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
