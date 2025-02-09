@@ -1,260 +1,256 @@
 <html>
+
 <head>
-    <title>Rekanan Kesepakatan Kontrak</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet"/>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            display: flex;
-        }
-        .sidebar {
-            display: none;
-            width: 250px;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-right: 1px solid #ddd;
-        }
-        .sidebar h2 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin-bottom: 10px;
-        }
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-        }
-        .sidebar ul li a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            flex-grow: 1;
-            padding: 20px;
-        }
-        .content h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .content .header {
-            background-color: #ff5722;
-            color: white;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-        .content .table-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .content .table-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .content .table-container table th, .content .table-container table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .content .table-container table th {
-            background-color: #f8f9fa;
-            font-weight: 500;
-        }
-        .content .table-container table td {
-            font-size: 14px;
-        }
-        .content .table-container .pagination {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-        }
-        .content .table-container .pagination .info {
-            font-size: 14px;
-        }
-        .content .table-container .pagination .pages {
-            display: flex;
-            align-items: center;
-        }
-        .content .table-container .pagination .pages button {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            padding: 5px 10px;
-            margin: 0 2px;
-            cursor: pointer;
-        }
-        .content .table-container .pagination .pages button:hover {
-            background-color: #ddd;
-        }
-        .content .table-container .pagination .pages button.active {
-            background-color: #ff5722;
-            color: white;
-            border-color: #ff5722;
-        }
-        .content .table-container .search-container {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 10px;
-        }
-        .content .table-container .search-container input {
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-        .content .table-container .actions {
-            display: flex;
-            justify-content: center;
-        }
-        .content .table-container .actions button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .content .table-container .actions button:hover {
-            text-align: center;
-        }
-    </style>
+  <title>Rekanan Kesepakatan Kontrak</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      display: none;
+      width: 250px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    .content h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .content .header {
+      background-color: #ff5722;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .content .table-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .content .table-container table th,
+    .content .table-container table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .content .table-container table th {
+      background-color: #f8f9fa;
+      font-weight: 500;
+    }
+
+    .content .table-container table td {
+      font-size: 14px;
+    }
+
+    .content .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .content .table-container .pagination .info {
+      font-size: 14px;
+    }
+
+    .content .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
+
+    .content .table-container .pagination .pages button {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 5px 10px;
+      margin: 0 2px;
+      cursor: pointer;
+    }
+
+    .content .table-container .pagination .pages button:hover {
+      background-color: #ddd;
+    }
+
+    .content .table-container .pagination .pages button.active {
+      background-color: #ff5722;
+      color: white;
+      border-color: #ff5722;
+    }
+
+    .content .table-container .search-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .content .table-container .search-container input {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+
+    .content .table-container .actions {
+      display: flex;
+      justify-content: center;
+    }
+
+    .content .table-container .actions button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .content .table-container .actions button:hover {
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="main">
-        <iframe 
-            src="./sidebar.html" >
-        </iframe>
-      <div style="flex-grow: 1;">
-        <div class="container">
+  <div class="main">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="container">
         <div class="content">
-            <h1 class="">Rekanan Kesepakatan Kontrak</h1>
-            <div class="header primary-color">Rekanan Kesepakatan Kontrak</div>
-            <div class="table-container">
-                <div class="search-container">
-                    <label for="search">Search:</label>
-                    <input type="text" id="search">
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Status</th>
-                            <th>No. Draft Kontrak</th>
-                            <th>Nama Pengadaan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>BARU</td>
-                            <td>NotaPengadaanHasby</td>
-                            <td>Pengadaan All In One - PC</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>MENYETUJUI</td>
-                            <td>PayungEcatalogMaui</td>
-                            <td>Pemilihan Payung eCatalog</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>MENYETUJUI</td>
-                            <td>270495</td>
-                            <td>Penunjukan Langsung Rapli</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>MENYETUJUI</td>
-                            <td>COA-1AAAAAAA1</td>
-                            <td>COA-1AAAAAAA1</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>MENYETUJUI</td>
-                            <td>ewrew</td>
-                            <td>test-pemilihan-langsung yudi00</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>MENYETUJUI</td>
-                            <td>Auciront001</td>
-                            <td>Pemilihan Simple Auction : 001</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>MENYETUJUI</td>
-                            <td>diaf01</td>
-                            <td>Diaf</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>MENYETUJUI</td>
-                            <td>PayungEcatalog-001</td>
-                            <td>Pengadaan Pemilihan Auction 001</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>MENYETUJUI</td>
-                            <td>mb01kontrak</td>
-                            <td>mb</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>MENYETUJUI</td>
-                            <td>32013470495</td>
-                            <td>Supply Rapli N</td>
-                            <td style="text-align: center;"><a class="" style="color: #007cad;"
-                                href="vendor-deal-contract-detail.html"><i class="fa fa-info-circle"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="pagination">
-                    <div class="info">Showing 1 to 10 of 15 entries</div>
-                    <div class="pages">
-                        <button>Previous</button>
-                        <button class="active primary-color">1</button>
-                        <button>2</button>
-                        <button>Next</button>
-                    </div>
-                </div>
+          <h1 class="">Rekanan Kesepakatan Kontrak</h1>
+          <div class="table-container" style="padding: 0;">
+            <div class="header primary-color" style="margin-bottom: 0;">Rekanan Kesepakatan Kontrak</div>
+
+            <table style="margin-top: 0; margin: 0;">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Status</th>
+                  <th>No. Draft Kontrak</th>
+                  <th>Nama Pengadaan</th>
+                  <th style="text-align: center;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>BARU</td>
+                  <td>NotaPengadaanHasby</td>
+                  <td>Pengadaan All In One - PC</td>
+                  <td style="text-align: center;"><button class="app-button green-color"
+                      onclick="location.href='vendor-deal-contract-detail.html.'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='vendor-deal-contract-detail.html'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color" onclick="">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>MENYETUJUI</td>
+                  <td>PayungEcatalogMaui</td>
+                  <td>Pemilihan Payung eCatalog</td>
+                  <td style="text-align: center;">
+                    <button class="app-button green-color" onclick="location.href='vendor-deal-contract-detail.html.'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='vendor-deal-contract-detail.html'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color" onclick="">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>MENYETUJUI</td>
+                  <td>270495</td>
+                  <td>Penunjukan Langsung Rapli</td>
+                  <td style="text-align: center;">
+                    <button class="app-button green-color"
+                      onclick="location.href='vendor-deal-contract-detail.html.'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='vendor-deal-contract-detail.html'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color" onclick="">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pagination" style="padding: 10px; margin-top: 0;">
+              <div class="info">Showing 1 to 3 of 3 entries</div>
+              <div class="pages">
+                <button class="disabled">Previous</button>
+                <button class="disabled">Next</button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
       </div>
+    </div>
 </body>
+
 </html>

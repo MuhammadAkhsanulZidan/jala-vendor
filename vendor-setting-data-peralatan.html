@@ -95,7 +95,6 @@
         }
         .content .card .table-actions .btn {
             color: white;
-            padding: 5px 10px;
             border: none;
             border-radius: 3px;
             cursor: pointer;
@@ -142,33 +141,20 @@
         </iframe>
       <div  style="flex-grow: 1;">
     <div class="navbar primary-color">
-        <div class="title">VENDOR.</div>
-        <button class="login-btn secondary-color">Login</button>
-    </div>
-    <div class="sidebar" style="display: none;">
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Catalog Vendor</a></li>
-            <li><a href="#">Proses Pengadaan Vendor</a></li>
-            <li><a href="#">Order</a></li>
-            <li><a href="#">Delivery Received</a></li>
-            <li><a href="#">Setting</a></li>
-            <li><a href="#">Data User</a></li>
-            <li><a href="#">Data Perusahaan</a></li>
-            <li><a href="#">Data Pengalaman</a></li>
-            <li><a href="#">Data Bank</a></li>
-            <li><a href="#">Data Segmentasi</a></li>
-            <li><a href="#">Data Keuangan</a></li>
-            <li><a href="#">Data Dokumen</a></li>
-            <li><a href="#">Data Peralatan</a></li>
-            <li><a href="#">Data Sertifikat</a></li>
-        </ul>
+        <div class="title"></div>
+        <button class="login-btn secondary-color">Logout</button>
     </div>
     <div class="content">
         <h1>SETTING VENDOR - EDIT DATA</h1>
-        <div class="card">
-            <div class="card-header primary-color">DATA PERALATAN</div>
-            <table>
+        <div class="card" style="padding: 0;">
+            <div class="card-header primary-color" style="display: flex; justify-content: space-between; align-items: center;">
+              <h4 class="" style="margin: 0;">DATA SEGMENTASI</h4>
+              <button class="app-button2 secondary-color" style="display: flex; align-items: center; gap: 5px;"><i
+                class="bi bi-plus-circle"></i>
+              <p style="margin: 0;">Tambah</p>
+            </button>
+            </div>
+            <table style="margin: 0;">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -197,13 +183,24 @@
                         <td>MILIK</td>
                         <td><a href="#">ReportMemo (8).pdf</a></td>
                         <td>
-                            <button style="background-color: #4caf50; color: white; border: none; padding: 5px; border-radius: 3px;"><i class="fas fa-edit"></i></button>
-                            <button style="background-color: #f44336; color: white; border: none; padding: 5px; border-radius: 3px;"><i class="fas fa-trash"></i></button>
+                          <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                            <button class="app-button green-color"
+                              onclick="location.href='customer-auction-penawaran-home.html'">
+                              <i class="bi bi-box-arrow-up-right"></i>
+                            </button>
+                            <button class="app-button blue-color" onclick="location.href='customer-auction-penawaran.html'">
+                              <i class="bi bi-pencil-square"></i>
+                            </button>
+                            <button class="app-button red-color"
+                              onclick="location.href='customer-auction-penawaran-verifikasi.html'">
+                              <i class="bi bi-trash-fill"></i>
+                            </button>
+                          </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <div class="table-actions">
+            <!-- <div class="table-actions">
                 <button class="btn primary-color">Tambah</button>
                 <div class="pagination">
                     <span>10</span>
@@ -216,7 +213,7 @@
                     <button class="primary-color" disabled><i class="fas fa-chevron-left"></i></button>
                     <button class="primary-color"><i class="fas fa-chevron-right"></i></button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
       </div>

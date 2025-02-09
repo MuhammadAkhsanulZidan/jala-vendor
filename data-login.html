@@ -1,284 +1,292 @@
 <html>
- <head>
+
+<head>
   <title>
-   Data Vendor Perusahaan
+    Data Vendor Perusahaan
   </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-   body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-        }
-        .header img {
-            height: 50px;
-        }
-        .header .date {
-            font-size: 14px;
-            color: #333;
-        }
-        .header .home {
-            font-size: 14px;
-            color: #333;
-            text-decoration: none;
-        }
-        .nav {
-            background-color: #976841;
-            padding: 10px 20px;
-        }
-        .nav h1 {
-            color: #fff;
-            font-size: 18px;
-            margin: 0;
-        }
-        .tabs {
-            display: flex;
-            background-color: #e9ecef;
-            border-bottom: 1px solid #ddd;
-        }
-        .tabs button {
-            flex: 1;
-            padding: 10px;
-            background-color: #e9ecef;
-            border: none;
-            border-right: 1px solid #ddd;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .tabs button:last-child {
-            border-right: none;
-        }
-        .tabs button.active {
-            background-color: #fff;
-            border-bottom: 2px solid #976841;
-        }
-        .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .form-group input[type="file"] {
-            display: none;
-        }
-        .form-group .file-label {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #976841;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .form-group .file-label:hover {
-            background-color: #976841;
-        }
-        .form-group .file-name {
-            margin-left: 10px;
-            font-size: 14px;
-        }
-        .form-group .check-user-id {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        .form-group .check-user-id:hover {
-            background-color: #976841;
-        }
-        .form-footer {
-            font-size: 12px;
-            color: red;
-            margin-top: 20px;
-        }
-        .form-footer p {
-            margin: 5px 0;
-        }
-        .form-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .form-navigation button {
-            padding: 10px 20px;
-            background-color: #976841;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .form-navigation button:hover {
-            background-color: #976841;
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header img {
+      height: 50px;
+    }
+
+    .header .date {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .header .home {
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .nav {
+      background-color: #976841;
+      padding: 10px 20px;
+    }
+
+    .nav h1 {
+      color: #fff;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .tabs {
+      /* background-color: white; */
+      display: flex;
+      justify-content: space-around;
+      padding: 5px 0;
+    }
+
+    .tabs a {
+      text-decoration: none;
+      color: white;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .tabs a.active {
+      border-radius: 0;
+      border-bottom: 1px solid white;
+      /* background-color: white; */
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="file"] {
+      display: none;
+    }
+
+    .form-group .file-label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #976841;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-group .file-label:hover {
+      background-color: #976841;
+    }
+
+    .form-group .file-name {
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    .form-group .check-user-id {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .form-group .check-user-id:hover {
+      background-color: #976841;
+    }
+
+    .form-footer {
+      font-size: 12px;
+      color: red;
+      margin-top: 20px;
+    }
+
+    .form-footer p {
+      margin: 5px 0;
+    }
+
+    .form-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .form-navigation button {
+      padding: 10px 20px;
+      background-color: #976841;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-navigation button:hover {
+      background-color: #976841;
+    }
   </style>
- </head>
- <body>
-    <div class="main">
-    <iframe 
-        src="./sidebar.html" >
+</head>
+
+<body>
+  <div class="main">
+    <iframe src="./sidebar.html" style="border: none;">
     </iframe>
-  <div  style="flex-grow: 1;">
-    <div class="header">
-        <div class="date">
-         Senin, 19 Februari 2018, 9:30:05
-        </div>
-        <a class="home" href="#">
-         HOME
+    <div style="flex-grow: 1;">
+      <div class="tabs primary-color">
+        <a class="active" href="data-login.html" style="font-weight: bold;">
+          DATA LOGIN <i class="bi bi-box-arrow-in-right"></i>
         </a>
-       </div>
-       <div class="nav">
-        <h1>
-         DATA VENDOR PERUSAHAAN
-        </h1>
-       </div>
-       <div class="container">
-        <div class="tabs">
-         <button class="active">
-          DATA LOGIN
-         </button>
-         <button>
-          DATA PERUSAHAAN
-         </button>
-         <button>
-          DATA BANK
-         </button>
-         <button>
-          DATA SEGMENTASI
-         </button>
-         <button>
-          DATA DOKUMEN
-         </button>
-         <button>
-          PERALATAN
-         </button>
-         <button>
-          DATA KEUANGAN
-         </button>
-         <button>
-          DATA PENGALAMAN
-         </button>
-        </div>
+        <a href="data-perusahaan.html">
+          DATA PERUSAHAAN <i class="bi bi-building"></i>
+        </a>
+        <a href="data-bank-isi.html">
+          DATA BANK <i class="bi bi-bank"></i>
+        </a>
+        <a href="data-segmentasi-isi.html">
+          DATA SEGMENTASI <i class="bi bi-grid"></i>
+        </a>
+        <a href="data-dokumen-isi.html">
+          DATA DOKUMEN <i class="bi bi-file-earmark-richtext"></i>
+        </a>
+        <a href="data-peralatan-isi.html">
+          PERALATAN <i class="bi bi-tools"></i>
+        </a>
+        <a href="data-keuangan-isi.html">
+          DATA KEUANGAN <i class="bi bi-coin"></i>
+        </a>
+        <a href="data-pengalaman-isi.html">
+          DATA PENGALAMAN <i class="bi bi-file-earmark-person"></i>
+        </a>
+      </div>
+      <div class="">
         <div class="form-container">
-         <div class="form-group">
-          <label for="nama-pengguna">
-           Nama Pengguna
-           <span style="color: red;">
-            *)
-           </span>
-          </label>
-          <input id="nama-pengguna" type="text"/>
-         </div>
-         <div class="form-group">
-          <label for="user-id">
-           User ID
-           <span style="color: red;">
-            *)
-           </span>
-          </label>
-          <input id="user-id" placeholder="promise@example.co.id" type="email"/>
-          <button class="check-user-id primary-color">
-           Check User ID
-          </button>
-         </div>
-         <div class="form-group">
-          <label for="password">
-           Password
-           <span style="color: red;">
-            *)
-           </span>
-          </label>
-          <input id="password" type="password"/>
-         </div>
-         <div class="form-group">
-          <label for="retype-password">
-           Retype Password
-           <span style="color: red;">
-            *)
-           </span>
-          </label>
-          <input id="retype-password" type="password"/>
-         </div>
-         <div class="form-group">
-          <label for="logo">
-           Logo
-          </label>
-          <label class="file-label primary-color" for="logo">
-           Upload Logo
-          </label>
-          <input id="logo" type="file"/>
-          <span class="file-name">
-           Cari File
-          </span>
-         </div>
-         <div class="form-group">
-          <label for="header-image">
-           Header Image
-          </label>
-          <label class="file-label primary-color" for="header-image">
-           Upload Head Image
-          </label>
-          <input id="header-image" type="file"/>
-          <span class="file-name">
-           Cari File
-          </span>
-         </div>
-         <div class="form-footer">
-          <p>
-           *) User ID dan Password akan digunakan pada saat LOG IN
-          </p>
-          <p>
-           *) Password minimal 8 karakter, kombinasi huruf besar, kecil dan angka
-          </p>
-          <p>
-           *) Dengan mengisi form/register ini anda telah menyetujui TERM OF CONDITION E-PROCUREMENT
-          </p>
-         </div>
-         <div class="form-navigation">
-          <button class="primary-color">
-           Sebelumnya
-          </button>
-          <button class="primary-color">
-           Selanjutnya
-          </button>
-         </div>
+          <div class="form-group">
+            <label for="nama-pengguna">
+              Nama Pengguna
+              <span style="color: red;">
+                *
+              </span>
+            </label>
+            <input id="nama-pengguna" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="user-id">
+              User ID
+              <span style="color: red;">
+                *
+              </span>
+            </label>
+            <input id="user-id" placeholder="xxxx@example.co.id" type="email" />
+            <button class="app-button2 color-primary-color" style="margin-top: 5px; border: 1px solid #976841;">
+              Check User ID
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="password">
+              Password
+              <span style="color: red;">
+                *
+              </span>
+            </label>
+            <input id="password" type="password" />
+          </div>
+          <div class="form-group">
+            <label for="retype-password">
+              Retype Password
+              <span style="color: red;">
+                *
+              </span>
+            </label>
+            <input id="retype-password" type="password" />
+          </div>
+          <div class="form-group">
+            <label for="logo">
+              Logo
+            </label>
+            <button class="app-button2 color-primary-color" style="border: 1px solid #976841;">
+              Upload Logo <i style="padding-left: 5px;" class="bi bi-upload"></i>
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="header-image">
+              Header Image
+            </label>
+            <button class="app-button2 color-primary-color" style="border: 1px solid #976841;">
+              Upload Head Image <i style="padding-left: 5px;" class="bi bi-upload"></i>
+            </button>
+
+          </div>
+          <div class="form-footer">
+            <p>
+              * User ID dan Password akan digunakan pada saat LOG IN
+            </p>
+            <p>
+              * Password minimal 8 karakter, kombinasi huruf besar, kecil dan angka
+            </p>
+            <p>
+              * Dengan mengisi form/register ini anda telah menyetujui TERM OF CONDITION E-PROCUREMENT
+            </p>
+          </div>
+          <div class="pagination" style="margin: 10px; display: flex; justify-content: center; gap: 10px;">
+            <button class="app-button2 primary-color">
+              <i class="fas fa-chevron-left" style="padding-right: 5px;">
+              </i>
+              Sebelumnya
+            </button>
+            <button class="app-button2 primary-color">
+              Selanjutnya
+              <i class="fas fa-chevron-right" style="padding-left: 5px;">
+              </i>
+            </button>
+          </div>
         </div>
-    
-  </div>
- 
-</div>
- </body>
+
+      </div>
+
+    </div>
+</body>
+
 </html>
