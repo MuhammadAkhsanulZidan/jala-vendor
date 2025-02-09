@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Katalog Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            color: white;
+            text-align: center;
+        }
+
+        .catalog,
+        .policies,
+        .news {
+            padding: 40px 20px;
+        }
+
+        .catalog h2,
+        .policies h2,
+        .news h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .catalog .images,
+        .news .images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog .images img,
+        .news .images img {
+            max-width: 30%; /* Reduced size */
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        /* Navigation buttons */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .carousel-nav.prev {
+            left: 10px;
+        }
+
+        .carousel-nav.next {
+            right: 10px;
+        }
+
+        .policies .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .policies .item {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .policies .item img {
+            max-width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .policies .item h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Banner Section -->
+    <img style="width: 100vw; height: 200px; object-fit: cover;"
+        src="https://th.bing.com/th/id/R.121a7e8a60e497c459546169eca764ab?rik=D4ME0PjwEOyT8w&pid=ImgRaw&r=0" alt="Car">
+    <div style="margin-top: 0; align-items: center; display: flex; gap: 10px; padding: 10px; justify-content: center;"
+        class="primary-color">
+        <h5 style="margin: 0; color: white;">Menjadi Rekanan Kami</h5>
+        <button class="secondary-color"
+            style="border-radius: 5px; color: white; padding: 10px; border: none; height: fit-content;">Pendaftaran</button>
+    </div>
+
+    <!-- Catalog Section -->
+    <div class="catalog" style="margin-top: 0;">
+        <h2>Katalog</h2>
+        <div class="images">
+            <img src="https://images8.alphacoders.com/800/800013.jpg" alt="Car">
+            <img src="https://cdni.autocarindia.com/ExtraImages/20230424024934_FRONX_LAUNCH.jpg" alt="Driver">
+            <img src="https://th.bing.com/th/id/R.9c51248e9d1c87b8f0b0dca7e9a3369b?rik=OTPwkPAL181kcg&pid=ImgRaw&r=0" alt="Driver">
+            <img src="https://th.bing.com/th/id/OIP.05pqdFP-RHBKqVXCBZidzQHaE8?rs=1&pid=ImgDetMain" alt="Driver">
+            <!-- Carousel navigation buttons -->
+            <button class="carousel-nav prev" onclick="moveSlide('catalog', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-nav next" onclick="moveSlide('catalog', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Policies Section -->
+    <div class="policies primary-color" style="color: white;">
+        <h2>Kebijakan</h2>
+        <div class="grid">
+            <div class="item">
+                <i class="fas fa-shield-alt fa-3x"></i> <!-- Font Awesome icon with large size -->
+                <h3>Kebijakan 1</h3>
+                <p>Deskripsi kebijakan pertama yang informatif.</p>
+            </div>
+            <div class="item">
+                <i class="fas fa-balance-scale fa-3x"></i> <!-- Font Awesome icon with large size -->
+                <h3>Kebijakan 2</h3>
+                <p>Deskripsi kebijakan kedua yang menarik.</p>
+            </div>
+            <div class="item">
+                <i class="fas fa-clipboard-list fa-3x"></i> <!-- Font Awesome icon with large size -->
+                <h3>Kebijakan 3</h3>
+                <p>Deskripsi kebijakan ketiga yang relevan.</p>
+            </div>
+            <div class="item">
+                <i class="fas fa-thumbs-up fa-3x"></i> <!-- Font Awesome icon with large size -->
+                <h3>Kebijakan 4</h3>
+                <p>Deskripsi kebijakan keempat yang bermanfaat.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <div class="news">
+        <h2>Berita</h2>
+        <div class="images">
+            <img src="https://stimg2.cardekho.com/images/carNewsimages/userimages/30653/1680687832921/ElectricCar.jpg" alt="Car News 1">
+            <img src="https://stimg2.cardekho.com/images/carNewsimages/userimages/30667/1680866155881/ToyotaInnova.jpg" alt="Car News 2">
+            <img src="https://th.bing.com/th/id/R.14360a658d1fd8280a726805617eb3c3?rik=zewj9NMDS3kgIg&riu=http%3a%2f%2fimg.jakpost.net%2fc%2f2016%2f10%2f19%2f2016_10_19_14131_1476866912._large.jpg&ehk=czp5Arkm3B15N%2fsgFr1L%2bM%2fgoAKVZyfwYsAO1tpirE8%3d&risl=&pid=ImgRaw&r=0" alt="Car News 3">
+            <img src="https://th.bing.com/th/id/OIP.Wj4dsfjwy9fH_UMcvmGGcwHaEK?rs=1&pid=ImgDetMain" alt="Car News 4">
+            <!-- Carousel navigation buttons -->
+            <button class="carousel-nav prev" onclick="moveSlide('news', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-nav next" onclick="moveSlide('news', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    <div style="height: 50px; width: 100vw;" class="primary-color">
+    </div>
+
+    <script>
+        let currentCatalogIndex = 0;
+        let currentNewsIndex = 0;
+
+        function moveSlide(section, direction) {
+            let images = document.querySelectorAll(`.${section} .images img`);
+            if (section === 'catalog') {
+                currentCatalogIndex = (currentCatalogIndex + direction + images.length) % images.length;
+                images.forEach((img, index) => {
+                    img.style.transform = `translateX(-${currentCatalogIndex * 100}%)`;
+                });
+            } else if (section === 'news') {
+                currentNewsIndex = (currentNewsIndex + direction + images.length) % images.length;
+                images.forEach((img, index) => {
+                    img.style.transform = `translateX(-${currentNewsIndex * 100}%)`;
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

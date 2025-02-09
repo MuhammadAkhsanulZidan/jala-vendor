@@ -1,0 +1,269 @@
+<html>
+
+<head>
+  <title>Quick Quote</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .header .status {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .tabs {
+      display: flex;
+      margin: 20px 0;
+    }
+
+    .tabs a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tabs a.active {
+      border-bottom: 2px solid #e74c3c;
+      color: #e74c3c;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .filters select {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 48%;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    .company {
+      font-weight: 500;
+    }
+
+    select, input {
+      border-radius: 5px !important;
+      border: 1px solid #b1b1b1 !important;
+    }
+
+
+    .rank {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #e74c3c;
+      color: #fff;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 50%;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .award-qty input {
+      width: 60px;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .award-qty span {
+      margin-left: 5px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .actions button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .actions .go-back {
+      background-color: #ddd;
+      color: #333;
+    }
+
+    .actions .disapprove-award {
+      background-color: #e74c3c;
+      color: #fff;
+    }
+
+    .actions .save-draft {
+      background-color: #f39c12;
+      color: #fff;
+    }
+
+    .actions .finalize-award {
+      background-color: #27ae60;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container" style="padding: 20px;">
+        <div class="header" style="border-bottom: 2px solid #976841; padding-bottom: 12px;">
+          <h1>Quick Quote</h1>
+          <div class="status">Closed <i class="fas fa-bell"></i></div>
+        </div>
+        <div class="tabs">
+          <a href="#" class="active">BID VIEW (BY ITEM)</a>
+          <a href="#">BID VIEW (BY SUPPLIER)</a>
+        </div>
+        <div class="filters">
+          <select>
+            <option>DMS Volvo Tooling RFQ</option>
+          </select>
+          <select>
+            <option>Select Award Scenario</option>
+          </select>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Lot</th>
+                <th>Company</th>
+                <th>Bid Amount</th>
+                <th>Award Qty</th>
+                <th>Dimension of ...</th>
+                <th>Wall Thickness</th>
+                <th>Part Weig</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>brace_hinge</td>
+                <td class="">Nationwide</td>
+                <td class="">$ 1.29 <span class="rank">1</span></td>
+                <td class="award-qty"><input type="text" value="500"> <span>UNI</span></td>
+                <td>55</td>
+                <td>55</td>
+                <td>37</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="company">Syco</td>
+                <td class="bid-amount">$ 2.20 <span class="rank">2</span></td>
+                <td class="award-qty"><input type="text" value="500"> <span>UNI</span></td>
+                <td>55</td>
+                <td>55</td>
+                <td>37</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="company">Progressive</td>
+                <td class="bid-amount">$ 2.20 <span class="rank">2</span></td>
+                <td class="award-qty"><input type="text" value="500"> <span>UNI</span></td>
+                <td>55</td>
+                <td>55</td>
+                <td>37</td>
+              </tr>
+              <tr>
+                <td>oil tank sediment</td>
+                <td class="company">Syco</td>
+                <td class="bid-amount">$ 2.59 <span class="rank">1</span></td>
+                <td class="award-qty"><input type="text" value="200"> <span>UNI</span></td>
+                <td>32</td>
+                <td>46</td>
+                <td>46</td>
+              </tr>
+              <tr>
+                <td>lock bar</td>
+                <td class="company">Nationwide</td>
+                <td class="bid-amount">$ 1.54 <span class="rank">1</span></td>
+                <td class="award-qty"><input type="text" value="400"> <span>UNI</span></td>
+                <td>243</td>
+                <td>52</td>
+                <td>52</td>
+              </tr>
+              <tr>
+                <td>top seal bar</td>
+                <td class="company">Nationwide</td>
+                <td class="bid-amount">$ 1.22 <span class="rank">1</span></td>
+                <td class="award-qty"><input type="text" value="400"> <span>UNI</span></td>
+                <td>2323</td>
+                <td>4342</td>
+                <td>4342</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="actions">
+          <button class="go-back">GO BACK</button>
+          <button class="disapprove-award">DISAPPROVE AWARD</button>
+          <button class="save-draft">SAVE AS DRAFT</button>
+          <button class="finalize-award">FINALIZE AWARD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

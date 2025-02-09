@@ -1,0 +1,1127 @@
+<html>
+
+<head>
+  <title>
+    Approved Supplier List
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    select,
+    input {
+      border-radius: 5px !important;
+      border: 1px solid #b1b1b1 !important;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+    }
+
+    .nav {
+      display: flex;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .nav a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .nav a.active {
+      border-bottom: 3px solid #976841;
+      color: #976841;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+      border-bottom: 2px solid #976841;
+      padding-bottom: 5px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .table th,
+    .table td {
+      padding: 10px;
+      /* border: 1px solid #e0e0e0; */
+      text-align: left;
+      border: none;
+    }
+
+    .table th {
+      background-color: #f5f5f5;
+      border: none;
+    }
+
+    .highlight {
+      background-color: #ca9e7a;
+      color: white;
+    }
+
+    .highlight .fa-star {
+      color: white;
+    }
+
+    .button {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .button button {
+      background-color: #976841;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button button:hover {
+      background-color: #976841;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav a {
+        text-align: center;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .form-group>div {
+      flex: 1;
+      min-width: 200px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group>div:last-child {
+      margin-right: 0;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-group .info {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+    }
+
+    .form-group .category {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-group .category span {
+      background-color: #e0e0e0;
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .form-group .category i {
+      color: #e53935;
+      cursor: pointer;
+    }
+
+    .form-group .date-time i {
+      margin-left: 10px;
+      color: #999;
+    }
+
+    .setting-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .setting-item label {
+      /* flex: 1; */
+      font-size: 16px;
+      color: #333;
+    }
+
+    .setting-item input[type="range"] {
+      /* flex: 2; */
+      margin: 0 10px;
+    }
+
+    .setting-item .value {
+      /* flex: 0.5; */
+      text-align: right;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .setting-item .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+    }
+
+    .setting-item .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .setting-item .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .setting-item .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    .setting-item input:checked+.slider {
+      background-color: #4CAF50;
+    }
+
+    .setting-item input:checked+.slider:before {
+      transform: translateX(14px);
+    }
+
+    .edit-rates {
+      color: #5a5a5a;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .bid-decrement {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .bid-decrement label {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .bid-decrement .radio-group {
+      flex: 2;
+      display: flex;
+      align-items: center;
+    }
+
+    .bid-decrement .radio-group label {
+      margin-right: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .bid-decrement .radio-group input {
+      margin-right: 5px;
+    }
+
+    .bid-limits {
+      display: flex;
+      align-items: center;
+    }
+
+    .bid-limits .limit {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .bid-limits .limit:last-child {
+      margin-right: 0;
+    }
+
+    .bid-limits .limit label {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .bid-limits .limit input {
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .bid-limits .limit .currency {
+      text-align: right;
+      font-size: 16px;
+      color: #333;
+      margin-left: 10px;
+    }
+
+    .control {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .control label {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .control .switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+    }
+
+    .control .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .control .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .control .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    .control input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    .control input:checked+.slider:before {
+      transform: translateX(14px);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .table th,
+    .table td {
+      padding: 10px;
+      text-align: left;
+      border: none;
+    }
+
+    .table th {
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+
+    .table td {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .table input[type="text"] {
+      width: 50px;
+      padding: 5px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .table .currency {
+      display: flex;
+      align-items: center;
+    }
+
+    .table .currency span {
+      margin: 0 5px;
+    }
+
+    .add-item-btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .add-item-btn button {
+      background-color: #3f51b5;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .add-item-btn button i {
+      margin-right: 10px;
+    }
+
+    .table .actions {
+      text-align: right;
+    }
+
+    .table .actions i {
+      cursor: pointer;
+    }
+
+    .risk-performance i {
+      color: #ff9800;
+    }
+
+    @media (max-width: 600px) {
+
+      .table th,
+      .table td {
+        display: block;
+        width: 100%;
+        text-align: right;
+      }
+
+      .table th {
+        text-align: left;
+      }
+
+      .table td {
+        border-bottom: none;
+        padding: 10px 0;
+      }
+
+      .table td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="container">
+        <div class="header">
+          <h1>
+            Quick E-Auction
+          </h1>
+        </div>
+        <!-- <div class="nav">
+          <a href="active">
+            General Info
+          </a>
+          <a href="#">
+            Suppliers
+          </a>
+          <a class="" href="#">
+            Tier List
+          </a>
+          <a href="#">
+            Groups
+          </a>
+          <a href="#">
+            Classification
+          </a>
+          <a href="#">
+            Document Placeholder
+          </a>
+          <a href="#">
+            Lots
+          </a>
+          <a href="#">
+            Management
+          </a>
+          <a href="#">
+            Postcodes
+          </a>
+        </div> -->
+        <div class="section">
+          <h2>
+            General Info
+          </h2>
+          <div class="form-group">
+            <div>
+              <label for="name">Name *</label>
+              <input type="text" id="name" placeholder="Name">
+            </div>
+            <div>
+              <label for="description">Description</label>
+              <textarea id="description" rows="3" placeholder="Description"></textarea>
+              <div class="info">0/3000</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="auction-type">Auction Type</label>
+              <input type="text" id="auction-type" value="Reverse Auction" disabled>
+            </div>
+            <div>
+              <label for="time-zone">Time Zone *</label>
+              <select id="time-zone">
+                <option value="us-eastern">US/Eastern</option>
+                <!-- Add other time zones as needed -->
+              </select>
+              <div class="info">Current Date/Time: April 20, 2020 08:52 PM US/Eastern</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="currency">Currency *</label>
+              <select id="currency">
+                <option value="usd">USD</option>
+                <!-- Add other currencies as needed -->
+              </select>
+            </div>
+            <div>
+              <label for="end-date">End Date *</label>
+              <div class="date-time">
+                <div style="position: relative; display: flex;">
+                  <input type="text" id="end-date" value="05/24/2017" style="flex-grow: 1;">
+                  <i class="fas fa-calendar-alt"
+                    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="end-time">End Time *</label>
+              <div class="date-time" style="position: relative; display: flex">
+                <input type="text" id="end-time" value="07:30 AM">
+                <i class="fas fa-clock"
+                  style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="extensions-allowed"># of Extensions Allowed</label>
+            <input type="number" id="extensions-allowed" value="5">
+          </div>
+          <div>
+            <label for="extension-time">Extension Time</label>
+            <input type="number" id="extension-time" value="5">
+            <div class="info">minutes</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="category">Select Category *</label>
+            <div class="category">
+              <span>Miscellaneous</span>
+              <i class="fas fa-times"></i>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <h2>
+            Settings
+          </h2>
+          <div class="setting-item" style="width: 50%; display: flex; justify-content: start;">
+            <label for="decimal-places">Bid Amount Decimal Places</label>
+            <input type="range" id="decimal-places" min="0" max="10" value="4">
+            <div class="value">4</div>
+          </div>
+          <div class="setting-item">
+            <label for="starting-bid">Use Starting Bid for Items</label>
+            <label class="toggle-switch" style="width: 40px;">
+              <input type="checkbox" id="starting-bid" checked>
+              <span class="slider" style="width: 35px;"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="currency-conversion">Currency Conversion</label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="currency-conversion" checked>
+              <span class="slider" style="width: 35px;"></span>
+            </label>
+          </div>
+          <div class="edit-rates">EDIT RATES</div>
+          <div class="bid-decrement">
+            <label for="bid-decrement">Bid Decrement</label>
+            <div class="radio-group">
+              <label><input type="radio" name="bid-decrement" value="numerical" checked> Numerical</label>
+              <label><input type="radio" name="bid-decrement" value="percentage"> Percentage</label>
+            </div>
+          </div>
+          <div class="bid-limits">
+            <div class="limit" style="flex:1">
+              <label for="min-bid" style="padding-right: 5px;">Minimum *</label>
+              <div style="display: flex; align-items: center;flex-grow: 1;">
+                <input type="text" id="min-bid" value="$0">
+                <div class="currency">USD</div>
+              </div>
+            </div>
+            <div class="limit" style="flex:1">
+              <label for="max-bid" style="padding-right: 5px;">Maximum</label>
+              <input type="text" id="max-bid" value="$0">
+              <div class="currency">USD</div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <h2>
+            Supplier Display Control
+          </h2>
+          <div class="control">
+            <label for="leadBid">Current Lead Bid</label>
+            <label class="switch">
+              <input type="checkbox" id="leadBid">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="control">
+            <label for="bidRank">Individual Bid Rank</label>
+            <label class="switch">
+              <input type="checkbox" id="bidRank">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="section">
+          <h2>
+            Documentation
+          </h2>
+          <div style="display: flex; gap: 20px;">
+            <div>
+              <h5 style="margin: 0; margin-bottom: 10px;">Specification Documents</h5>
+              <div class="upload-section">
+                <button class="app-button2 blue-color"><i class="fas fa-upload" style="padding-right: 5px;"></i>
+                  UPLOAD</button>
+                <span>CHOOSE FROM BANK</span>
+              </div>
+              <small>50MB max</small>
+            </div>
+            <div>
+              <h5 style="margin: 0; margin-bottom: 10px;">Participation Terms & Conditions</h5>
+              <div class="upload-section">
+                <button class="app-button2 blue-color"><i class="fas fa-upload" style="padding-right: 5px;"></i>
+                  UPLOAD</button>
+                <span>CHOOSE FROM BANK</span>
+              </div>
+              <small>50MB max. size</small>
+              <div class="file-info" style="color: #555;">
+                <span>Manual Auction Terms.pdf</span>
+                <i class="fas fa-times"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <h2>
+            Items
+          </h2>
+          <div style="margin-bottom: 10px;">
+            <button class="app-button2 primary-color"
+              onclick="document.getElementById('dialog-item').style.display='block';">
+              <i class="fas fa-plus" style="padding-right: 5px;"></i>
+              ADD ITEM
+            </button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Item Description</th>
+                <th>Starting Bid</th>
+                <th>Quantity</th>
+                <th>Category</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Item Description">P1000068837 :: SHOULDER SCREW HEX</td>
+                <td data-label="Starting Bid">
+                  <div class="currency">
+                    <span>$</span>
+                    <input type="text" value="0">
+                    <span>USD</span>
+                  </div>
+                </td>
+                <td data-label="Quantity">
+                  <input type="text" value="10">
+                  <span>Pack</span>
+                </td>
+                <td data-label="Category">Miscellaneous</td>
+                <td class="actions">
+                  <i class="fas fa-ellipsis-v"></i>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Item Description">78-030-204 :: HEAVY HEX NUT, .625-11UNC-2</td>
+                <td data-label="Starting Bid">
+                  <div class="currency">
+                    <span>$</span>
+                    <input type="text" value="0">
+                    <span>USD</span>
+                  </div>
+                </td>
+                <td data-label="Quantity">
+                  <input type="text" value="10">
+                  <span>Pack</span>
+                </td>
+                <td data-label="Category">Miscellaneous</td>
+                <td class="actions">
+                  <i class="fas fa-ellipsis-v"></i>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Item Description">79-030-315 :: CAP SCREW, HEX SOCKET</td>
+                <td data-label="Starting Bid">
+                  <div class="currency">
+                    <span>$</span>
+                    <input type="text" value="0">
+                    <span>USD</span>
+                  </div>
+                </td>
+                <td data-label="Quantity">
+                  <input type="text" value="10">
+                  <span>Pack</span>
+                </td>
+                <td data-label="Category">Miscellaneous</td>
+                <td class="actions">
+                  <i class="fas fa-ellipsis-v"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="section">
+          <h2>
+            Supplier
+          </h2>
+          <div class="">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Contact</th>
+                  <th>Currency</th>
+                  <th>Risk + Performance</th>
+                  <th style="text-align: center;">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>National Grid</td>
+                  <td>Bernice Franklin</td>
+                  <td class="currency-select">
+                    <span>$ | USD</span>
+                    <select>
+                      <option value="usd">USD</option>
+                      <option value="eur">EUR</option>
+                      <option value="gbp">GBP</option>
+                    </select>
+                  </td>
+                  <td class="risk-performance">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </td>
+                  <td class="" style="text-align: center;">
+                    <button class="app-button green-color" onclick="location.href='#'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='#'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color" onclick="location.href='#'">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mercuria Energy America, Inc.</td>
+                  <td>Brian Ford</td>
+                  <td class="currency-select">
+                    <span>$ | USD</span>
+                    <select>
+                      <option value="usd">USD</option>
+                      <option value="eur">EUR</option>
+                      <option value="gbp">GBP</option>
+                    </select>
+                  </td>
+                  <td class="risk-performance">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </td>
+                  <td class="" style="text-align: center;">
+                    <button class="app-button green-color" onclick="location.href='#'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='#'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color" onclick="location.href='#'">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Helix Ravenswood, LLC</td>
+                  <td>Sean Conaway</td>
+                  <td class="currency-select">
+                    <span>$ | USD</span>
+                    <select>
+                      <option value="usd">USD</option>
+                      <option value="eur">EUR</option>
+                      <option value="gbp">GBP</option>
+                    </select>
+                  </td>
+                  <td class="risk-performance">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </td>
+                  <td class="" style="text-align: center;">
+                    <button class="app-button green-color" onclick="location.href='#'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='#'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color" onclick="location.href='#'">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Con Edison</td>
+                  <td>Billy Joel</td>
+                  <td class="currency-select">
+                    <span>$ | USD</span>
+                    <select>
+                      <option value="usd">USD</option>
+                      <option value="eur">EUR</option>
+                      <option value="gbp">GBP</option>
+                    </select>
+                  </td>
+                  <td class="risk-performance">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </td>
+                  <td class="" style="text-align: center;">
+                    <button class="app-button green-color" onclick="location.href='#'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='#'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color" onclick="location.href='#'">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="buttons" style="display: flex; justify-content: space-between;">
+            <button onclick="document.getElementById('dialog-supplier').style.display='block';"
+              class="app-button2 blue-color"><i class="fas fa-plus" style="padding-right: 5px;"></i> CHOOSE
+              SUPPLIERS</button>
+            <div>
+              <button class="app-button2 save-draft" style="background-color: #f5f5f5; color: #757575;">SAVE AS
+                DRAFT</button>
+              <button class="app-button2 green-color">PUBLISH AUCTION</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="dialog-supplier" style="display: none;">
+    <div id="dialog-overlay" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;" onclick="document.getElementById('dialog-supplier').style.display='none';">
+    </div>
+    <div id="dialog-box" style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;">
+      <div class=""
+        style="border-bottom: solid 1px #555; display: flex; align-items: center; justify-content: space-between;">
+        <h4 style="margin: 0;">Create New Quick Quote</h4>
+        <span class="close" style="font-size: large; cursor: pointer;"
+          onclick="document.getElementById('dialog-supplier').style.display='none';">&times;</span>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; align-items: start;">
+        <h5 style="margin: 0; margin-top: 10px; margin-bottom: 10px;">Choose Suppliers</h5>
+        <div class="filter-tags" style="display: flex; gap: 10px;">
+          <div class="filter-tag" style="background-color: #dfdfdf; padding: 5px 5px; border-radius: 10px;">
+            <span style="margin: 0;">United States</span>
+            <i class="fas fa-times" style="margin: 0;"></i>
+          </div>
+          <div class="filter-tag" style="background-color: #dfdfdf; padding: 5px 5px; border-radius: 10px;">
+            <span style="margin: 0;">New York</span>
+            <i class="fas fa-times" style="margin: 0;"></i>
+          </div>
+        </div>
+        <div class="" style="margin-top: 10px;">
+          <table>
+            <thead>
+              <tr style="background-color: #e2e2e2;">
+                <th>Company</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="display: flex; border: none; align-items: center; margin: 0; gap: 5px;"><input
+                    type="checkbox" style="margin: 0;"> National Grid</td>
+                <td>
+                  <select>
+                    <option>Bernice Franklin</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td style="display: flex; border: none;  align-items: center; margin: 0; gap: 5px;"><input
+                    type="checkbox" style="margin: 0;"> Mercuria Energy America, Inc.</td>
+                <td>
+                  <select>
+                    <option>Bernice Franklin</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td style="display: flex; border: none;  align-items: center; margin: 0; gap: 5px;"><input
+                    type="checkbox" style="margin: 0;"> Helix Ravenswood, LLC</td>
+                <td>
+                  <select>
+                    <option>Bernice Franklin</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td style="display: flex; border: none;  align-items: center; margin: 0; gap: 5px;"><input
+                    type="checkbox" style="margin: 0;"> Con Edison</td>
+                <td>
+                  <select>
+                    <option>Bernice Franklin</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <button onclick="
+        document.getElementById('dialog-supplier').style.display='none';" class="app-button2 red-color cancel"
+          style="width: 30%;">CANCEL</button>
+        <button onclick="
+        document.getElementById('dialog-supplier').style.display='none';" class="app-button2 green-color"
+          style="width: 30%;">ADD</button>
+      </div>
+    </div>
+  </div>
+  <div id="dialog-item" style="display: none;">
+    <div id="dialog-overlay" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;" onclick="document.getElementById('dialog-item').style.display='none';">
+    </div>
+    <div id="dialog-box" style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      text-align: center;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;">
+      <div class=""
+        style="border-bottom: solid 1px #555; display: flex; align-items: center; justify-content: space-between;">
+        <h4 style="margin: 0;">Add Item</h4>
+        <span class="close" style="font-size: large; cursor: pointer;"
+          onclick="document.getElementById('dialog-item').style.display='none';">&times;</span>
+      </div>
+      <div style="max-height: 50vh; overflow-y: auto; margin-top: 10px; padding: 5px;">
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="item-group" style="margin: 0;">Item Group</label>
+          <input type="text" id="item-group" class="full-width" value="N/A" readonly>
+        </div>
+        <div class="form-group" style="margin-bottom: 10px;">
+          <input type="text" style="margin-bottom: 5px;" placeholder="SKU / Part No." class="half-width">
+          <input type="text"  placeholder="Material No." class="half-width">
+        </div>
+        <div class="form-group" style="margin-bottom: 10px;">
+          <input type="text" placeholder="Brand" class="full-width">
+        </div>
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="category" style="margin: 0;">SELECT CATEGORY</label>
+          <input type="text" id="category" class="full-width">
+        </div>
+        <div class="form-group" style="margin-bottom: 10px; display: block;">
+          <label for="short-description" style="margin: 0; text-align: start;">Short Description *</label>
+          <div class="description" style="margin: 0; display: flex; flex-direction: column;">
+            <input type="text" id="short-description" class="full-width">
+            <span style="margin: 0; align-self: end;">0/50</span>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 10px; display: block;">
+          <label for="long-description" style="margin: 0; text-align: start;">Long Description</label>
+          <div class="description" style="display: flex; flex-direction: column;">
+            <input type="text" id="long-description" class="full-width">
+            <span  style="align-self: end;">0/150</span>
+          </div>
+        </div>
+        <div class="form-group" style="display: flex; gap: 5px; margin-bottom: 10px;">
+          <input type="text" placeholder="Starting Bid *" style="flex: 1;" class="half-width" value="$0.00">
+          <input type="text" placeholder="USD" style="flex: 1;" class="half-width" readonly>
+        </div>
+        <div class="form-group" style="display: flex; gap: 5px; margin-bottom: 10px;">
+          <input type="text" placeholder="Quantity *" style="flex: 1;" class="half-width">
+          <select class="half-width" style="flex: 1;">
+            <option>Unit of Measure (UOM)</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer" style=" display: flex; justify-content: space-between; margin-top: 10px;">
+        <button onclick="
+          document.getElementById('dialog-item').style.display='none';" class="app-button2 red-color cancel"
+          style="width: 30%;">CANCEL</button>
+        <button onclick="
+          document.getElementById('dialog-item').style.display='none';" class="app-button2 green-color"
+          style="width: 30%;">ADD</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

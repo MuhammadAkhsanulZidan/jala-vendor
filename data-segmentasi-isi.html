@@ -1,250 +1,307 @@
 <html>
- <head>
+
+<head>
   <title>
-   Data Vendor Perusahaan
+    Data Vendor Perusahaan
   </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="style.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
   <style>
-   body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .header {
-            background-color: #ffffff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-        }
-        .header img {
-            height: 50px;
-        }
-        .header .date {
-            font-size: 14px;
-            color: #333;
-        }
-        .header .home {
-            font-size: 14px;
-            color: #333;
-            text-decoration: none;
-        }
-        .header .home:hover {
-            text-decoration: underline;
-        }
-        .header .logo {
-            display: flex;
-            align-items: center;
-        }
-        .header .logo img {
-            height: 50px;
-            margin-left: 20px;
-        }
-        .nav {
-            padding: 10px 0;
-        }
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-        .nav a:hover {
-            background-color: #2d4373;
-        }
-        .container {
-            padding: 20px;
-        }
-        .table-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .btn {
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #2d4373;
-        }
-        .btn-add {
-            float: right;
-            margin-bottom: 10px;
-        }
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .pagination .btn {
-            margin: 0 5px;
-        }
-        @media (max-width: 768px) {
-            .header, .nav, .container {
-                padding: 10px;
-            }
-            .header img, .header .logo img {
-                height: 40px;
-            }
-            .header .date, .header .home {
-                font-size: 12px;
-            }
-            .nav a {
-                padding: 10px;
-            }
-            th, td {
-                padding: 5px;
-            }
-            .btn {
-                padding: 5px 10px;
-            }
-        }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header img {
+      height: 50px;
+    }
+
+    .header .date {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .header .home {
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .header .home:hover {
+      text-decoration: underline;
+    }
+
+    .header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header .logo img {
+      height: 50px;
+      margin-left: 20px;
+    }
+
+    .nav {
+      padding: 10px 0;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+    }
+
+    .nav a:hover {
+      background-color: #2d4373;
+    }
+    
+    .tabs {
+      /* background-color: white; */
+      display: flex;
+      justify-content: space-around;
+      padding: 5px 0;
+    }
+
+    .tabs a {
+      text-decoration: none;
+      color: white;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .tabs a.active {
+      border-radius: 0;
+      border-bottom: 1px solid white;
+      /* background-color: white; */
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .table-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    .btn {
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #2d4373;
+    }
+
+    .btn-add {
+      float: right;
+      margin-bottom: 10px;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pagination .btn {
+      margin: 0 5px;
+    }
+
+    @media (max-width: 768px) {
+
+      .header,
+      .nav,
+      .container {
+        padding: 10px;
+      }
+
+      .header img,
+      .header .logo img {
+        height: 40px;
+      }
+
+      .header .date,
+      .header .home {
+        font-size: 12px;
+      }
+
+      .nav a {
+        padding: 10px;
+      }
+
+      th,
+      td {
+        padding: 5px;
+      }
+
+      .btn {
+        padding: 5px 10px;
+      }
+    }
   </style>
- </head>
- <body>
-    <div class="main">
-        <iframe 
-            src="./sidebar.html" >
-        </iframe>
-      <div  style="flex-grow: 1;">  <div class="header">
-   
-   <div class="date">
-    Senin, 19 Februari 2018, 9:43:19
-   </div>
-   <a class="home" href="#">
-    HOME
-   </a>
-   
-  </div>
-  <div class="nav primary-color">
-   <a href="#">
-    DATA LOGIN
-   </a>
-   <a href="#">
-    DATA PERUSAHAAN
-   </a>
-   <a href="#">
-    DATA BANK
-   </a>
-   <a href="#">
-    DATA SEGMENTASI
-   </a>
-   <a href="#">
-    DATA DOKUMEN
-   </a>
-   <a href="#">
-    PERALATAN
-   </a>
-   <a href="#">
-    DATA KEUANGAN
-   </a>
-   <a href="#">
-    DATA PENGALAMAN
-   </a>
-  </div>
-  <div class="container" >
-   <div class="table-container">
-    <a class="btn btn-add primary-color" href="#">
-     + Tambah
-    </a>
-    <table>
-     <thead>
-      <tr>
-       <th>
-        No
-       </th>
-       <th>
-        Bidang Usaha
-       </th>
-       <th>
-        Sub Bidang
-       </th>
-       <th>
-        Asosiasi
-       </th>
-       <th>
-        Nomor
-       </th>
-       <th>
-        Tanggal Mulai
-       </th>
-       <th>
-        Tanggal Berakhir
-       </th>
-       <th>
-        Aksi
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        SERVICE
-       </td>
-       <td>
-        AKSESORIS
-       </td>
-       <td>
-        Kamar Dagang dan Industri Indonesia (KADIN)
-       </td>
-       <td>
-        1423-RI/76
-       </td>
-       <td>
-        28/01/2018
-       </td>
-       <td>
-        03/03/2018
-       </td>
-       <td>
-        <button class="btn">
-         <i class="fas fa-edit">
-         </i>
-        </button>
-        <button class="btn">
-         <i class="fas fa-trash">
-         </i>
-        </button>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <div class="pagination">
-     <button class="btn primary-color">
-      Sebelumnya
-     </button>
-     <button class="btn primary-color">
-      Selanjutnya
-     </button>
+</head>
+
+<body>
+  <div class="main">
+    <iframe src="./sidebar.html">
+    </iframe>
+    <div style="flex-grow: 1;">
+      <div class="tabs primary-color">
+        <a href="data-login.html" style="font-weight: bold;">
+          DATA LOGIN <i class="bi bi-box-arrow-in-right"></i>
+        </a>
+        <a href="data-perusahaan.html">
+          DATA PERUSAHAAN <i class="bi bi-building"></i>
+        </a>
+        <a href="data-bank-isi.html">
+          DATA BANK <i class="bi bi-bank"></i>
+        </a>
+        <a class="active"  href="data-segmentasi-isi.html">
+          DATA SEGMENTASI <i class="bi bi-grid"></i>
+        </a>
+        <a href="data-dokumen-isi.html">
+          DATA DOKUMEN <i class="bi bi-file-earmark-richtext"></i>
+        </a>
+        <a href="data-peralatan-isi.html">
+          PERALATAN <i class="bi bi-tools"></i>
+        </a>
+        <a href="data-keuangan-isi.html">
+          DATA KEUANGAN <i class="bi bi-coin"></i>
+        </a>
+        <a href="data-pengalaman-isi.html">
+          DATA PENGALAMAN <i class="bi bi-file-earmark-person"></i>
+        </a>
+      </div>
+      <div class="">
+        <div class="table-container">
+          <a class="btn btn-add primary-color" href="data-segmentasi-entry.html">
+            + Tambah
+          </a>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  No
+                </th>
+                <th>
+                  Bidang Usaha
+                </th>
+                <th>
+                  Sub Bidang
+                </th>
+                <th>
+                  Asosiasi
+                </th>
+                <th>
+                  Nomor
+                </th>
+                <th>
+                  Tanggal Mulai
+                </th>
+                <th>
+                  Tanggal Berakhir
+                </th>
+                <th>
+                  Aksi
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  1
+                </td>
+                <td>
+                  SERVICE
+                </td>
+                <td>
+                  AKSESORIS
+                </td>
+                <td>
+                  Kamar Dagang dan Industri Indonesia (KADIN)
+                </td>
+                <td>
+                  1423-RI/76
+                </td>
+                <td>
+                  28/01/2025
+                </td>
+                <td>
+                  03/03/2025
+                </td>
+                <td>
+                  <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                    <button class="app-button green-color"
+                      onclick="location.href='customer-auction-penawaran-home.html'">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                    </button>
+                    <button class="app-button blue-color" onclick="location.href='data-bank-entry.html'">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="app-button red-color"
+                      onclick="location.href='customer-auction-penawaran-verifikasi.html'">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination" style="margin: 10px; display: flex; justify-content: center; gap: 10px;">
+            <button class="app-button2 primary-color">
+              <i class="fas fa-chevron-left" style="padding-right: 5px;">
+              </i>
+              Sebelumnya
+            </button>
+            <button class="app-button2 primary-color">
+              Selanjutnya
+              <i class="fas fa-chevron-right" style="padding-left: 5px;">
+              </i>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-   </div>
-  </div>
-  </div>
- </body>
+</body>
+
 </html>

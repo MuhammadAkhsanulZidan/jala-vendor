@@ -1,0 +1,347 @@
+<html>
+
+<head>
+  <title>Contract Administration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header i {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .filters select,
+    .filters input,
+    .filters button {
+      margin-right: 10px;
+      padding: 5px;
+      font-size: 14px;
+    }
+
+    .filters button {
+      background-color: #976841;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+
+    select, input {
+      border-radius: 5px !important;
+      border: 1px solid #b1b1b1 !important;
+    }
+
+    .filters button.clear {
+      background-color: #6c757d;
+    }
+
+    .filters button.advanced {
+      background-color: #17a2b8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #f8f9fa;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .rag-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .red {
+      background-color: #dc3545;
+      color: white;
+      text-align: center;
+    }
+
+    .green {
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: left;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container">
+        <div class="header">
+          <i class="fas fa-file-contract"></i>
+          <h1>Contract Administration</h1>
+        </div>
+        <div class="filters" style="gap: 10px">
+          <label for="data-filter" style="font-weight: bold;">Data Filter:</label>
+          <select id="data-filter">
+            <option>Current Contracts</option>
+            <option>Expired Contracts</option>
+            <option>All Contracts</option>
+          </select>
+        </div>
+        <div class="filters">
+          <input type="text" placeholder="Search...">
+          <select style="width: 100px;">
+            <option>in</option>
+          </select>
+          <select style="width:  100px;">
+            <option>Title</option>
+          </select>
+          <button>Search</button>
+          <button class="clear">Clear Search</button>
+          <button class="advanced">Advanced...</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>R</th>
+              <th>A</th>
+              <th>G</th>
+              <th>Supplier Name</th>
+              <th>Value</th>
+              <th>Start Date</th>
+              <th>Expiry</th>
+              <th>Contract Spend to Date</th>
+              <th>Contract Spend</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: #976841; color: white;">
+              <td>Construction Contract for Corp Ltd</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Construction Ltd</td>
+              <td>50000.00</td>
+              <td>28/02/2030</td>
+              <td>28/02/2031</td>
+              <td>0.00 (GBP)</td>
+              <td>0.00 %</td>
+            </tr>
+            <tr>
+              <td>ABC Medical Supplies</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>ABC</td>
+              <td>100000.00</td>
+              <td>04/03/2030</td>
+              <td>04/09/2030</td>
+              <td>110000.00 (GBP)</td>
+              <td>110.00 %</td>
+            </tr>
+            <tr>
+              <td>Water Coolers</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Hydration & Co</td>
+              <td>100000.00</td>
+              <td>23/02/2030</td>
+              <td>25/03/2030</td>
+              <td>0.00 (GBP)</td>
+              <td>0.00 %</td>
+            </tr>
+            <tr>
+              <td>Office Supplies</td>
+              <td class="red">
+                2
+              </td>
+              <td></td>
+              <td class="green">
+               1
+              </td>
+              <td>XYZ Stationery</td>
+              <td>100000.00</td>
+              <td>24/02/2030</td>
+              <td>24/02/2031</td>
+              <td>750000.00 (GBP)</td>
+              <td>750.00 %</td>
+            </tr>
+            <tr>
+              <td>Fire Safety Doors</td>
+              <td class="red">
+                2
+              </td>
+              <td></td>
+              <td class="green">
+                1
+              </td>
+              <td>John Doe's Fire Safety Equipment Ltd</td>
+              <td>100000.00</td>
+              <td>24/02/2030</td>
+              <td>24/02/2031</td>
+              <td>610000.00 (GBP)</td>
+              <td>610.00 %</td>
+            </tr>
+            <tr>
+              <td>Placeholder Contract</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Placeholders'R'us PLC</td>
+              <td>60000.00</td>
+              <td>01/03/2030</td>
+              <td>01/01/2031</td>
+              <td>30000.00 (GBP)</td>
+              <td>50.00 %</td>
+            </tr>
+            <tr>
+              <td>Spare Bulbs</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Dr Watts Electrical Supplies</td>
+              <td>80000.00</td>
+              <td>01/03/2030</td>
+              <td>01/03/2031</td>
+              <td>20000.00 (GBP)</td>
+              <td>20.00 %</td>
+            </tr>
+            <tr>
+              <td>Copper Piping for Corp Ltd Office</td>
+              <td></td>
+              <td></td>
+              <td class="green">1</div>
+              </td>
+              <td>Supplied Piper & Co</td>
+              <td>100000.00</td>
+              <td>25/02/2030</td>
+              <td>25/03/2030</td>
+              <td>59621.00 (GBP)</td>
+              <td>59.62 %</td>
+            </tr>
+            <tr>
+              <td>Second Construction Contract for Corp Ltd</td>
+              <td></td>
+              <td></td>
+              <td class="green">1</div>
+              <td>Construction Ltd</td>
+              <td>100000.00</td>
+              <td>25/02/2030</td>
+              <td>25/08/2030</td>
+              <td>48750.00 (GBP)</td>
+              <td>48.75 %</td>
+            </tr>
+            <tr>
+              <td>Third Construction Contract for Corp Ltd</td>
+              <td class="red">1</div>
+              </td>
+              <td></td>
+              <td class="green">1</div>
+              <td>Construction Ltd</td>
+              <td>100000.00</td>
+              <td>26/02/2030</td>
+              <td>26/02/2031</td>
+              <td>500000.00 (GBP)</td>
+              <td>500.00 %</td>
+            </tr>
+            <tr>
+              <td>Laminate Flooring</td>
+              <td></td>
+              <td></td>
+              <td class="green">1</div>
+              <td>Jane Doe's Laminate & Tile Flooring</td>
+              <td>100000.00</td>
+              <td>27/02/2030</td>
+              <td>27/02/2031</td>
+              <td>101000.00 (GBP)</td>
+              <td>101.00 %</td>
+            </tr>
+            <tr>
+              <td>More Medical Supplies</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Lorem Ipsum Health</td>
+              <td>100000.00</td>
+              <td>20/02/2030</td>
+              <td>20/02/2031</td>
+              <td>0.00 (GBP)</td>
+              <td>0.00 %</td>
+            </tr>
+            <tr>
+              <td>IT Equipment</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Shiny New Computers</td>
+              <td>100000.00</td>
+              <td>25/02/2030</td>
+              <td>25/03/2030</td>
+              <td>0.00 (GBP)</td>
+              <td>0.00 %</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="footer" style="align-self: flex-start;">
+          Showing 1 to 14 of 14
+        </div>
+      </div>
+    </div>
+</body>
+</html>

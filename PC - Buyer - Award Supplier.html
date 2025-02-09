@@ -1,0 +1,256 @@
+<html>
+
+<head>
+  <title>Auction Event</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .sub-header {
+      padding: 10px 20px;
+      background-color: #fce4ec;
+      color: #d81b60;
+      font-size: 14px;
+    }
+
+    .sub-header span {
+      color: #000;
+    }
+
+    .content h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+      background-color: #e0e0e0;
+      padding: 10px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .table th,
+    .table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .table th {
+      background-color: #f5f5f5;
+      font-weight: 500;
+    }
+
+    .table td {
+      background-color: #fff;
+    }
+
+    .table .highlight {
+      border-left: 4px solid #d81b60;
+    }
+
+    .table .bid-amount {
+      color: #4caf50;
+      font-weight: 500;
+    }
+
+    .table .rank {
+      background-color: #2ecc71;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .table .award-qty {
+      display: flex;
+      align-items: center;
+    }
+
+    .table .award-qty input {
+      margin-right: 10px;
+    }
+
+    .table .award-qty .doz {
+      margin-right: 5px;
+    }
+
+    .table .award-qty .usd {
+      color: #757575;
+      margin-left: 5px;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: right;
+      border-top: 2px solid #f0f0f0;
+    }
+
+    .footer button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .footer .go-back {
+      background-color: #f5f5f5;
+      color: #757575;
+    }
+
+    .footer .save-draft {
+      background-color: #f5f5f5;
+      color: #757575;
+    }
+
+    .footer .finalize-award {
+      background-color: #d81b60;
+      color: #fff;
+    }
+
+    .status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .status .closed {
+      color: #757575;
+      font-weight: bold;
+    }
+
+    .status .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .status .icons i {
+      margin-left: 10px;
+      color: #757575;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container" style="padding: 20px;">
+        <div class="status">
+          <h4 class="closed" style="margin: 0;">Closed</h4>
+          <div class="icons">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="header">
+          <h1>Auction Event</h1>
+        </div>
+        <div class="sub-header color-primary-color" style="border: none; background-color: #e6be9f;">
+          Reverse Auction (ID : 5567) : <span>Fasteners Auction for Electric Motors Company</span>
+        </div>
+        <div class="content">
+          <button class="app-button2" style="margin-top: 10px; background-color: #ddd; color: black;">Fasteners M21904</button>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>COMPANY</th>
+                <th>START BID</th>
+                <th>BID AMOUNT [RANK]</th>
+                <th>AWARD QTY.</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="highlight">P1000085673 :: Heavy Hex Nut ...</td>
+                <td>Exelon</td>
+                <td>$ 20.00</td>
+                <td class="bid-amount">$ 18.46 <span class="rank">1</span></td>
+                <td class="award-qty">
+                  <input type="checkbox" checked>
+                  <span class="doz">100.0</span> DOZ
+                  <span class="usd">$ 1,946.00 USD</span>
+                </td>
+                
+              </tr>
+              <tr>
+                <td class="highlight">P1000085682 :: Heavy Hex Nut ...</td>
+                <td>Exelon</td>
+                <td>$ 25.00</td>
+                <td class="bid-amount">$ 23.61 <span class="rank">1</span></td>
+                <td class="award-qty">
+                  <input type="checkbox" checked>
+                  <span class="doz">116.0</span> DOZ
+                  <span class="usd">$ 2,854.76 USD</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="highlight">P1000085664 :: Heavy Hex Nut ...</td>
+                <td>Progressive</td>
+                <td>$ 25.00</td>
+                <td class="bid-amount">$ 23.14 <span class="rank">1</span></td>
+                <td class="award-qty">
+                  <input type="checkbox">
+                  <span class="doz">125.0</span> DOZ
+                  <span class="usd">$ 3,013.75 USD</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="highlight">P1000085669 :: Heavy Hex Nut ...</td>
+                <td>Exelon</td>
+                <td>$ 25.00</td>
+                <td class="bid-amount">$ 23.49 <span class="rank">1</span></td>
+                <td class="award-qty">
+                  <input type="checkbox">
+                  <span class="doz">125.0</span> DOZ
+                  <span class="usd">$ 3,061.25 USD</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="footer">
+          <button class="go-back">GO BACK</button>
+          <button class="save-draft">SAVE AS DRAFT</button>
+          <button class="app-button2 green-color">FINALIZE AWARD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

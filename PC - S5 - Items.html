@@ -1,0 +1,193 @@
+<html>
+<head>
+    <title>Items</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header i {
+            color: #e53935;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .header h2 {
+            color: #e53935;
+            font-size: 24px;
+            margin: 0;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .table td {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .table input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .table .currency {
+            display: flex;
+            align-items: center;
+        }
+        .table .currency span {
+            margin: 0 5px;
+        }
+        .add-item-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .add-item-btn button {
+            background-color: #3f51b5;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .add-item-btn button i {
+            margin-right: 10px;
+        }
+        .table .actions {
+            text-align: right;
+        }
+        .table .actions i {
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .table th, .table td {
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+            .table th {
+                text-align: left;
+            }
+            .table td {
+                border-bottom: none;
+                padding: 10px 0;
+            }
+            .table td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-box"></i>
+            <h2>Items</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item Description</th>
+                    <th>Starting Bid</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Item Description">P1000068837 :: SHOULDER SCREW HEX</td>
+                    <td data-label="Starting Bid">
+                        <div class="currency">
+                            <span>$</span>
+                            <input type="text" value="0">
+                            <span>USD</span>
+                        </div>
+                    </td>
+                    <td data-label="Quantity">
+                        <input type="text" value="10">
+                        <span>Pack</span>
+                    </td>
+                    <td data-label="Category">Miscellaneous</td>
+                    <td class="actions">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Item Description">78-030-204 :: HEAVY HEX NUT, .625-11UNC-2</td>
+                    <td data-label="Starting Bid">
+                        <div class="currency">
+                            <span>$</span>
+                            <input type="text" value="0">
+                            <span>USD</span>
+                        </div>
+                    </td>
+                    <td data-label="Quantity">
+                        <input type="text" value="10">
+                        <span>Pack</span>
+                    </td>
+                    <td data-label="Category">Miscellaneous</td>
+                    <td class="actions">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Item Description">79-030-315 :: CAP SCREW, HEX SOCKET</td>
+                    <td data-label="Starting Bid">
+                        <div class="currency">
+                            <span>$</span>
+                            <input type="text" value="0">
+                            <span>USD</span>
+                        </div>
+                    </td>
+                    <td data-label="Quantity">
+                        <input type="text" value="10">
+                        <span>Pack</span>
+                    </td>
+                    <td data-label="Category">Miscellaneous</td>
+                    <td class="actions">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="add-item-btn">
+            <button>
+                <i class="fas fa-plus"></i>
+                ADD ITEM
+            </button>
+        </div>
+    </div>
+</body>
+</html>

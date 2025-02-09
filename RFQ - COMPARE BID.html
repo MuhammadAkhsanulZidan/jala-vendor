@@ -1,0 +1,344 @@
+<html>
+
+<head>
+  <title>
+    Bid Comparison
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header div {
+      font-weight: bold;
+    }
+
+    .header div:nth-child(2) {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .header div:nth-child(3) {
+      text-align: right;
+    }
+
+    .section {
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .section-header img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .section-header div {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .item div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .item div:first-child {
+      text-align: left;
+      flex: 2;
+    }
+
+    .item div:last-child {
+      text-align: right;
+    }
+
+    .item .company {
+      display: flex;
+      align-items: center;
+    }
+
+    .item .company img {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+
+    .item .bid-amount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .item .bid-amount span {
+      margin-left: 5px;
+      background-color: #e0e0e0;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .item .bid-amount span.green {
+      background-color: #8bc34a;
+    }
+
+    .item .bid-amount span.red {
+      background-color: #f44336;
+    }
+
+    .item .bid-amount span.orange {
+      background-color: #ff9800;
+    }
+  </style>
+</head>
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
+      <div class="container" style="padding: 20px;">
+        <h1 style="border-bottom: 2px solid #976841; padding-bottom: 12px;">Compare Bid</h1>
+        <div class="header">
+          <div>
+            COMPANY
+          </div>
+          <div>
+            BID AMOUNT
+          </div>
+          <div>
+            EXTENDED PRICE
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <div>
+              Thermal Roll Films
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Stonex Group
+            </div>
+            <div class="bid-amount">
+              $57.89
+              <span class="green">
+                1
+              </span>
+            </div>
+            <div>
+              $8,683.50
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Exelon
+            </div>
+            <div class="bid-amount">
+              $71.75
+              <span class="orange">
+                2
+              </span>
+            </div>
+            <div>
+              $10,762.50
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Progressive
+            </div>
+            <div class="bid-amount">
+              $74.89
+              <span class="red">
+                3
+              </span>
+            </div>
+            <div>
+              $11,233.50
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Nationwide
+            </div>
+            <div class="bid-amount">
+              $78.54
+              <span class="red">
+                4
+              </span>
+            </div>
+            <div>
+              $11,781.00
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Nucor
+            </div>
+            <div class="bid-amount">
+              $79.35
+              <span class="red">
+                5
+              </span>
+            </div>
+            <div>
+              $11,902.50
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Sysco
+            </div>
+            <div class="bid-amount">
+              $79.67
+              <span class="red">
+                6
+              </span>
+            </div>
+            <div>
+              $11,950.50
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <div>
+              3125641, 1.5mil Napll Gloss 36x300 3CPD
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Stonex Group
+            </div>
+            <div class="bid-amount">
+              $59.75
+              <span class="green">
+                1
+              </span>
+            </div>
+            <div>
+              $10,157.50
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Sysco
+            </div>
+            <div class="bid-amount">
+              $72.65
+              <span class="orange">
+                2
+              </span>
+            </div>
+            <div>
+              $12,250.50
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Progressive
+            </div>
+            <div class="bid-amount">
+              $73.67
+              <span class="red">
+                3
+              </span>
+            </div>
+            <div>
+              $12,523.90
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Exelon
+            </div>
+            <div class="bid-amount">
+              $73.89
+              <span class="red">
+                4
+              </span>
+            </div>
+            <div>
+              $12,563.10
+            </div>
+          </div>
+          <div class="item">
+            <div class="company">
+              <img alt="Company Icon" src="https://placehold.co/10x10" />
+              Nationwide
+            </div>
+            <div class="bid-amount">
+              $79.65
+              <span class="red">
+                5
+              </span>
+            </div>
+            <div>
+              $13,540.50
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

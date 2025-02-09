@@ -1,0 +1,448 @@
+<html>
+
+<head>
+  <title>
+    Dashboard
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ddd;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .card {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      border-radius: 3px;
+      border-top: solid 3px #976841;
+      padding: 10px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-header h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .card-header .icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .card-header .icons i {
+      cursor: pointer;
+    }
+
+    .chart {
+      text-align: center;
+    }
+
+    .gauge {
+      text-align: center;
+    }
+
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list li {
+      padding: 5px 0;
+      display: flex;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .list li:last-child {
+      border-bottom: none;
+    }
+
+    .list li span {
+      display: inline-block;
+      width: 70%;
+    }
+
+    .list li span.date {
+      width: 30%;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+
+    #chart-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .chart-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .legend-square {
+      width: 15px;
+      height: 15px;
+    }
+  </style>
+</head>
+
+<body style="overflow-y: hidden;">
+  <div class="main" style=" width: 100vw; height: 100vh;">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div class="container" style="overflow-y: auto; width: 100%; height: 100vh; background-color: #f5f5f5">
+      <div style="display: flex; gap: 10px;">
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 3vh;">
+          <div class="card" style="height: 26vh;">
+            <div class="card-header">
+              <h3>
+                Project Evaluation Status
+              </h3>
+              <div class="icons">
+                <i class="fas fa-cog">
+                </i>
+                <i class="fas fa-times">
+                </i>
+              </div>
+            </div>
+            <div id="" style="display: flex; justify-content: center;">
+              <div style="width: 100px; height: 100px">
+                <canvas id="circleChart"></canvas>
+              </div>
+            </div>
+            <div id="legendContainer" class="chart-legend"></div>
+          </div>
+          <div class="card" style="height: 26vh;">
+            <div class="card-header">
+              <h3>
+                Contract Spend over time
+              </h3>
+              <div class="icons">
+                <i class="fas fa-cog">
+                </i>
+                <i class="fas fa-times">
+                </i>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 60%;">
+                <canvas id="timechart"></canvas>
+              </div>
+            </div>
+            <!-- <div class="chart">
+              <img alt="Bar chart showing projects by end date" src="https://placehold.co/300x300?text=Bar+Chart" />
+            </div> -->
+          </div>
+          <div class="card" style="height: 26vh;">
+            <div class="card-header">
+              <h3>
+                Returns Received On Time
+              </h3>
+              <div class="icons">
+                <i class="fas fa-cog">
+                </i>
+                <i class="fas fa-times">
+                </i>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
+              <div style="width: 30%;">
+                <canvas id="returnchart"></canvas>
+              </div>
+              <h4 style="color: green; margin: 0; padding-top: 5px;">
+                84.85%
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div style="flex-grow: 2; display: flex; flex-direction: column; gap: 2vh;">
+          <div class="card" style="height: 58vh;">
+            <div class="card-header">
+              <h3>
+                Projects by End Date
+              </h3>
+              <div class="icons">
+                <i class="fas fa-cog">
+                </i>
+                <i class="fas fa-times">
+                </i>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; margin: auto; height: 100%;">
+              <div style="width: 90%;">
+                <canvas id="enddatechart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="height: 27vh;">
+            <div class="card-header">
+              <h3>
+                Active Published Stages
+              </h3>
+              <div class="icons">
+                <i class="fas fa-cog">
+                </i>
+                <i class="fas fa-times">
+                </i>
+              </div>
+            </div>
+            <div style="overflow-y: auto; padding: 5px; height: 85%;">
+              <ul class="list">
+                <li>
+                  <span>
+                    CB - 19/11 DPS
+                  </span>
+                  <span class="date">
+                    12-12-2024 15:20:00.000
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    CB - DOCUMENTS
+                  </span>
+                  <span class="date">
+                    29-12-2024 15:37:00.000
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    CB - Eval 14/11
+                  </span>
+                  <span class="date">
+                    14-12-2024 11:25:00.000
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    CB - Online Journal 29/11
+                  </span>
+                  <span class="date">
+                    29-12-2024 09:43:00.000
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    CB - Tender Wizard (Standard) 29/11
+                  </span>
+                  <span class="date">
+                    29-12-2024 15:07:00.000
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    JMAC - Big Date Project
+                  </span>
+                  <span class="date">
+                    31-12-2024 13:27:00.000
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <!-- <div class="chart">
+              <img alt="Bar chart showing contract spend over time" src="https://placehold.co/300x300?text=Bar+Chart" />
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <script>
+    const ctx = document.getElementById('circleChart').getContext('2d');
+
+    // Data for the pie chart
+    const data = {
+      labels: ['Completed', 'In Progress', 'Not Applicable', 'Not Started'],
+      datasets: [
+        {
+          data: [5, 25, 10, 10],
+          backgroundColor: ['#4caf50', '#ffeb3b', '#9e9e9e', '#f44336'],
+          borderWidth: 0, // No border around the segments
+        },
+      ],
+    };
+
+    // Chart configuration
+    const chart = new Chart(ctx, {
+      type: 'pie', // Full circle chart
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false, // Disable built-in legend to use a custom one
+          },
+          tooltip: {
+            enabled: true,
+          },
+        },
+      },
+    });
+
+    // Generate custom legend
+    const legendContainer = document.getElementById('legendContainer');
+
+    data.labels.forEach((label, index) => {
+      const legendItem = document.createElement('div');
+      legendItem.className = 'chart-legend-item';
+
+      const legendSquare = document.createElement('span');
+      legendSquare.className = 'legend-square';
+      legendSquare.style.backgroundColor = data.datasets[0].backgroundColor[index];
+
+      const legendText = document.createElement('span');
+      legendText.innerText = label;
+
+      legendItem.appendChild(legendSquare);
+      legendItem.appendChild(legendText);
+
+      legendContainer.appendChild(legendItem);
+    });
+
+    const ctx2 = document.getElementById('timechart').getContext('2d');
+
+    const biddingChart = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['2023-11', '2023-12', '2024-01', '2024-02', '2024-03'],
+        datasets: [{
+          label: "",
+          data: [12000, 15000, 10000, 18000, 17000],
+
+          backgroundColor: [
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(153, 102, 255, 0.8)',
+            'rgba(255, 159, 64, 0.8)',
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(54, 162, 235, 0.8)'
+          ],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+
+          legend: {
+            display: false,
+            position: 'top',
+          },
+          tooltip: {
+            enabled: true
+          }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            title: {
+              display: false,
+            },
+            ticks: { font: { size: 10 } }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: false,
+            },
+            ticks: { font: { size: 10 } }
+          }
+        }
+      }
+    });
+
+    const ctx3 = document.getElementById('enddatechart').getContext('2d');
+
+    const endDates = [
+      '2023-01', '2023-02', '2023-03', '2023-04',
+      '2023-05', '2023-06', '2023-07', '2023-08',
+      '2023-09', '2023-10'
+    ];
+    const values = [50, 35, 60, 80, 90, 55, 70, 45, 85, 65];
+
+    new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: endDates,
+        datasets: [{
+          data: values,
+          backgroundColor: 'rgba(54, 162, 235, 1)',
+        }],
+      },
+      options: {
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: false },
+        },
+        responsive: true,
+        scales: {
+          x: {
+            display: true,
+            ticks: { font: { size: 10 } }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: { font: { size: 10 } }
+          },
+        },
+      },
+    });
+
+    const ctx4 = document.getElementById('returnchart').getContext('2d');
+
+    new Chart(ctx4, {
+      type: 'doughnut',
+      data: {
+        labels: ['Completed', 'Remaining'],
+        datasets: [{
+          data: [84.85, 100 - 84.85],
+          backgroundColor: ['green', 'black'],
+          borderWidth: 0,  // Remove the border
+        }],
+      },
+      options: {
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: false },  // Hide tooltip
+        },
+        responsive: true,
+        cutout: '70%', // Inner circle size
+        scales: {
+          x: { display: false },
+          y: { display: false },
+        },
+      },
+    });
+
+  </script>
+</body>
+
+</html>
