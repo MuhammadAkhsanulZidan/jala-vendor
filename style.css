@@ -14,6 +14,11 @@
     color: #976841 !important;
 }
 
+input, select, textarea{
+  border-radius: 5px !important;
+  border-color: #b1b1b1 !important;
+}
+
 body {
     width: 100vw !important;
   }
@@ -73,10 +78,11 @@ h5 {
 }
 
 .app-b-button {
-  border: solid 1px black;
+  border: solid 1px #976841;
+  color: #976841;
   padding: 5px;
   background-color: white;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 

@@ -28,32 +28,33 @@
 
     .header {
       display: flex;
+      gap: 10px;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .header img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+    .header i {
+      font-size: 20px;
     }
 
     .header h1 {
-      font-size: 24px;
       margin: 0;
     }
 
     .nav {
       display: flex;
-      border-bottom: 2px solid #e0e0e0;
       margin-bottom: 20px;
+      justify-content: space-between;
     }
 
     .nav a {
+      text-align: center;
+      width: 100%;
       padding: 10px 10px;
       text-decoration: none;
       color: #555;
       font-weight: 500;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .nav a.active {
@@ -242,6 +243,12 @@
             cursor: not-allowed;
         }
 
+        .section-title{
+          color: white;
+          padding: 5px 10px;
+          margin-bottom: 10px;
+        }
+
   </style>
 </head>
 
@@ -252,7 +259,7 @@
     <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
       <div class="container" >
         <div class="header">
-          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <i class="bi bi-info-circle"></i>
           <h1>Vendor Information</h1>
         </div>
         <div class="nav">
@@ -266,12 +273,10 @@
           <a href="vendor-data-segmentation.html">Segmentation</a>
         </div>
 
-
         <div class="main" style="overflow-y: auto;">
-          <div class="container">
-              <div class="header primary-color">Data Auditor</div>
+          <div class="">
               <div class="section">
-                  <div class="section-title">Data Auditor</div>
+                  <div class=" primary-color section-title">Data Auditor</div>
                   <div class="form-group">
                       <label for="nomor-audit">Nomor Audit <span style="color: red;">*</span></label>
                       <input type="text" id="nomor-audit" name="nomor-audit">
@@ -426,9 +431,15 @@
                       </table>
                   </div>
               </div>
-              <div class="footer">
-                  <button type="button" class=" primary-color" style="color: white;" onclick="location.href='./vendor-data-finance.html'"><i class="fas fa-arrow-left"></i> Kembali</button>
-                  <button type="button" class=" primary-color" style="color: white;" onclick="location.href='./vendor-data-finance.html'">Simpan <i class="fas fa-arrow-right"></i></button>
+              <div class="" style="display: flex; gap: 10px; margin-top: 10px;">
+                  <button class="app-button2 red-color" style=" display: flex; align-items: center; gap: 5px;"><i
+                    class="bi bi-arrow-left-circle"></i>
+                  <p style="margin: 0;">Kembali</p>
+                </button>
+                <button class="app-button2 green-color" style="display: flex; align-items: center; gap: 5px;"><i
+                    class="bi bi-check-circle"></i>
+                  <p style="margin: 0;">Simpan</p>
+                </button>
               </div>
           </div>
           </div>

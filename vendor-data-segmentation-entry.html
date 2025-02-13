@@ -64,6 +64,11 @@
       color: #976841;
     }
 
+    .section-title {
+      color: white;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
 
     .section h2 {
       font-size: 18px;
@@ -106,13 +111,6 @@
 
     .form-group .radio-group label {
       margin-right: 20px;
-    }
-
-    .table-container {
-      background-color: white;
-
-      border-radius: 3px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .table-container .table-header {
@@ -173,11 +171,87 @@
       cursor: not-allowed;
     }
 
-    .content .card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .card-header {
+      color: white;
+      padding: 10px;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-header h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .card-header .add-button {
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .table th,
+    .table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .table th {
+      background-color: #f5f5f5;
+    }
+
+    .table td .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .table td .action-buttons .edit,
+    .table td .action-buttons .delete {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .table td .action-buttons .delete {
+      background-color: #f44336;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .pagination .page-info {
+      font-size: 14px;
+    }
+
+    .pagination .page-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pagination .page-buttons button {
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
     }
 
     .content .card .card-header {
@@ -259,12 +333,6 @@
     .content .card .table-actions .pagination button:focus {
       outline: none;
     }
-
-    .section-title {
-      color: white;
-      padding: 5px 10px;
-      margin-bottom: 10px;
-    }
   </style>
 </head>
 
@@ -284,66 +352,69 @@
           <a href="vendor-data-finance.html">Finance</a>
           <a href="vendor-data-banks.html">Banks</a>
           <a href="vendor-data-experience.html">Experience</a>
-          <a href="vendor-data-equipment.html" class="active">Equipment</a>
-          <a href="vendor-data-segmentation.html">Segmentation</a>
+          <a href="vendor-data-equipment.html">Equipment</a>
+          <a href="vendor-data-segmentation.html" class="active">Segmentation</a>
         </div>
 
-
-        <div class="" style="overflow-y: auto;">
+        <div class="content">
+          <!-- <h2>SETTING VENDOR - EDIT DATA</h2> -->
           <div class="">
-            <div class=" primary-color section-title">Peralatan/Aset</div>
-            <form>
+            <div class="content">
               <div class="form-group">
-                <label for="jenis">Jenis <span style="color: red;">*</span></label>
-                <input type="text" id="jenis" name="jenis" required>
+                <label for="bidang-usaha">Bidang Usaha <span style="color: red;">*</span></label>
+                <input type="text" id="bidang-usaha" value="SERVICE" readonly>
+              </div>
+              <table class="table" style="margin-bottom: 10px;">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Sub Bidang</th>
+                    <th>Pilih</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>SPOORING & BALANCING</td>
+                    <td><input type="radio" name="sub-bidang"></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>AKSESORIS</td>
+                    <td><input type="radio" name="sub-bidang"></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>JASABBN</td>
+                    <td><input type="radio" name="sub-bidang"></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>GENERAL REPAIR</td>
+                    <td><input type="radio" name="sub-bidang" checked></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>SALON MOBIL</td>
+                    <td><input type="radio" name="sub-bidang"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="form-group">
+                <label for="asosiasi">Asosiasi <span style="color: red;">*</span></label>
+                <input type="text" id="asosiasi" value="Asosiasi Pengusaha Indonesia (APINDO)">
               </div>
               <div class="form-group">
-                <label for="jumlah">Jumlah <span style="color: red;">*</span></label>
-                <input type="number" id="jumlah" name="jumlah" required>
+                <label for="nomor">Nomor <span style="color: red;">*</span></label>
+                <input type="text" id="nomor" value="313sdj2j-rt">
               </div>
               <div class="form-group">
-                <label for="kapasitas">Kapasitas <span style="color: red;">*</span></label>
-                <input type="text" id="kapasitas" name="kapasitas" required>
+                <label for="tanggal-mulai">Tanggal Mulai <span style="color: red;">*</span></label>
+                <input type="date" id="tanggal-mulai" value="2025-02-13">
               </div>
               <div class="form-group">
-                <label for="merk">Merk / Tipe <span style="color: red;">*</span></label>
-                <input type="text" id="merk" name="merk" required>
-              </div>
-              <div class="form-group">
-                <label for="tahun">Tahun Pembuatan <span style="color: red;">*</span></label>
-                <input type="number" id="tahun" name="tahun" required>
-              </div>
-              <div class="form-group">
-                <label for="kondisi">Kondisi <span style="color: red;">*</span></label>
-                <select id="kondisi" name="kondisi" required>
-                  <option value="">Pilih Kondisi</option>
-                  <option value="baik">Baik</option>
-                  <option value="rusak">Rusak</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="lokasi">Lokasi <span style="color: red;">*</span></label>
-                <input type="text" id="lokasi" name="lokasi" required>
-              </div>
-              <div class="form-group">
-                <label for="bukti">Bukti Kepemilikan <span style="color: red;">*</span></label>
-                <select id="bukti" name="bukti" required>
-                  <option value="">Pilih Kondisi</option>
-                  <option value="sertifikat">Sertifikat</option>
-                  <option value="kwitansi">Kwitansi</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Dokumen Bukti Kepemilikan</label>
-                <div class="upload-btn">
-                  <input type="file" id="upload-dokumen" name="upload-dokumen">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Gambar Peralatan / Asset</label>
-                <div class="upload-btn">
-                  <input type="file" id="upload-gambar" name="upload-gambar">
-                </div>
+                <label for="tanggal-berakhir">Tanggal Berakhir <span style="color: red;">*</span></label>
+                <input type="date" id="tanggal-berakhir" value="2025-02-13">
               </div>
               <div class="" style="display: flex; gap: 10px; margin-top: 10px;">
                 <button class="app-button2 red-color" onclick="window.history.back();"
@@ -354,7 +425,8 @@
                   style="display: flex; align-items: center; gap: 5px;"><i class="bi bi-check-circle"></i>
                   <p style="margin: 0;">Simpan</p>
                 </button>
-            </form>
+              </div>
+            </div>
           </div>
         </div>
 

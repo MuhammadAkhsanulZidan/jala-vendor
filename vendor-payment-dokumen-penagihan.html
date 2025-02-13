@@ -119,40 +119,39 @@
 </head>
 
 <body>
-  <iframe src="./sidebar.html"
-    style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
-  </iframe>
-  <div class="container">
-    <h2>Syarat Penagihan</h2>
-    <div class="form-group">
-      <label for="dokumen">Dokumen Syarat Penagihan <span style="color: red;">*</span></label>
-      <input type="text" id="dokumen" value="Dokumen Syarat Penagih" readonly>
-      <label for="file-upload" class="custom-file-upload">
-        <i class="fas fa-folder-open"></i> Select files
-      </label>
-      <input id="file-upload" type="file" />
-      <span class="upload-btn"><i class="fas fa-upload"></i></span>
-      <a href="#" class="file-name">Dokumen Syarat Penagihan.docx</a>
-    </div>
-    <div class="form-group">
-      <label for="lembar">Lembar <span style="color: red;">*</span></label>
-      <input type="number" id="lembar" value="1">
-    </div>
-    <div class="form-group">
-      <label for="no-dokumen">No. Dokumen <span style="color: red;">*</span></label>
-      <input type="text" id="no-dokumen" value="Dokumen Syarat Penagihan">
-    </div>
-    <div class="form-actions">
-      <button class="app-button2 red-color" style=" display: flex; align-items: center; gap: 5px;"><i
-          class="bi bi-arrow-left-circle"></i>
-        <p style="margin: 0;">Kembali</p>
-      </button>
-      <button class="app-button2 green-color" style="display: flex; align-items: center; gap: 5px;"><i
-          class="bi bi-check-circle"></i>
-        <p style="margin: 0;">Simpan</p>
-      </button>
+  <div class="">
+    <iframe src="./sidebar.html" style="height: 100%; border: none;"></iframe>
+  </div>
+  <div class="main" style="overflow-y: auto;">
+    <div class="container" style="margin: auto;">
+      <h2>Syarat Penagihan</h2>
+      <div class="form-group">
+        <label for="dokumen">Dokumen Syarat Penagihan <span style="color: red;">*</span></label>
+        <input type="text" id="dokumen" value="Dokumen Syarat Penagih" readonly>
+        <input id="file-upload" type="file" />
+        <a href="#" class="file-name">Dokumen Syarat Penagihan.docx</a>
+      </div>
+      <div class="form-group">
+        <label for="lembar">Lembar <span style="color: red;">*</span></label>
+        <input type="number" id="lembar" value="1">
+      </div>
+      <div class="form-group">
+        <label for="no-dokumen">No. Dokumen <span style="color: red;">*</span></label>
+        <input type="text" id="no-dokumen" value="Dokumen Syarat Penagihan">
+      </div>
+      <div class="form-actions">
+        <button class="app-button2 red-color" style=" display: flex; align-items: center; gap: 5px;"><i
+            class="bi bi-arrow-left-circle"></i>
+          <p style="margin: 0;">Kembali</p>
+        </button>
+        <button class="app-button2 green-color" style="display: flex; align-items: center; gap: 5px;"><i
+            class="bi bi-check-circle"></i>
+          <p style="margin: 0;">Simpan</p>
+        </button>
+      </div>
     </div>
   </div>
+
 </body>
 
 </html>

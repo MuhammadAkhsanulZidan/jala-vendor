@@ -4,7 +4,7 @@
   <title>Vendor Information</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -12,7 +12,9 @@
       margin: 0;
       padding: 0;
     }
-    select, input {
+
+    select,
+    input {
       border-radius: 5px !important;
       border: 1px solid #b1b1b1 !important;
     }
@@ -28,49 +30,38 @@
 
     .header {
       display: flex;
+      gap: 10px;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .header img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+    .header i {
+      font-size: 20px;
     }
 
     .header h1 {
-      font-size: 24px;
       margin: 0;
     }
 
     .nav {
       display: flex;
-      border-bottom: 2px solid #e0e0e0;
       margin-bottom: 20px;
+      justify-content: space-between;
     }
 
     .nav a {
+      text-align: center;
+      width: 100%;
       padding: 10px 10px;
       text-decoration: none;
       color: #555;
       font-weight: 500;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .nav a.active {
       border-bottom: 3px solid #976841;
       color: #976841;
-    }
-
-    .section {
-      /* border-bottom: 1px solid #ddd; */
-    }
-
-    .section h2 {
-      font-size: 18px;
-      margin: 0 0 10px;
-      border-bottom: 2px solid #976841;
-      padding-top: 5px;
-      padding-bottom: 5px;
     }
 
     .form-group {
@@ -109,70 +100,77 @@
     }
 
     .table-container {
-            background-color: white;
+      background-color: white;
 
-            border-radius: 3px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .table-container .table-header {
-            background-color: #3f51b5;
-            color: white;
-            padding: 10px;
-            border-radius: 3px 3px 0 0;
-        }
+    .table-container .table-header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px;
+      border-radius: 3px 3px 0 0;
+    }
 
-        .table-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-        .table-container table th,
-        .table-container table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+    .table-container table th,
+    .table-container table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
 
-        .table-container table th {
-            background-color: #f0f0f0;
-        }
+    .table-container table th {
+      background-color: #f0f0f0;
+    }
 
-        .table-container .pagination {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+    .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
 
-        .table-container .pagination .info {
-            font-size: 14px;
-        }
+    .table-container .pagination .info {
+      font-size: 14px;
+    }
 
-        .table-container .pagination .pages {
-            display: flex;
-            align-items: center;
-        }
+    .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
 
-        .table-container .pagination .pages button {
-            background-color: #3f51b5;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin: 0 2px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+    .table-container .pagination .pages button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 2px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-        .table-container .pagination .pages button:hover {
-            background-color: #303f9f;
-        }
+    .table-container .pagination .pages button:hover {
+      background-color: #303f9f;
+    }
 
-        .table-container .pagination .pages button.disabled {
-            background-color: #ddd;
-            cursor: not-allowed;
-        }
+    .table-container .pagination .pages button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
 
+    .subheader {
+      background-color: #976841;
+      color: white;
+      padding: 10px;
+      margin: 0;
+    }
+    
   </style>
 </head>
 
@@ -181,9 +179,9 @@
     <iframe src="./sidebar.html" style="border: none;">
     </iframe>
     <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
-      <div class="container" >
+      <div class="container">
         <div class="header">
-          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <i class="bi bi-info-circle"></i>
           <h1>Vendor Information</h1>
         </div>
         <div class="nav">
@@ -197,128 +195,113 @@
           <a href="vendor-data-segmentation.html">Segmentation</a>
         </div>
         <!-- <div class="section"> -->
-          <!-- <h2>Vendor Data</h2>
+        <!-- <h2>Vendor Data</h2>
           <div class="content">
 
           </div> -->
-          <div class="section">
-            <h2 class="primary-color">DATA PERUSAHAAN</h2>
-            <div class="form-group">
-                <label>PKP / Non PKP</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="pkp" value="pkp"> PKP</label>
-                    <label><input type="radio" name="pkp" value="non-pkp"> Non PKP</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Title</label>
-                <input type="text" value="Company">
-            </div>
-            <div class="form-group">
-                <label>Kualifikasi</label>
-                <input type="text" value="Besar">
-            </div>
-            <div class="form-group">
-                <label>Jenis Perusahaan</label>
-                <input type="text" value="PT">
-            </div>
-            <div class="form-group">
-                <label>Bidang Usaha</label>
-                <input type="text" value="Airlines/Office">
-            </div>
-            <div class="form-group">
-                <label>Nama Perusahaan</label>
-                <input type="text" value="0000">
-            </div>
-            <div class="form-group">
-                <label>NPWP Perusahaan</label>
-                <input type="text" value="2039382938202936">
-                <button class="btn primary-color">Check NPWP</button>
-            </div>
-            <div class="form-group">
-                <label>Alamat NPWP</label>
-                <input type="text" value="jalan">
-            </div>
-            <div class="form-group">
-                <label>Kota NPWP</label>
-                <input type="text" value="kota">
-            </div>
-            <div class="form-group">
-                <label>Nama Singkatan</label>
-                <input type="text" value="singkatan">
-            </div>
-            <div class="form-group">
-                <label>Jumlah Karyawan</label>
-                <input type="text" value="01">
-            </div>
-            <div class="form-group">
-                <label>Tanggal Berdiri</label>
-                <input type="text" value="13-10-2017">
-            </div>
-            <div class="form-group">
-                <label>Deskripsi</label>
-                <textarea>Deskripsi</textarea>
-            </div>
-            <div class="form-group pagination">
-                <button class="disabled">&lt;&lt;</button>
-                <button class="disabled">&lt;</button>
-                <button class="active">1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>10</button>
-                <button>&gt;</button>
-                <button>&gt;&gt;</button>
+        <div class="section">
+          <h2 class="primary-color" style="margin: 0; padding: 5px 10px; color: white;">Data Perusahaan</h2>
+          <div class="form-group" style="margin-top: 10px;">
+            <label>PKP / Non PKP</label>
+            <div class="radio-group">
+              <label><input type="radio" name="pkp" value="pkp"> PKP</label>
+              <label><input type="radio" name="pkp" value="non-pkp"> Non PKP</label>
             </div>
           </div>
-          <div class="section">
-            <h2 class="primary-color">Alamat Perusahaan</h2>
-            <div class="form-group">
-                <label>Alamat Perusahaan</label>
-                <textarea>jalan</textarea>
-            </div>
-            <div class="form-group">
-                <label>Provinsi</label>
-                <input type="text" value="DKI Jakarta">
-            </div>
-            <div class="form-group">
-                <label>Kota</label>
-                <input type="text" value="KOTA JAKARTA PUSAT">
-            </div>
-            <div class="form-group">
-                <label>Po Box</label>
-                <input type="text" value="4140">
-            </div>
-            <div class="form-group">
-                <label>Kode Pos</label>
-                <input type="text" value="534005">
-            </div>
-            <div class="form-group">
-                <label>Telepon Perusahaan</label>
-                <input type="text" value="1423">
-            </div>
-            <div class="form-group">
-                <label>No. Fax</label>
-                <input type="text" value="4234">
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" value="abc@gmail.com">
-            </div>
-            <div class="form-group">
-                <label>Website</label>
-                <input type="text" value="">
-            </div>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" value="Company">
           </div>
+          <div class="form-group">
+            <label>Kualifikasi</label>
+            <input type="text" value="Besar">
+          </div>
+          <div class="form-group">
+            <label>Jenis Perusahaan</label>
+            <input type="text" value="PT">
+          </div>
+          <div class="form-group">
+            <label>Bidang Usaha</label>
+            <input type="text" value="Airlines/Office">
+          </div>
+          <div class="form-group">
+            <label>Nama Perusahaan</label>
+            <input type="text" value="0000">
+          </div>
+          <div class="form-group">
+            <label>NPWP Perusahaan</label>
+            <input type="text" value="2039382938202936">
+            <button class="app-button2 primary-color" style="margin-top: 5px; color: white;">Check NPWP</button>
+          </div>
+          <div class="form-group">
+            <label>Alamat NPWP</label>
+            <input type="text" value="jalan">
+          </div>
+          <div class="form-group">
+            <label>Kota NPWP</label>
+            <input type="text" value="kota">
+          </div>
+          <div class="form-group">
+            <label>Nama Singkatan</label>
+            <input type="text" value="singkatan">
+          </div>
+          <div class="form-group">
+            <label>Jumlah Karyawan</label>
+            <input type="text" value="01">
+          </div>
+          <div class="form-group">
+            <label>Tanggal Berdiri</label>
+            <input type="text" value="13-10-2017">
+          </div>
+          <div class="form-group">
+            <label>Deskripsi</label>
+            <textarea style="width: 100%; padding: 5px;">Deskripsi</textarea>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="primary-color" style="margin: 0; padding: 5px 10px; color: white;">Alamat Perusahaan</h2>
+          <div class="form-group" style="margin-top: 10px;">
+            <label>Alamat Perusahaan</label>
+            <textarea style="width: 100%; padding: 5px;">jalan</textarea>
+          </div>
+          <div class="form-group">
+            <label>Provinsi</label>
+            <input type="text" value="DKI Jakarta">
+          </div>
+          <div class="form-group">
+            <label>Kota</label>
+            <input type="text" value="KOTA JAKARTA PUSAT">
+          </div>
+          <div class="form-group">
+            <label>Po Box</label>
+            <input type="text" value="4140">
+          </div>
+          <div class="form-group">
+            <label>Kode Pos</label>
+            <input type="text" value="534005">
+          </div>
+          <div class="form-group">
+            <label>Telepon Perusahaan</label>
+            <input type="text" value="1423">
+          </div>
+          <div class="form-group">
+            <label>No. Fax</label>
+            <input type="text" value="4234">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" value="abc@gmail.com">
+          </div>
+          <div class="form-group">
+            <label>Website</label>
+            <input type="text" value="">
+          </div>
+        </div>
 
 
         <!-- </div> -->
       </div>
     </div>
 </body>
+
 </html>

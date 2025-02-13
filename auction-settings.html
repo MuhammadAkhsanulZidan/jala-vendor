@@ -28,32 +28,33 @@
 
     .header {
       display: flex;
+      gap: 10px;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .header img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+    .header i {
+      font-size: 20px;
     }
 
     .header h1 {
-      font-size: 24px;
       margin: 0;
     }
 
     .nav {
       display: flex;
-      border-bottom: 2px solid #e0e0e0;
       margin-bottom: 20px;
+      justify-content: space-between;
     }
 
     .nav a {
+      text-align: center;
+      width: 100%;
       padding: 10px 10px;
       text-decoration: none;
       color: #555;
       font-weight: 500;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .nav a.active {
@@ -117,7 +118,7 @@
     <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
       <div class="container" >
         <div class="header">
-          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <i class="bi bi-list-ul"></i>
           <h1>Details</h1>
         </div>
         <div class="nav">

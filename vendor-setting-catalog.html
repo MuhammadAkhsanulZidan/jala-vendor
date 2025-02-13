@@ -4,7 +4,7 @@
   <title>Vendor Information</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -12,7 +12,9 @@
       margin: 0;
       padding: 0;
     }
-    select, input {
+
+    select,
+    input {
       border-radius: 5px !important;
       border: 1px solid #b1b1b1 !important;
     }
@@ -28,18 +30,16 @@
 
     .header {
       display: flex;
+      gap: 10px;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .header img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+    .header i {
+      font-size: 20px;
     }
 
     .header h1 {
-      font-size: 24px;
       margin: 0;
     }
 
@@ -109,141 +109,140 @@
     }
 
     .table-container {
-            background-color: white;
+      background-color: white;
 
-            border-radius: 3px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      border-radius: 3px;
+      /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    }
 
-        .table-container .table-header {
-            background-color: #3f51b5;
-            color: white;
-            padding: 10px;
-            border-radius: 3px 3px 0 0;
-        }
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-        .table-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    .table-container table th,
+    .table-container table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
 
-        .table-container table th,
-        .table-container table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+    .table-container table th {
+      background-color: #f0f0f0;
+    }
 
-        .table-container table th {
-            background-color: #f0f0f0;
-        }
+    .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
 
-        .table-container .pagination {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+    .table-container .pagination .info {
+      font-size: 14px;
+    }
 
-        .table-container .pagination .info {
-            font-size: 14px;
-        }
+    .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
 
-        .table-container .pagination .pages {
-            display: flex;
-            align-items: center;
-        }
+    .table-container .pagination .pages button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 2px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-        .table-container .pagination .pages button {
-            background-color: #3f51b5;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin: 0 2px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+    .table-container .pagination .pages button:hover {
+      background-color: #303f9f;
+    }
 
-        .table-container .pagination .pages button:hover {
-            background-color: #303f9f;
-        }
+    .table-container .pagination .pages button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
 
-        .table-container .pagination .pages button.disabled {
-            background-color: #ddd;
-            cursor: not-allowed;
-        }
+    .card-header {
+      color: white;
+      padding: 10px 20px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .card-header {
-            color: white;
-            padding: 10px 20px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .card-header .title {
-            font-size: 18px;
-        }
-        .card-header .actions {
-            display: flex;
-            gap: 10px;
-        }
-        .card-header .actions button {
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .table-container {
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table th, table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        table th {
-            background-color: #f0f0f0;
-        }
-        table td.actions {
-            display: flex;
-            gap: 10px;
-        }
-        table td.actions button {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        table td.actions button.delete {
-            background-color: #f44336;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .content {
-                margin-left: 0;
-            }
-        }
+    .card-header .title {
+      font-size: 18px;
+    }
 
+    .card-header .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .card-header .actions button {
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th,
+    table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f0f0f0;
+    }
+
+    table td.actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    table td.actions button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    table td.actions button.delete {
+      background-color: #f44336;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 
@@ -252,9 +251,9 @@
     <iframe src="./sidebar.html" style="border: none;">
     </iframe>
     <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
-      <div class="container" >
+      <div class="container">
         <div class="header">
-          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <i class="bi bi-gear"></i>
           <h1>Setting</h1>
         </div>
         <div class="nav">
@@ -275,60 +274,84 @@
               <a href="#">Home</a> &gt; <a href="#">Manage Catalog</a>
           </div> -->
           <div class="card">
-              <div class="card-header primary-color">
-                  <div class="title">Manage Catalog</div>
-                  <div class="actions">
-                      <button class="import secondary-color" onclick="location.href='./vendor-catalog-import.html'">Import</button>
-                      <button class="add secondary-color" onclick="location.href='./vendor-setting-catalog-add.html'">Tambah</button>
-                  </div>
-              </div>
-              <div class="table-container">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>No</th>
-                              <th>Nama</th>
-                              <th>Attribute Set</th>
-                              <th>Price</th>
-                              <th>Satuan</th>
-                              <th>Status</th>
-                              <th>Aksi</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>1</td>
-                              <td>Camera Niken D320</td>
-                              <td>Camera</td>
-                              <td>4,880,504.00</td>
-                              <td>BUAH</td>
-                              <td>Active</td>
-                              <td class="actions">
-                                  <button class="edit"><i class="fas fa-edit" onclick="location.href='./vendor-setting-catalog-edit.html'"></i></button>
-                                  <button class="delete"><i class="fas fa-trash" onclick="location.href='./vendor-setting-catalog-hapus.html'"></i></button>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>2</td>
-                              <td>Mobil Listrik</td>
-                              <td>Catalog</td>
-                              <td>899,000.00</td>
-                              <td>BUAH</td>
-                              <td>Active</td>
-                              <td class="actions">
-                                  <button class="edit"><i class="fas fa-edit" onclick="location.href='./vendor-setting-catalog-edit.html'"></i></button>
-                                  <button class="delete"><i class="fas fa-trash" onclick="location.href='./vendor-setting-catalog-hapus.html'"></i></button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
+            <button style="margin: 0; display: flex; gap: 10px; align-items: center;"
+              class="app-button2 secondary-color" onclick="location.href='./vendor-catalog-import.html'">
+              <p style="margin: 0;">Import</p>
+              <i class="bi bi-upload"></i>
+            </button>
+            <div class="table-container" style="margin: 0; padding: 0;">
+              <table>
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Attribute Set</th>
+                    <th>Price</th>
+                    <th>Satuan</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Camera Niken D320</td>
+                    <td>Camera</td>
+                    <td>4,880,504.00</td>
+                    <td>BUAH</td>
+                    <td>Active</td>
+                    <td>
+                      <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                        <button class="app-button green-color" onclick="location.href=''">
+                          <i class="bi bi-box-arrow-up-right"></i>
+                        </button>
+                        <button class="app-button blue-color"
+                          onclick="location.href='./vendor-setting-catalog-add.html'">
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="app-button red-color"
+                          onclick="location.href='./vendor-setting-catalog-hapus.html'">
+                          <i class="bi bi-trash-fill"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Mobil Listrik</td>
+                    <td>Catalog</td>
+                    <td>899,000.00</td>
+                    <td>BUAH</td>
+                    <td>Active</td>
+                    <td class="">
+                      <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                        <button class="app-button green-color" onclick="location.href=''">
+                          <i class="bi bi-box-arrow-up-right"></i>
+                        </button>
+                        <button class="app-button blue-color"
+                          onclick="location.href='./vendor-setting-catalog-edit.html'">
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="app-button red-color"
+                          onclick="location.href='./vendor-setting-catalog-hapus.html'">
+                          <i class="bi bi-trash-fill"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button class="app-button2 blue-color" onclick="location.href='./vendor-setting-catalog-add.html'"
+              style="display: flex; align-items: center; gap: 5px; margin-top: 10px;"><i class="bi bi-plus-circle"></i>
+              <p style="margin: 0;">Tambah</p>
+            </button>
           </div>
-      </div>
+        </div>
 
-      
+
         <!-- <div class="section"> -->
-          <!-- <h2>Vendor Data</h2>
+        <!-- <h2>Vendor Data</h2>
           <div class="content">
 
           </div> -->
@@ -336,4 +359,5 @@
       </div>
     </div>
 </body>
+
 </html>

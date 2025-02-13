@@ -1,105 +1,137 @@
-<html>
+<html lang="en">
+
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-        }
-        .main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .login-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-        .login-container h2 {
-            margin-bottom: 20px;
-        }
-        .login-container label {
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-        }
-        .login-container input[type="email"],
-        .login-container input[type="password"] {
-            width: calc(100% - 40px);
-            padding: 10px;
-            margin-bottom: 20px;
-            border: none;
-            border-bottom: 2px solid #1a73e8;
-            outline: none;
-        }
-        .login-container .input-icon {
-            position: relative;
-        }
-        .login-container .input-icon i {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-        }
-        .login-container .remember-me {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .login-container .remember-me input {
-            margin-right: 10px;
-        }
-        .login-container button {
-            width: 45%;
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            border-radius: 20px;
-            color: white;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #155ab6;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .login-modal {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .login-modal h2 {
+      margin-bottom: 20px;
+    }
+
+    .login-modal .input-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .login-modal .input-group input {
+      width: 100%;
+      padding: 10px 40px 10px 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0 !important;
+      font-size: 16px;
+    }
+
+    .login-modal .input-group i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ccc;
+    }
+
+    .login-modal .input-group input:focus {
+      outline: none;
+      border-bottom: 1px solid #007bff;
+    }
+
+    .login-modal .remember-me {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .login-modal .remember-me input {
+      margin-right: 10px;
+    }
+
+    .login-modal .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .login-modal .buttons button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .login-modal .buttons button:last-child {
+      background-color: #0056b3;
+    }
+
+    .login-modal .buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .login-modal .buttons button:last-child:hover {
+      background-color: #003f7f;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="">
-        <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+  <div class="">
+    <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+  <div class="main" style="overflow-y: auto;">
+
+    <div class="login-modal">
+      <i class="bi bi-person-circle" style="font-size: 30px;"></i>
+      <h2>Masuk Sebagai Vendor</h2>
+      <div class="input-group">
+        <input type="email" placeholder="Email" value="">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Password" value="">
+        <i class="fas fa-lock"></i>
+      </div>
+      <div class="remember-me">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+      <div class="buttons">
+        <button class="primary-color" style="width: 100%;" onclick="location.href='./customer-dashboard.html'">Login</button>
+      </div>
+      <p>Lupa Password Anda?</p>
     </div>
-    <div class="main" style="overflow-y: auto;">
-        
-    <div class="login-container">
-        <h2 class="color-primary-color">Vendor Login</h2>
-        <div class="input-icon">
-            <label for="email" class="color-primary-color">Email</label>
-            <input  style="width: 100%; padding: 0; padding-bottom: 5px;" type="email" id="email" value="xxxx@gmail.com">
-        </div>
-        <div class="">
-            <label for="password" class="color-primary-color">Password</label>
-            <input type="password" id="password" style="width: 100%; padding: 0; padding-bottom: 5px;" value="********">
-            <!-- <i class="fas fa-lock color-primary-color"></i> -->
-        </div>
-        <div class="" style="display: flex; gap: 5px; align-items: center;">
-            <input type="checkbox" id="remember-me" checked>
-            <p style="margin: 0;">Remember me</p>
-        </div>
-        <button class="primary-color" style="margin-top: 30px; border-radius: 5px;">Login</button>
-        <div>
-          <a class="color-primary-color">Lupa Password Anda?</a>
-        </div>
-    </div>
-    </div>
+  </div>
 </body>
+
 </html>

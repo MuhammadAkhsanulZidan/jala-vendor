@@ -1,283 +1,275 @@
 <html>
 
 <head>
-    <title>
-        Booking Order
-    </title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet">
+  <title>
+    Booking Order
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
 
-        .header {
-            background-color: #3f51b5;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .header .title {
-            display: flex;
-            align-items: center;
-        }
+    .header .title {
+      display: flex;
+      align-items: center;
+    }
 
-        .header .title img {
-            height: 30px;
-            margin-right: 10px;
-        }
+    .header .title img {
+      height: 30px;
+      margin-right: 10px;
+    }
 
-        .header .title span {
-            font-size: 18px;
-            font-weight: 500;
-        }
+    .header .title span {
+      font-size: 18px;
+      font-weight: 500;
+    }
 
-        .header .logout {
-            background-color: #4caf50;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+    .header .logout {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-        .sidebar {
-            display: none;
-            width: 250px;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
+    .sidebar {
+      display: none;
+      width: 250px;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
 
-        .sidebar h3 {
-            margin-top: 0;
-            font-size: 16px;
-            color: #333;
-        }
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #333;
+    }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        .sidebar ul li {
-            margin: 10px 0;
-        }
+    .sidebar ul li {
+      margin: 10px 0;
+    }
 
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            display: block;
-            padding: 10px;
-            border-radius: 3px;
-        }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 10px;
+      border-radius: 3px;
+    }
 
-        .sidebar ul li a:hover {
-            background-color: #f0f0f0;
-        }
+    .sidebar ul li a:hover {
+      background-color: #f0f0f0;
+    }
 
-        .content {
-            /* margin-left: 270px; */
-            padding: 20px;
-        }
+    .content {
+      /* margin-left: 270px; */
+      padding: 20px;
+    }
 
-        .content h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+    .content h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
 
-        .table-container {
-            background-color: white;
+    .table-container {
+      background-color: white;
 
-            border-radius: 3px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .table-container .table-header {
-            background-color: #3f51b5;
-            color: white;
-            padding: 10px;
-            border-radius: 3px 3px 0 0;
-        }
+    .table-container .table-header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px;
+      border-radius: 3px 3px 0 0;
+    }
 
-        .table-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-        .table-container table th,
-        .table-container table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+    .table-container table th,
+    .table-container table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
 
-        .table-container table th {
-            background-color: #f0f0f0;
-        }
+    .table-container table th {
+      background-color: #f0f0f0;
+    }
 
-        .table-container .pagination {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+    .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
 
-        .table-container .pagination .info {
-            font-size: 14px;
-        }
+    .table-container .pagination .info {
+      font-size: 14px;
+    }
 
-        .table-container .pagination .pages {
-            display: flex;
-            align-items: center;
-        }
+    .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
 
-        .table-container .pagination .pages button {
-            background-color: #3f51b5;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin: 0 2px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+    .table-container .pagination .pages button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 2px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-        .table-container .pagination .pages button:hover {
-            background-color: #303f9f;
-        }
+    .table-container .pagination .pages button:hover {
+      background-color: #303f9f;
+    }
 
-        .table-container .pagination .pages button.disabled {
-            background-color: #ddd;
-            cursor: not-allowed;
-        }
+    .table-container .pagination .pages button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
 
-            .sidebar ul {
-                display: flex;
-                flex-wrap: wrap;
-            }
+      .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-            .sidebar ul li {
-                flex: 1 1 50%;
-            }
+      .sidebar ul li {
+        flex: 1 1 50%;
+      }
 
-            .content {
-                margin-left: 0;
-            }
-        }
-    </style>
+      .content {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="main">
-        <iframe src="./sidebar.html">
-        </iframe>
-        <div style="flex-grow: 1;">
-            <div class="header primary-color">
-                <div class="title">
-                    <span>
-                    </span>
-                </div>
-                <button class="logout secondary-color">
-                    Logout
-                </button>
-            </div>
-            <div class="content">
-                <h2>E-Auction</h2>
-                <div class="table-container">
-                    <div class="table-header primary-color">
-                        Auction List
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="text-align:center;">No.</th>
-                                <th style="text-align:center;">Auction Order</th>
-                                <th tyle="text-align:center;">Auction Date</th>
-                                <th style="text-align:center;">Item</th>
-                                <th style="text-align:center;">Volume (Tonage)</th>
-                                <th style="text-align:center;">Amount</th>
-                                <th style="text-align:center;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Empty Data Row Example -->
-                            <tr>
-                                <td style="text-align:center;">1</td>
-                                <td style="text-align:left;">CPO/AU/02/25/011</td>
-                                <td style="text-align:center;">21/02/2025</td>
-                                <td style="text-align:left;">CPO YYY</td>
-                                <td style="text-align:right;">967</td>
-                                <td style="text-align:right;">967,399,000</td>
-                                <td>
-                                    <div style="padding-left: 5px; padding-right: 5px; display: flex; gap: 10px; justify-content: center; align-items: center;">
-                                        <a style="color: #007cad;" 
-                                            href="customer-auction-penawaran-home.html">
-                                            <i class="fa fa-info-circle"></i>
-                                        </a>
-                                        <a href="customer-auction-penawaran.html">
-                                            <i class="fa fa-edit" style="border: none;"></i>                                            
-                                        </a>
-                                        <a href="vcustomer-auction-penawaran-verifikasi.html">
-                                            <i class="fa fa-star" style="color: gold; border: none;"></i>                                            
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;">2</td>
-                                <td style="text-align:left;">CPO/AU/06/25/202</td>
-                                <td style="text-align:center;">1/06/2025</td>
-                                <td style="text-align:left;">CPO XXX</td>
-                                <td style="text-align:right;">267</td>
-                                <td style="text-align:right;">381,750,000</td>
-                                <td>
-                                    <div style="padding-left: 5px; padding-right: 5px; display: flex; gap: 10px; justify-content: center; align-items: center;">
-                                        <a style="color: #007cad;" 
-                                            href="customer-auction-penawaran-home.html">
-                                            <i class="fa fa-info-circle"></i>
-                                        </a>
-                                        <a href="customer-auction-penawaran.html">
-                                            <i class="fa fa-edit" style="border: none;"></i>                                            
-                                        </a>
-                                        <a href="vcustomer-auction-penawaran-verifikasi.html">
-                                            <i class="fa fa-star" style="color: gold; border: none;"></i>                                            
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+  <div class="main">
+    <iframe src="./sidebar.html"  style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; height: 100vh; overflow-y: auto;">
+      
+      <div class="content">
+        <h2>E-Auction</h2>
+        <div class="table-container">
+          <div class="table-header primary-color">
+            Auction List
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align:center;">No.</th>
+                <th style="text-align:center;">Auction Order</th>
+                <th tyle="text-align:center;">Auction Date</th>
+                <th style="text-align:center;">Item</th>
+                <th style="text-align:center;">Volume (Tonage)</th>
+                <th style="text-align:center;">Amount</th>
+                <th style="text-align:center;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Empty Data Row Example -->
+              <tr>
+                <td style="text-align:center;">1</td>
+                <td style="text-align:left;">CPO/AU/02/25/011</td>
+                <td style="text-align:center;">21/02/2025</td>
+                <td style="text-align:left;">CPO YYY</td>
+                <td style="text-align:right;">967</td>
+                <td style="text-align:right;">967,399,000</td>
+                <td>
+                  <div
+                    style="padding-left: 5px; padding-right: 5px; display: flex; gap: 10px; justify-content: center; align-items: center;">
+                    <a style="color: #007cad;" href="customer-auction-penawaran-home.html">
+                      <i class="fa fa-info-circle"></i>
+                    </a>
+                    <a href="customer-auction-penawaran.html">
+                      <i class="fa fa-edit" style="border: none;"></i>
+                    </a>
+                    <a href="vcustomer-auction-penawaran-verifikasi.html">
+                      <i class="fa fa-star" style="color: gold; border: none;"></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">2</td>
+                <td style="text-align:left;">CPO/AU/06/25/202</td>
+                <td style="text-align:center;">1/06/2025</td>
+                <td style="text-align:left;">CPO XXX</td>
+                <td style="text-align:right;">267</td>
+                <td style="text-align:right;">381,750,000</td>
+                <td>
+                  <div
+                    style="padding-left: 5px; padding-right: 5px; display: flex; gap: 10px; justify-content: center; align-items: center;">
+                    <a style="color: #007cad;" href="customer-auction-penawaran-home.html">
+                      <i class="fa fa-info-circle"></i>
+                    </a>
+                    <a href="customer-auction-penawaran.html">
+                      <i class="fa fa-edit" style="border: none;"></i>
+                    </a>
+                    <a href="vcustomer-auction-penawaran-verifikasi.html">
+                      <i class="fa fa-star" style="color: gold; border: none;"></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
 
-                        </tbody>
-                    </table>
-                    <div class="pagination">
-                        <div class="info">Showing 1 to 2 of 2 entries</div>
-                        <div class="pages">
-                            <button class="disabled">Previous</button>
-                            <button class="active primary-color">1</button>
-                            <button class="primary-color">2</button>
-                            <button class="primary-color">Next</button>
-                        </div>
-                    </div>
-                </div>
+            </tbody>
+          </table>
+          <div class="pagination">
+            <div class="info">Showing 1 to 2 of 2 entries</div>
+            <div class="pages">
+              <button class="disabled">Previous</button>
+              <button class="active primary-color">1</button>
+              <button class="primary-color">2</button>
+              <button class="primary-color">Next</button>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
 </body>
 
 </html>

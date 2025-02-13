@@ -4,7 +4,7 @@
   <title>Vendor Management</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -12,7 +12,9 @@
       margin: 0;
       padding: 0;
     }
-    select, input {
+
+    select,
+    input {
       border-radius: 5px !important;
       border: 1px solid #b1b1b1 !important;
     }
@@ -28,41 +30,38 @@
 
     .header {
       display: flex;
+      gap: 10px;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    .header img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+    .header i {
+      font-size: 20px;
     }
 
     .header h1 {
-      font-size: 24px;
       margin: 0;
     }
 
     .nav {
       display: flex;
-      border-bottom: 2px solid #e0e0e0;
       margin-bottom: 20px;
+      justify-content: space-between;
     }
 
     .nav a {
+      text-align: center;
+      width: 100%;
       padding: 10px 10px;
       text-decoration: none;
       color: #555;
       font-weight: 500;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .nav a.active {
       border-bottom: 3px solid #976841;
       color: #976841;
-    }
-
-    .section {
-      /* border-bottom: 1px solid #ddd; */
     }
 
     .section h2 {
@@ -109,70 +108,69 @@
     }
 
     .table-container {
-            background-color: white;
+      background-color: white;
 
-            border-radius: 3px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .table-container .table-header {
-            background-color: #3f51b5;
-            color: white;
-            padding: 10px;
-            border-radius: 3px 3px 0 0;
-        }
+    .table-container .table-header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px;
+      border-radius: 3px 3px 0 0;
+    }
 
-        .table-container table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-        .table-container table th,
-        .table-container table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+    .table-container table th,
+    .table-container table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
 
-        .table-container table th {
-            background-color: #f0f0f0;
-        }
+    .table-container table th {
+      background-color: #f0f0f0;
+    }
 
-        .table-container .pagination {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+    .table-container .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
 
-        .table-container .pagination .info {
-            font-size: 14px;
-        }
+    .table-container .pagination .info {
+      font-size: 14px;
+    }
 
-        .table-container .pagination .pages {
-            display: flex;
-            align-items: center;
-        }
+    .table-container .pagination .pages {
+      display: flex;
+      align-items: center;
+    }
 
-        .table-container .pagination .pages button {
-            background-color: #3f51b5;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin: 0 2px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+    .table-container .pagination .pages button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 2px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-        .table-container .pagination .pages button:hover {
-            background-color: #303f9f;
-        }
+    .table-container .pagination .pages button:hover {
+      background-color: #303f9f;
+    }
 
-        .table-container .pagination .pages button.disabled {
-            background-color: #ddd;
-            cursor: not-allowed;
-        }
-
+    .table-container .pagination .pages button.disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 
@@ -181,9 +179,9 @@
     <iframe src="./sidebar.html" style="border: none;">
     </iframe>
     <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
-      <div class="container" >
+      <div class="container">
         <div class="header">
-          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
+          <i class="bi bi-shop"></i>
           <h1>Vendor Management</h1>
         </div>
         <div class="nav">
@@ -191,91 +189,84 @@
           <a href="vendor.html">Top Rating</a>
           <a href="vendor.html">Auction Return</a>
           <a href="vendor.html">Blacklist</a>
-          <a href="vendor.html" >Parameter Setting</a>
+          <a href="vendor.html">Parameter Setting</a>
         </div>
         <div class="section">
           <h2>Vendor</h2>
           <div class="content">
             <div class="table-container">
-                <div class="table-header primary-color">
-                    Vendor List
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="text-align:center;">No.</th>
-                            <th style="text-align:center;">Code</th>
-                            <th style="text-align:center;">Vendor Name</th>
-                            <th style="text-align:center;">Reg. Date</th>
-                            <th style="text-align:center;">Fields</th>
-                            <th style="text-align:center;">Location, City, Country</th>
-                            <th style="text-align:center;">Total Unit</th>
-                            <th style="text-align:center;">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Empty Data Row Example -->
-                        <tr>
-                            <td style="text-align:center;">1</td>
-                            <td style="text-align:left;">C24/00001</td>
-                            <td style="text-align:left;">PT. CBA</td>
-                            <td style="text-align:center;">21/02/2025</td>
-                            <td style="text-align:left;">Umum</td>
-                            <td style="text-align:center;">Sampit, Kalimantan Tengah, Indonesia</td>
-                            <td style="text-align:center;">4</td>
-                            <td>
-                                <div style="padding-left: 5px; padding-right: 5px; display: flex; gap: 10px; justify-content: center; align-items: center;">
-                                    <a style="color: #007cad;" 
-                                        href="#">
-                                        <i class="fa fa-info-circle"></i>
-                                    </a>
-                                    <a href="vendor-data.html">
-                                        <i class="fa fa-edit" style="border: none;"></i>                                            
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-star" style="color: gold; border: none;"></i>                                            
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align:center;">2</td>
-                            <td style="text-align:left;">A24/00001</td>
-                            <td style="text-align:left;">PT. ABS</td>
-                            <td style="text-align:center;">1/06/2025</td>
-                            <td style="text-align:left;">General Supplier</td>
-                            <td style="text-align:center;">Jakarta Timur, Jakarta, Indonesia</td>
-                            <td style="text-align:center;">1</td>
-                            <td>
-                                <div style="padding-left: 5px; padding-right: 5px; display: flex; gap: 10px; justify-content: center; align-items: center;">
-                                  <a style="color: #007cad;" href="#">
-                                    <i class="fa fa-info-circle"></i>
-                                  </a>
-                                  <a href="vendor-data.html">
-                                    <i class="fa fa-edit" style="border: none;"></i>                                            
-                                  </a>
-                                  <a href="#">
-                                    <i class="fa fa-star" style="color: gold; border: none;"></i>                                            
-                                  </a>
-                          </div>
-                            </td>
-                        </tr>
+              <div class="table-header primary-color">
+                Vendor List
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th style="text-align:center;">No.</th>
+                    <th style="text-align:center;">Code</th>
+                    <th style="text-align:center;">Vendor Name</th>
+                    <th style="text-align:center;">Reg. Date</th>
+                    <th style="text-align:center;">Fields</th>
+                    <th style="text-align:center;">Location, City, Country</th>
+                    <th style="text-align:center;">Total Unit</th>
+                    <th style="text-align:center;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Empty Data Row Example -->
+                  <tr>
+                    <td style="text-align:center;">1</td>
+                    <td style="text-align:left;">C24/00001</td>
+                    <td style="text-align:left;">PT. CBA</td>
+                    <td style="text-align:center;">21/02/2025</td>
+                    <td style="text-align:left;">Umum</td>
+                    <td style="text-align:center;">Sampit, Kalimantan Tengah, Indonesia</td>
+                    <td style="text-align:center;">4</td>
+                    <td>
+                      <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                        <button class="app-button green-color" onclick="location.href='vendor-data.html'">
+                          <i class="bi bi-box-arrow-up-right"></i>
+                        </button>
+                        <button class="app-button blue-color" onclick="location.href='vendor-data.html'">
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center;">2</td>
+                    <td style="text-align:left;">A24/00001</td>
+                    <td style="text-align:left;">PT. ABS</td>
+                    <td style="text-align:center;">1/06/2025</td>
+                    <td style="text-align:left;">General Supplier</td>
+                    <td style="text-align:center;">Jakarta Timur, Jakarta, Indonesia</td>
+                    <td style="text-align:center;">1</td>
+                    <td>
+                      <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                        <button class="app-button green-color" onclick="location.href='vendor-data.html'">
+                          <i class="bi bi-box-arrow-up-right"></i>
+                        </button>
+                        <button class="app-button blue-color" onclick="location.href='vendor-data.html'">
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
 
-                    </tbody>
-                </table>
-                <div class="pagination">
-                    <div class="info">Showing 1 to 2 of 2 entries</div>
-                    <div class="pages">
-                        <button class="disabled">Previous</button>
-                        <button class="active primary-color">1</button>
-                        <button class="primary-color">2</button>
-                        <button class="primary-color">Next</button>
-                    </div>
+                </tbody>
+              </table>
+              <div class="pagination">
+                <div class="info">Showing 1 to 2 of 2 entries</div>
+                <div class="pages">
+                  <button class="disabled">Previous</button>
+                  <button class="active primary-color">1</button>
+                  <button class="disabled">Next</button>
                 </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 </body>
+
 </html>

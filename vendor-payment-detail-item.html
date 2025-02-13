@@ -1,220 +1,266 @@
 <html>
+
 <head>
-    <title>Pembayaran Vendor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="style.css" rel="stylesheet"/>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            display: flex;
-        }
-        .sidebar {
-            display: none;
-            width: 200px;
-            background-color: #e7e7e7;
-            padding: 20px;
-            height: 100vh;
-        }
-        .sidebar h2 {
-            font-size: 14px;
-            color: #333;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin: 10px 0;
-        }
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-        }
-        .content {
-            flex-grow: 1;
-            padding: 20px;
-        }
-        .content h1 {
-            font-size: 24px;
-            color: #333;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section-header {
-            background-color: #ff6600;
-            color: white;
-            padding: 10px;
-            font-size: 16px;
-        }
-        .table-container {
-            background-color: white;
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        table th {
-            background-color: #f2f2f2;
-        }
-        .actions {
-            text-align: center;
-        }
-        .actions button {
-            margin: 5px;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .actions .back {
-            background-color: #5bc0de;
-            color: white;
-        }
-        .actions .save {
-            background-color: #5cb85c;
-            color: white;
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-            }
-        }
-    </style>
+  <title>Pembayaran Vendor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      display: none;
+      width: 200px;
+      background-color: #e7e7e7;
+      padding: 20px;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    .content h1 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      background-color: #ff6600;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .table-container {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f2f2f2;
+    }
+
+    .actions {
+      text-align: center;
+    }
+
+    .actions button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .actions .back {
+      background-color: #5bc0de;
+      color: white;
+    }
+
+    .actions .save {
+      background-color: #5cb85c;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="main">
-        <iframe 
-            src="./sidebar.html" >
-        </iframe>
+  <div class="main">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
     <!-- <iframe 
     src="./sidebar.html" 
     style="width: 100%; height: 100%; border: none; position: fixed; top: 0; left: 0; z-index: 1000;">
   </iframe> -->
     <div class="container" style="flex-grow: 1;">
-        <div class="sidebar">
-            <h2>CONTRACT MANAGEMENT</h2>
-            <ul>
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-folder"></i> Core</a></li>
-                <ul>
-                    <li><a href="#">Vendor Deal Contract</a></li>
-                    <li><a href="#">Vendor Payment</a></li>
-                    <li><a href="#">Vendor Revision Payment</a></li>
-                    <li><a href="#">Vendor Memo</a></li>
-                </ul>
-            </ul>
+      <div class="sidebar">
+        <h2>CONTRACT MANAGEMENT</h2>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-folder"></i> Core</a></li>
+          <ul>
+            <li><a href="#">Vendor Deal Contract</a></li>
+            <li><a href="#">Vendor Payment</a></li>
+            <li><a href="#">Vendor Revision Payment</a></li>
+            <li><a href="#">Vendor Memo</a></li>
+          </ul>
+        </ul>
+      </div>
+      <div class="content">
+        <h1>Pembayaran Vendor</h1>
+        <div class="section">
+          <div class="section-header primary-color">Dokumen Syarat Penagihan</div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Dokumen</th>
+                  <th>File</th>
+                  <th>No. Dokumen</th>
+                  <th>Jumlah</th>
+                  <th style="text-align: center;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Kwitansi</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+                      <button class="app-button green-color"
+                        onclick="location.href='#'">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                      </button>
+                      <button class="app-button blue-color" onclick="location.href='#'">
+                        <i class="bi bi-pencil-square"></i>
+                      </button>
+                      <button class="app-button red-color"
+                        onclick="location.href='#'">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="content">
-            <h1>Pembayaran Vendor</h1>
-            <div class="section">
-                <div class="section-header primary-color">Dokumen Syarat Penagihan</div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Dokumen</th>
-                                <th>File</th>
-                                <th>No. Dokumen</th>
-                                <th>Jumlah</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Kwitansi</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><i class="fas fa-pen"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Material</div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Item</th>
-                                <th>Tipe</th>
-                                <th>Jumlah</th>
-                                <th>Dibayarkan</th>
-                                <th>Harga Satuan</th>
-                                <th>Harga Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Lamput LED 10 Watt</td>
-                                <td>MATERIAL</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>190,000,000</td>
-                                <td>190,000,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Jasa</div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Jasa</th>
-                                <th>Tipe</th>
-                                <th>Jumlah</th>
-                                <th>Dibayarkan</th>
-                                <th>Harga Satuan</th>
-                                <th>Harga Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="actions">
-                <button class="back primary-color"><i class="fas fa-undo"></i> Kembali</button>
-                <button class="save secondary-color"><i class="fas fa-save"></i> Simpan</button>
-            </div>
+        <div class="section">
+          <div class="section-header primary-color">Material</div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Item</th>
+                  <th>Tipe</th>
+                  <th>Jumlah</th>
+                  <th>Dibayarkan</th>
+                  <th>Harga Satuan</th>
+                  <th>Harga Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lamput LED 10 Watt</td>
+                  <td>MATERIAL</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>190,000,000</td>
+                  <td>190,000,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+        <div class="section">
+          <div class="section-header primary-color">Jasa</div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Jasa</th>
+                  <th>Tipe</th>
+                  <th>Jumlah</th>
+                  <th>Dibayarkan</th>
+                  <th>Harga Satuan</th>
+                  <th>Harga Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="" style="display: flex; gap: 10px; margin-top: 10px;">
+            <button class="app-button2 red-color" onclick="window.history.back();"
+              style=" display: flex; align-items: center; gap: 5px;"><i class="bi bi-arrow-left-circle"></i>
+              <p style="margin: 0;">Kembali</p>
+            </button>
+            <button class="app-button2 green-color" onclick="window.history.back();"
+              style="display: flex; align-items: center; gap: 5px;"><i class="bi bi-check-circle"></i>
+              <p style="margin: 0;">Simpan</p>
+            </button>
+          </div>
+
+        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </body>
+
 </html>
