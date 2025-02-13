@@ -1,153 +1,153 @@
 <html>
 
 <head>
-    <title>Data Bank</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-        }
+  <title>Data Bank</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+    }
 
-        .main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        .container {
-            background-color: white;
-            width: 500px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      background-color: white;
+      width: 500px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .header {
-            color: white;
-            padding: 10px;
-            border-radius: 5px 5px 0 0;
-            text-align: center;
-            font-size: 18px;
-        }
+    .header {
+      color: white;
+      padding: 10px;
+      border-radius: 5px 5px 0 0;
+      text-align: center;
+      font-size: 18px;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .form-group {
+      margin-bottom: 15px;
+    }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
 
-        .form-group input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    .form-group input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-        .form-group input[type="text"] {
-            width: calc(100% - 20px);
-        }
+    .form-group input[type="text"] {
+      width: calc(100% - 20px);
+    }
 
-        .form-group input[type="button"] {
-            width: auto;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .form-group input[type="button"] {
+      width: auto;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .form-group input[type="button"]:hover {
-            background-color: #303f9f;
-        }
+    .form-group input[type="button"]:hover {
+      background-color: #303f9f;
+    }
 
-        .buttons {
-            display: flex;
-            justify-content: space-between;
-        }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
 
-        .buttons button {
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .buttons button {
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .buttons button:hover {
-            background-color: #303f9f;
-        }
+    .buttons button:hover {
+      background-color: #303f9f;
+    }
 
-        .buttons button i {
-            margin-right: 5px;
-        }
+    .buttons button i {
+      margin-right: 5px;
+    }
 
-        @media (max-width: 600px) {
-            .container {
-                width: 90%;
-            }
-        }
-    </style>
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="">
-        <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
-    </div>
-    <div class="main" style="overflow-y: auto;">
-        <div class="container">
-            <div class="header primary-color">Data Bank</div>
-            <div class="form-group">
-                <label for="nama-bank">Nama Bank <span style="color: red;">*</span></label>
-                <input type="text" id="nama-bank" value="PT Bank Central Asia">
-                <div class="buttons">
-                    <button class="buttons primary-color" style="color: white;">Cari Bank</button>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="cabang-bank">Cabang Bank</label>
-                <input type="text" id="cabang-bank" value="Jalan Panjang">
-            </div>
-            <div class="form-group">
-                <label for="alamat-bank">Alamat Bank</label>
-                <input type="text" id="alamat-bank" value="Jln. Panjang 78 EF Jakarta">
-            </div>
-            <div class="form-group">
-                <label for="kota">Kota</label>
-                <input type="text" id="kota" value="Wil. Kota Jakarta Barat">
-            </div>
-            <div class="form-group">
-                <label for="negara">Negara</label>
-                <input type="text" id="negara" value="Indonesia">
-            </div>
-            <div class="form-group">
-                <label for="nomor-rekening">Nomor Rekening <span style="color: red;">*</span></label>
-                <input type="text" id="nomor-rekening" value="973876989">
-            </div>
-            <div class="form-group">
-                <label for="nama-nasabah">Nama Nasabah <span style="color: red;">*</span></label>
-                <input type="text" id="nama-nasabah" value="Prima hospitality">
-            </div>
-            <div class="form-group">
-                <label for="mata-uang">Mata Uang</label>
-                <input type="text" id="mata-uang" value="Rupiah">
-            </div>
-            <div class="buttons">
-                <button class="primary-color"><i class="fas fa-arrow-left"></i> Kembali</button>
-                <button class="primary-color"><i class="fas fa-save"></i> Simpan</button>
-            </div>
+  <div class="">
+    <iframe src="./sidebar.html" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+  <div class="main" style="overflow-y: auto;">
+    <div class="container">
+      <div class="header primary-color">Data Bank</div>
+      <div class="form-group">
+        <label for="nama-bank">Nama Bank <span style="color: red;">*</span></label>
+        <input type="text" id="nama-bank" value="PT Bank Central Asia">
+        <div class="buttons">
+          <button class="buttons primary-color" style="color: white;">Cari Bank</button>
         </div>
+      </div>
+      <div class="form-group">
+        <label for="cabang-bank">Cabang Bank</label>
+        <input type="text" id="cabang-bank" value="Jalan Panjang">
+      </div>
+      <div class="form-group">
+        <label for="alamat-bank">Alamat Bank</label>
+        <input type="text" id="alamat-bank" value="Jln. Panjang 78 EF Jakarta">
+      </div>
+      <div class="form-group">
+        <label for="kota">Kota</label>
+        <input type="text" id="kota" value="Wil. Kota Jakarta Barat">
+      </div>
+      <div class="form-group">
+        <label for="negara">Negara</label>
+        <input type="text" id="negara" value="Indonesia">
+      </div>
+      <div class="form-group">
+        <label for="nomor-rekening">Nomor Rekening <span style="color: red;">*</span></label>
+        <input type="text" id="nomor-rekening" value="973876989">
+      </div>
+      <div class="form-group">
+        <label for="nama-nasabah">Nama Nasabah <span style="color: red;">*</span></label>
+        <input type="text" id="nama-nasabah" value="Prima hospitality">
+      </div>
+      <div class="form-group">
+        <label for="mata-uang">Mata Uang</label>
+        <input type="text" id="mata-uang" value="Rupiah">
+      </div>
+      <div class="buttons">
+        <button class="primary-color"><i class="fas fa-arrow-left"></i> Kembali</button>
+        <button class="primary-color"><i class="fas fa-save"></i> Simpan</button>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>

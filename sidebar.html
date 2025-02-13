@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Floating Sidebar</title>
-  <link href="style.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -32,18 +33,22 @@
       color: #ddd;
       display: block;
       transition: 0.3s;
+      flex-grow: 1;
     }
 
     .sidebar a:hover {
-      background-color: #575757;
-      color: white;
+      color: #333 !important;
+      background-color: #ffffff;
+      border-radius: 5px;
+      font-weight: bold;
+      flex-grow: 1;
     }
 
     /* Toggle button */
     .toggle-btn {
       position: fixed;
       top: 0px;
-      left: 250px;
+      left: 0px;
       font-size: 20px;
       background-color: #333;
       color: white;
@@ -68,99 +73,127 @@
       left: 0;
     }
 
-    .toggle-btn {
-      position: fixed;
-      top: 0px;
-      left: 0;
-      z-index: 1001;
+    ul,
+    li {
+      list-style-type: none;
+      margin-left: 0px;
+      margin-top: 0;
+      padding-left: 8px;
     }
 
-    ul,li {
-        list-style-type: none;  
-        margin-left: 0px;     
-        /* padding-left: 0px;  */
-    }
     a {
-        text-decoration: none;
-        color: black;
-        margin-left: 10px;
+      text-decoration: none;
+      color: black;
+      margin-left: 10px;
     }
+
     h4 {
-        margin-left: 10px;
+      margin-left: 10px;
     }
+
     h3 {
-        font-size: 16px;
+      margin: 0;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .collapsible {
+      display: none;
     }
   </style>
 </head>
+
 <body>
-    <div class="sidebar primary-color" id="sidebar">
-      <!-- <ul class=""> -->
-        <!-- <h3 style="margin-top: 0; margin-bottom: 0;"><a href="vendor-dashboard.html" target="_top">Dashboard</a></h3> -->
-        
-      <!-- </ul> -->
-        <!-- <div style="margin-bottom: 10px;">
+  <div class="sidebar primary-color" id="sidebar">
+    <!-- <ul class=""> -->
+    <!-- <h3 style="margin-top: 0; margin-bottom: 0;"><a href="vendor-dashboard.html" target="_top">Dashboard</a></h3> -->
+
+    <!-- </ul> -->
+    <!-- <div style="margin-bottom: 10px;">
           <h3 style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 0px; margin-bottom: 0;">Auction</h3>
         </div> -->
+    <div style="height: 20px;"></div>
+    <div style="padding-right: 10px; margin-bottom: 10px;">
+      <h3>
+        <a href="vendor-login.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Vendor
+          Portal</a>
+        <button class="menu-btn" data-target="menu1"
+          style="border: none; background: none; font-size: 16px; cursor: pointer; color: white;"><i
+            class="bi bi-caret-down-fill"></i></button>
+      </h3>
+      <ul id="menu1" class="collapsible" style="display: none;">
+        <!-- <h3 style="margin-top: 0; margin-bottom: 0;">Vendor</h3> -->
+        <!-- <li><a href="vendor-dashboard.html" target="_top">Dashboard</a></li> -->
+        <!-- <li><a href="vendor-login.html" target="_top">Login</a></li> -->
+        <li><a href="vendor-data.html" target="_top">Company Information</a></li>
+        <!-- <li><a href="vendor-home.html" target="_top">Home</a></li> -->
+        <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Setting</h4> -->
+        <li><a href="vendor-setting-user.html" target="_top">Setting</a></li>
+        <!-- <li><a href="vendor-setting-data-perusahaan.html" target="_top">Data Perusahaan</a></li> -->
+        <!-- <li><a href="vendor-setting-data-bank.html" target="_top">Data Bank</a></li> -->
+        <!-- <li><a href="vendor-setting-data-bank-entry.html" target="_top">Data-bank-entry</a></li> -->
+        <!-- <li><a href="vendor-setting-data-segmentasi.html" target="_top">Segmentasi</a></li> -->
+        <!-- <li><a href="vendor-setting-data-segmentasi-entry.html" target="_top">Segmentasi-entry</a></li> -->
+        <!-- <li><a href="vendor-setting-data-dokumen.html" target="_top">Data-dokumen</a></li> -->
+        <!-- <li><a href="vendor-setting-data-peralatan.html" target="_top">Data-peralatan</a></li> -->
+        <!-- <li><a href="vendor-setting-data-peralatan-entry.html" target="_top">Data-peralatan-entry</a></li> -->
+        <!-- <li><a href="vendor-setting-data-keuangan.html" target="_top">Data-keuangan</a></li> -->
+        <!-- <li><a href="vendor-setting-data-keuangan-entry.html" target="_top">Data-keuangan-entry</a></li> -->
+        <!-- <li><a href="vendor-setting-data-pengalaman.html" target="_top">Data-pengalaman</a></li> -->
+        <!-- <li><a href="vendor-setting-data-pengalaman-entry.html" target="_top">Data-pengalaman-entry</a></li> -->
+        <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Catalog</h4> -->
+        <!-- <li><a href="catalog-vendor.html" target="_top">Daftar Catalog</a></li> -->
+        <!-- <li><a href="catalog-vendor-pencarian.html" target="_top">Pencarian</a></li> -->
+        <!-- <li><a href="catalog-vendor-import-catalog.html" target="_top">Import Catalog</a></li> -->
+        <!-- <li><a href="catalog-vendor-manage-catalog.html" target="_top">Manage catalog</a></li> -->
+      </ul>
+    </div>
 
-        <div style="padding-left: 10px; padding-right: 10px; margin-bottom: 10px;">
-          <h3 ><a href="vendor-login.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Vendor (Supplier) Portal</a></h3>
-          <ul>
-          <!-- <h3 style="margin-top: 0; margin-bottom: 0;">Vendor</h3> -->
-          <!-- <li><a href="vendor-dashboard.html" target="_top">Dashboard</a></li> -->
-          <!-- <li><a href="vendor-login.html" target="_top">Login</a></li> -->
-          <li><a href="vendor-data.html" target="_top">Company Information</a></li>
-          <!-- <li><a href="vendor-home.html" target="_top">Home</a></li> -->
-          <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Setting</h4> -->
-          <li><a href="vendor-setting-user.html" target="_top">Setting</a></li>
-          <!-- <li><a href="vendor-setting-data-perusahaan.html" target="_top">Data Perusahaan</a></li> -->
-          <!-- <li><a href="vendor-setting-data-bank.html" target="_top">Data Bank</a></li> -->
-          <!-- <li><a href="vendor-setting-data-bank-entry.html" target="_top">Data-bank-entry</a></li> -->
-          <!-- <li><a href="vendor-setting-data-segmentasi.html" target="_top">Segmentasi</a></li> -->
-          <!-- <li><a href="vendor-setting-data-segmentasi-entry.html" target="_top">Segmentasi-entry</a></li> -->
-          <!-- <li><a href="vendor-setting-data-dokumen.html" target="_top">Data-dokumen</a></li> -->
-          <!-- <li><a href="vendor-setting-data-peralatan.html" target="_top">Data-peralatan</a></li> -->
-          <!-- <li><a href="vendor-setting-data-peralatan-entry.html" target="_top">Data-peralatan-entry</a></li> -->
-          <!-- <li><a href="vendor-setting-data-keuangan.html" target="_top">Data-keuangan</a></li> -->
-          <!-- <li><a href="vendor-setting-data-keuangan-entry.html" target="_top">Data-keuangan-entry</a></li> -->
-          <!-- <li><a href="vendor-setting-data-pengalaman.html" target="_top">Data-pengalaman</a></li> -->
-          <!-- <li><a href="vendor-setting-data-pengalaman-entry.html" target="_top">Data-pengalaman-entry</a></li> -->
-          <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Catalog</h4> -->
-          <!-- <li><a href="catalog-vendor.html" target="_top">Daftar Catalog</a></li> -->
-          <!-- <li><a href="catalog-vendor-pencarian.html" target="_top">Pencarian</a></li> -->
-          <!-- <li><a href="catalog-vendor-import-catalog.html" target="_top">Import Catalog</a></li> -->
-          <!-- <li><a href="catalog-vendor-manage-catalog.html" target="_top">Manage catalog</a></li> -->
-        </ul>  
-      </div>
+    <div style="padding-right: 10px; margin-bottom: 10px;">
+      <h3>
+        <a href="customer-login.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Customer
+          Portal</a>
+        <button class="menu-btn" data-target="menu2"
+          style="border: none; background: none; font-size: 16px; cursor: pointer; color: white;"><i
+            class="bi bi-caret-down-fill"></i></button>
+      </h3>
+      <ul id="menu2" class="collapsible" style="display: none;">
+        <!-- <li><a href="customer-dashboard.html" target="_top">Dashboard</a></li> -->
+        <li><a href="auction.html" target="_top">Auction</a></li>
+        <!-- <li><a href="customer-auction-order.html" target="_top">List Auction</a></li> -->
+        <li><a href="customer-auction-penawaran-home.html" target="_top">Auction Bid</a></li>
+        <li><a href="customer-auction-penawaran.html" target="_top">Bid Item</a></li>
+        <li><a href="customer-auction-penawaran-verifikasi.html" target="_top">Verifikasi</a></li>
+      </ul>
+    </div>
 
-        <div style="margin-bottom: 10px;">
-          <h3 ><a href="customer-login.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Customer Portal</a></h3>
-          <ul>
-            <!-- <li><a href="customer-dashboard.html" target="_top">Dashboard</a></li> -->
-            <li><a href="auction.html" target="_top">Auction</a></li>
-          <!-- <li><a href="customer-auction-order.html" target="_top">List Auction</a></li> -->
-          <li><a href="customer-auction-penawaran-home.html" target="_top">Auction Bid</a></li>
-          <li><a href="customer-auction-penawaran.html" target="_top">Bid Item</a></li>
-          <li><a href="customer-auction-penawaran-verifikasi.html" target="_top">Verifikasi</a></li>
-          </ul>
-        </div>
+    <div style="padding-right: 10px;  margin-bottom: 10px;">
+      <h3><a href="marketing-login.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Marketing
+          Portal</a>
+        <button class="menu-btn" data-target="menu3"
+          style="border: none; background: none; font-size: 16px; cursor: pointer; color: white;"><i
+            class="bi bi-caret-down-fill"></i></button>
+      </h3>
+      <ul id="menu3" class="collapsible" style="display: none;">
+        <!-- <li><a href="marketing-dashboard.html" target="_top">Dashboard</a></li> -->
+        <li><a href="auction.html" target="_top">Auction</a></li>
+        <!-- <li><a href="marketing-auction-order.html" target="_top">List Auction</a></li> -->
+        <li><a href="marketing-auction-penawaran-home.html" target="_top">Auction Bid</a></li>
+        <li><a href="marketing-auction-penawaran.html" target="_top">Bid Item</a></li>
+        <li><a href="marketing-auction-penawaran-verifikasi.html" target="_top">Verifikasi</a></li>
+      </ul>
+    </div>
 
-        <div style="margin-bottom: 10px;">
-          <h3 ><a href="marketing-login.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Marketing Portal</a></h3>
-          <ul>
-            <!-- <li><a href="marketing-dashboard.html" target="_top">Dashboard</a></li> -->
-            <li><a href="auction.html" target="_top">Auction</a></li>
-            <!-- <li><a href="marketing-auction-order.html" target="_top">List Auction</a></li> -->
-            <li><a href="marketing-auction-penawaran-home.html" target="_top">Auction Bid</a></li>
-            <li><a href="marketing-auction-penawaran.html" target="_top">Bid Item</a></li>
-            <li><a href="marketing-auction-penawaran-verifikasi.html" target="_top">Verifikasi</a></li>
-          </ul>
-        </div>
-
-        <!-- <div style="padding-top: 45px; padding-left: 10px; padding-right: 10px; margin-bottom: 10px;"> -->
-          <div style="margin-bottom: 10px;">
-            <h3 ><a href="buyer-dashboard.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Procurement Portal</a></h3>
-          <!-- <ul>
+    <!-- <div style="padding-top: 45px; padding-left: 10px; padding-right: 10px; margin-bottom: 10px;"> -->
+    <div style="padding-right: 10px; margin-bottom: 10px;">
+      <h3><a href="buyer-dashboard.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">Procurement
+          Portal</a>
+        <button class="menu-btn" data-target="menu4"
+          style="border: none; background: none; font-size: 16px; cursor: pointer; color: white;"><i
+            class="bi bi-caret-down-fill"></i></button>
+      </h3>
+      <!-- <ul>
             <li>Menu Dashboard
               <ul>
                 <li><a href="buyer-dashboard.html" target="_top">Dashboard</a>
@@ -168,115 +201,149 @@
               </ul>
             </li>
           </ul> -->
-          <!-- <div style="margin-bottom: 10px;"> -->
-          <ul>
-            <!-- <li>Bidding</li> -->
-            <li><a href="vendor.html" target="_top">Vendor Management</a></li>
-            <li><a href="bidding-order.html" target="_top">Bidding Order</a></li>
-            <!-- <li><a href="bidding-evaluation.html" target="_top">Evaluation</a></li> -->
-            <li><a href="contract-admin.html" target="_top">Contract</a></li>
-            <!-- <li><a href="setting_parameter_kriteria_penentuan_pemenang.html" target="_top">Setting Penilaian Kriteria Vendor</a></li> -->
-            <li><a href="parameter_kriteria_penentuan_pemenang.html" target="_top">Parameter Kriteria Pemenang</a></li>
-            <li><a href="vendor-penilaian-compare.html" target="_top">Form Penilaian Vendor</a></li>
-          <!-- </ul> -->
-          <!-- <ul> -->
-            <!-- <li>Administration</li> -->
-            <li><a href="vendor-penilaian-compare.html" target="_top">Parameter Setting</a></li>
-          </ul>
-          <!-- </div> -->
-        </div>
-
-      <!-- <div style="padding-top: 45px; padding-left: 10px; padding-right: 10px; margin-bottom: 10px;"> -->
-            <!-- <h3 style="margin-top: 0; margin-bottom: 0;">Data-data</h3> -->
-            <!-- <li><a href="data-login.html" target="_top">Data Login</a></li> -->
-            <!-- <li><a href="data-perusahaan.html" target="_top">Data Perusahaan</a></li> -->
-            <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Bank</h4> -->
-            <!-- <li><a href="data-bank-isi.html" target="_top">Data Bank</a></li> -->
-            <!-- <li><a href="data-bank-entry.html" target="_top">data-bank-entry</a></li> -->
-            <!-- <li><a href="data-segmentasi-kosong.html" target="_top">data-segmentasi-kosong</a></li> -->
-            <!-- <li><a href="data-segmentasi-entry.html" target="_top">data-segmentasi-entry</a></li> -->
-            <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Segmentasi</h4> -->
-            <!-- <li><a href="data-segmentasi-isi.html" target="_top">Data Segmentasi</a></li> -->
-            <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Dokumen</h4> -->
-            <!-- <li><a href="data-dokumen-kosong.html" target="_top">data-dokumen-kosong</a></li> -->
-            <!-- <li><a href="data-dokumen-isi.html" target="_top">Data Dokumen</a></li> -->
-            <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Peralatan</h4> -->
-            <!-- <li><a href="data-peralatan-kosong.html" target="_top">data-peralatan-kosong</a></li> -->
-            <!-- <li><a href="data-peralatan-isi.html" target="_top">Data Peralatan</a></li> -->
-            <!-- <li><a href="data-peralatan-entry.html" target="_top">data-peralatan-entry</a></li> -->
-            <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Keuangan</h4> -->
-            <!-- <li><a href="data-keuangan-isi.html" target="_top">Data Keuangan</a></li> -->
-            <!-- <li><a href="data-keuangan-entry.html" target="_top">data-keuangan-entry</a></li> -->
-            <!-- <li><a href="data-keuangan-kosong.html" target="_top">data-keuangan-kosong</a></li> -->
-            <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Pengalaman</h4> -->
-            <!-- <li><a href="data-pengalaman-isi.html" target="_top">Data Pengalaman</a></li>                 -->
-            <!-- <li><a href="data-pengalaman-kosong.html" target="_top">data-pengalaman-kosong</a></li> -->
-            <!-- <li><a href="data-pengalaman-data-pelanggan.html" target="_top">data-pengalaman-data-pelanggan</a></li> -->
-            <!-- <li><a href="data-pengalaman-data-mitra-kerja.html" target="_top">data-pengalaman-data-mitra-kerja</a></li> -->
-            <!-- <li><a href="data-pengalaman-data-pekerjaan.html" target="_top">data-pengalaman-data-pekerjaan</a></li> -->
-        <!-- </div> -->
-        <!-- <div style="margin-bottom: 10px;"> -->
-            <!-- <h3 style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 0px; margin-bottom: 0;">General</h3> -->
-            <!-- <li><a href="general.html" target="_top">general</a></li> -->
-            <!-- <li><a href="general-categories.html" target="_top">general-categories</a></li> -->
-            <!-- <li><a href="general-inventory.html" target="_top">general-inventory</a></li> -->
-            <!-- <li><a href="general-images.html" target="_top">general-images</a></li> -->
-            <!-- <li><a href="general-specifications.html" target="_top"> general-specifications</a></li> -->
-            <!-- <li><a href="general-manage-catalog-list.html" target="_top">general-manage-catalog-list</a></li> -->
-            <!-- <li><a href="general-rubah-catalog.html" target="_top">general-rubah-catalog</a></li> -->
-            <!-- <li><a href="general-hapus-catalog.html"target="_top">general-hapus-catalog</a></li>     -->
-        <!-- </div> -->
-
-        <div style="margin-bottom: 10px;">
-          <!-- <li><a href="booking-order-login.html" target="_top">booking-order-login</a></li> -->
-          <h4 style="margin-top: 0; margin-bottom: 0;">Booking Order</h4>
-          <li><a href="vendor-booking-order.html" target="_top">List Booking</a></li>
-          <li><a href="vendor-booking-order-print.html" target="_top">Print Booking Order</a></li>
-          <li><a href="vendor-booking-order-entry-penawaran.html" target="_top">Penawaran Booking Order</a></li>
-          <li><a href="vendor-booking-order-penawaran-detail.html" target="_top">Detail penawaran</a></li>
-          <li><a href="vendor-booking-order-negosiasi.html" target="_top">Negosiasi</a></li>
-          <li><a href="vendor-booking-order-negosiasi-detail.html" target="_top">Negosiasi Detail</a></li>
-          <li><a href="vendor-delivery-received.html" target="_top">Delivery Received</a></li>
-          <li><a href="vendor-deal-contract.html" target="_top">Deal Contract</a></li>
-          <li><a href="vendor-deal-contract-detail.html" target="_top">Deal Contract Detail</a></li>
-          <li><a href="vendor-payment-list.html" target="_top">Payment List</a></li>
-          <li><a href="vendor-payment-detail.html" target="_top">Payment Detail</a></li>
-          <li><a href="vendor-payment-detail-item.html" target="_top">Payment Detail Item</a></li>
-          <li><a href="vendor-payment-dokumen-penagihan.html" target="_top">Dokumen Penagihan</a></li>
-          <li><a href="vendor-memo.html" target="_top">Memo</a></li>  
-        </div>
-
-        <div style="margin-bottom: 10px;">
-          <h3 ><a href="customer-dashboard.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">in-tend</a></h3>
-          <ul>
-            <li><a href="new-approved-supplier-list.html" target="_top">Supplier List</a></li>
-            <li><a href="new-auction-return.html" target="_top">Auction Return</a></li>
-          </ul>
-        </div>
-        <div style="margin-bottom: 10px;">
-          <h3 ><a href="RFQ - DASHBOARD.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">RFQ</a></h3>
-          <ul>
-            <li><a href="RFQ - COMPARE BID.html" target="_top">Compare Bid</a></li>
-            <li><a href="RFQ - SUPP QUOTES.html" target="_top">Supplier Quotes</a></li>
-            <li><a href="RFQ - SUPP AWARD.html" target="_top">Supplier Award</a></li>
-            <li><a href="RFQ - S1.html" target="_top">Step 1</a></li>
-            <li><a href="RFQ - S2.html" target="_top">Step 2</a></li>
-            <li><a href="RFQ - S3.html" target="_top">Step 3</a></li>
-          </ul>
-        </div>
-      <!-- </ul> -->
+      <!-- <div style="margin-bottom: 10px;"> -->
+      <ul id="menu4" class="collapsible" style="display: none;">
+        <!-- <li>Bidding</li> -->
+        <li><a href="vendor.html" target="_top">Vendor Management</a></li>
+        <li><a href="bidding-order.html" target="_top">Bidding Order</a></li>
+        <!-- <li><a href="bidding-evaluation.html" target="_top">Evaluation</a></li> -->
+        <li><a href="contract-admin.html" target="_top">Contract</a></li>
+        <!-- <li><a href="setting_parameter_kriteria_penentuan_pemenang.html" target="_top">Setting Penilaian Kriteria Vendor</a></li> -->
+        <li><a href="parameter_kriteria_penentuan_pemenang.html" target="_top">Parameter Kriteria Pemenang</a></li>
+        <li><a href="vendor-penilaian-compare.html" target="_top">Form Penilaian Vendor</a></li>
+        <!-- </ul> -->
+        <!-- <ul> -->
+        <!-- <li>Administration</li> -->
+        <li><a href="vendor-penilaian-compare.html" target="_top">Parameter Setting</a></li>
+      </ul>
+      <!-- </div> -->
     </div>
 
-    <button class="toggle-btn" id="toggleBtn">☰</button>
+    <!-- <div style="padding-top: 45px; padding-left: 10px; padding-right: 10px; margin-bottom: 10px;"> -->
+    <!-- <h3 style="margin-top: 0; margin-bottom: 0;">Data-data</h3> -->
+    <!-- <li><a href="data-login.html" target="_top">Data Login</a></li> -->
+    <!-- <li><a href="data-perusahaan.html" target="_top">Data Perusahaan</a></li> -->
+    <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Bank</h4> -->
+    <!-- <li><a href="data-bank-isi.html" target="_top">Data Bank</a></li> -->
+    <!-- <li><a href="data-bank-entry.html" target="_top">data-bank-entry</a></li> -->
+    <!-- <li><a href="data-segmentasi-kosong.html" target="_top">data-segmentasi-kosong</a></li> -->
+    <!-- <li><a href="data-segmentasi-entry.html" target="_top">data-segmentasi-entry</a></li> -->
+    <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Segmentasi</h4> -->
+    <!-- <li><a href="data-segmentasi-isi.html" target="_top">Data Segmentasi</a></li> -->
+    <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Dokumen</h4> -->
+    <!-- <li><a href="data-dokumen-kosong.html" target="_top">data-dokumen-kosong</a></li> -->
+    <!-- <li><a href="data-dokumen-isi.html" target="_top">Data Dokumen</a></li> -->
+    <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Peralatan</h4> -->
+    <!-- <li><a href="data-peralatan-kosong.html" target="_top">data-peralatan-kosong</a></li> -->
+    <!-- <li><a href="data-peralatan-isi.html" target="_top">Data Peralatan</a></li> -->
+    <!-- <li><a href="data-peralatan-entry.html" target="_top">data-peralatan-entry</a></li> -->
+    <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Keuangan</h4> -->
+    <!-- <li><a href="data-keuangan-isi.html" target="_top">Data Keuangan</a></li> -->
+    <!-- <li><a href="data-keuangan-entry.html" target="_top">data-keuangan-entry</a></li> -->
+    <!-- <li><a href="data-keuangan-kosong.html" target="_top">data-keuangan-kosong</a></li> -->
+    <!-- <h4 style="margin-top: 0; margin-bottom: 0;">Data Pengalaman</h4> -->
+    <!-- <li><a href="data-pengalaman-isi.html" target="_top">Data Pengalaman</a></li>                 -->
+    <!-- <li><a href="data-pengalaman-kosong.html" target="_top">data-pengalaman-kosong</a></li> -->
+    <!-- <li><a href="data-pengalaman-data-pelanggan.html" target="_top">data-pengalaman-data-pelanggan</a></li> -->
+    <!-- <li><a href="data-pengalaman-data-mitra-kerja.html" target="_top">data-pengalaman-data-mitra-kerja</a></li> -->
+    <!-- <li><a href="data-pengalaman-data-pekerjaan.html" target="_top">data-pengalaman-data-pekerjaan</a></li> -->
+    <!-- </div> -->
+    <!-- <div style="margin-bottom: 10px;"> -->
+    <!-- <h3 style="padding-left: 10px; padding-right: 10px; margin-top: 0; padding-bottom: 0px; margin-bottom: 0;">General</h3> -->
+    <!-- <li><a href="general.html" target="_top">general</a></li> -->
+    <!-- <li><a href="general-categories.html" target="_top">general-categories</a></li> -->
+    <!-- <li><a href="general-inventory.html" target="_top">general-inventory</a></li> -->
+    <!-- <li><a href="general-images.html" target="_top">general-images</a></li> -->
+    <!-- <li><a href="general-specifications.html" target="_top"> general-specifications</a></li> -->
+    <!-- <li><a href="general-manage-catalog-list.html" target="_top">general-manage-catalog-list</a></li> -->
+    <!-- <li><a href="general-rubah-catalog.html" target="_top">general-rubah-catalog</a></li> -->
+    <!-- <li><a href="general-hapus-catalog.html"target="_top">general-hapus-catalog</a></li>     -->
+    <!-- </div> -->
 
-    <script>
-      const sidebar = document.getElementById('sidebar');
-      const toggleBtn = document.getElementById('toggleBtn');
+    <div style="padding-right: 10px;  padding-bottom: 10px;">
+      <!-- <li><a href="booking-order-login.html" target="_top">booking-order-login</a></li> -->
+      <h3><a href="vendor-booking-order.html" style="margin-top: 0; margin-bottom: 0; color: aqua;"
+          target="_top">Booking Order</a>
+        <button class="menu-btn" data-target="menu5"
+          style="border: none; background: none; font-size: 16px; cursor: pointer; color: white;"><i
+            class="bi bi-caret-down-fill"></i></button>
+      </h3>
+      <ul id="menu5" class="collapsible" style="display: none;">
+        <li><a href="vendor-booking-order.html" target="_top">List Booking</a></li>
+        <li><a href="vendor-booking-order-print.html" target="_top">Print Booking Order</a></li>
+        <li><a href="vendor-booking-order-entry-penawaran.html" target="_top">Penawaran Booking Order</a></li>
+        <li><a href="vendor-booking-order-penawaran-detail.html" target="_top">Detail penawaran</a></li>
+        <li><a href="vendor-booking-order-negosiasi.html" target="_top">Negosiasi</a></li>
+        <li><a href="vendor-booking-order-negosiasi-detail.html" target="_top">Negosiasi Detail</a></li>
+        <li><a href="vendor-delivery-received.html" target="_top">Delivery Received</a></li>
+        <li><a href="vendor-deal-contract.html" target="_top">Deal Contract</a></li>
+        <li><a href="vendor-deal-contract-detail.html" target="_top">Deal Contract Detail</a></li>
+        <li><a href="vendor-payment-list.html" target="_top">Payment List</a></li>
+        <li><a href="vendor-payment-detail.html" target="_top">Payment Detail</a></li>
+        <li><a href="vendor-payment-detail-item.html" target="_top">Payment Detail Item</a></li>
+        <li><a href="vendor-payment-dokumen-penagihan.html" target="_top">Dokumen Penagihan</a></li>
+        <li><a href="vendor-memo.html" target="_top">Memo</a></li>
+      </ul>
+    </div>
 
-      toggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-        toggleBtn.classList.toggle('collapsed');
+    <div style="padding-right: 10px; margin-bottom: 10px;">
+      <h3><a href="customer-dashboard.html" style="margin-top: 0; margin-bottom: 0; color: aqua;"
+          target="_top">in-tend</a>
+        <button class="menu-btn" data-target="menu6"
+          style="border: none; background: none; font-size: 16px; cursor: pointer; color: white;"><i
+            class="bi bi-caret-down-fill"></i></button>
+      </h3>
+      <ul id="menu6" class="collapsible" style="display: none;">
+        <li><a href="new-approved-supplier-list.html" target="_top">Supplier List</a></li>
+        <li><a href="new-auction-return.html" target="_top">Auction Return</a></li>
+      </ul>
+    </div>
+    <div style="padding-right: 10px;  margin-bottom: 10px;">
+      <h3><a href="RFQ - DASHBOARD.html" style="margin-top: 0; margin-bottom: 0; color: aqua;" target="_top">RFQ</a>
+        <button class="menu-btn" data-target="menu7"
+          style="border: none; background: none; font-size: 16px; cursor: pointer; color: white;"><i
+            class="bi bi-caret-down-fill"></i></button>
+      </h3>
+      <ul id="menu7" class="collapsible" style="display: none;">
+        <li><a href="RFQ - COMPARE BID.html" target="_top">Compare Bid</a></li>
+        <li><a href="RFQ - SUPP QUOTES.html" target="_top">Supplier Quotes</a></li>
+        <li><a href="RFQ - SUPP AWARD.html" target="_top">Supplier Award</a></li>
+        <li><a href="RFQ - S1.html" target="_top">Step 1</a></li>
+        <li><a href="RFQ - S2.html" target="_top">Step 2</a></li>
+        <li><a href="RFQ - S3.html" target="_top">Step 3</a></li>
+      </ul>
+    </div>
+    <!-- </ul> -->
+  </div>
+
+  <button class="toggle-btn" id="toggleBtn">☰</button>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      toggleBtn.classList.toggle('collapsed');
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".menu-btn").forEach(button => {
+        button.addEventListener("click", function () {
+          var menu = document.getElementById(this.getAttribute("data-target"));
+
+          if (menu.style.display === "none") {
+            menu.style.display = "block";
+            this.innerHTML = '<i class="bi bi-caret-up-fill"></i>'; // Set icon for collapse
+          } else {
+            menu.style.display = "none";
+            this.innerHTML = '<i class="bi bi-caret-down-fill"></i>'; // Set icon for expand
+          }
+        });
       });
-    </script>
+    });
+  </script>
+
 </body>
+
 </html>

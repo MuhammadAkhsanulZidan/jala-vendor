@@ -14,6 +14,11 @@
     color: #976841 !important;
 }
 
+input, select, textarea{
+  border-radius: 5px !important;
+  border-color: #b1b1b1 !important;
+}
+
 body {
     width: 100vw !important;
   }

@@ -1,344 +1,348 @@
 <html>
 
 <head>
-    <title>Pembayaran Vendor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="style.css" rel="stylesheet" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
+  <title>Pembayaran Vendor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
 
-        body a{
-            color: #000;
-        }
+    body a {
+      color: #000;
+    }
 
-        .header {
-            background-color: #f15a22;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .header {
+      background-color: #f15a22;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .header i {
-            font-size: 24px;
-        }
+    .header i {
+      font-size: 24px;
+    }
 
-        .sidebar {
-            display: none;
-            width: 200px;
-            background-color: #f5f5f5;
-            padding: 20px;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
-        }
+    .sidebar {
+      display: none;
+      width: 200px;
+      background-color: #f5f5f5;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
 
-        .sidebar a {
-            display: block;
-            color: black;
-            padding: 10px;
-            text-decoration: none;
-        }
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 10px;
+      text-decoration: none;
+    }
 
-        .sidebar a.active {
-            background-color: #f15a22;
-            color: white;
-        }
+    .sidebar a.active {
+      background-color: #f15a22;
+      color: white;
+    }
 
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        }
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
 
-        .content {
-            /* margin-left: 220px; */
-            padding: 20px;
-        }
+    .content {
+      /* margin-left: 220px; */
+      padding: 20px;
+    }
 
-        .section {
-            background-color: white;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-        }
+    .section {
+      background-color: white;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
 
-        .section-header {
-            background-color: #f15a22;
-            color: white;
-            padding: 10px;
-            font-size: 18px;
-        }
+    .section-header {
+      background-color: #f15a22;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+    }
 
-        .section-content {
-            padding: 20px;
-        }
+    .section-content {
+      padding: 20px;
+    }
 
-        .section-content input,
-        .section-content select {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+    .section-content input,
+    .section-content select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
 
-        .table-container {
-            overflow-x: auto;
-        }
+    .table-container {
+      overflow-x: auto;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
 
-        table,
-        th,
-        td {
-            border: 1px solid #ddd;
-        }
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
 
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-        }
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
 
-        th {
-            background-color: #f15a22;
-            color: white;
-        }
+    th {
+      background-color: #f15a22;
+      color: white;
+    }
 
-        .highlight {
-            background-color: yellow;
-        }
+    .highlight {
+      background-color: yellow;
+    }
 
-        .button-container {
-            text-align: center;
-            margin: 20px 0;
-        }
+    .button-container {
+      text-align: center;
+      margin: 20px 0;
+    }
 
-        .button-container button {
-            background-color: #f15a22;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    .button-container button {
+      background-color: #f15a22;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-        .button-container button:hover {
-            background-color: #e14a1a;
-        }
+    .button-container button:hover {
+      background-color: #e14a1a;
+    }
 
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f5f5f5;
-            color: #888;
-        }
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #f5f5f5;
+      color: #888;
+    }
 
-        @media screen and (max-width: 600px) {
+    @media screen and (max-width: 600px) {
 
-            .sidebar,
-            .content {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
+      .sidebar,
+      .content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
 
-            .sidebar {
-                height: auto;
-                position: relative;
-            }
+      .sidebar {
+        height: auto;
+        position: relative;
+      }
 
-            .sidebar a {
-                float: left;
-            }
+      .sidebar a {
+        float: left;
+      }
 
-            .content {
-                margin-left: 0;
-            }
-        }
-    </style>
+      .content {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="main">
-        <iframe src="./sidebar.html" style="border: none;">
-        </iframe>
-        <div class="content" style="flex-grow: 1;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <a href="./vendor-payment-list.html">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <h2>Pembayaran Vendor</h2>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Purchase Order</div>
-                <div class="section-content">
-                    <label>Purchase Order Number</label>
-                    <input type="text" value="PO/2017-05-09/AI/8408" readonly>
-                    <label>Purchase Order Date</label>
-                    <input type="text" value="05/09/2017" readonly>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Data Pengadaan</div>
-                <div class="section-content">
-                    <label>Jenis Permintaan</label>
-                    <input type="text" value="Semua jenis kontrak" readonly>
-                    <label>Nama Pengadaan</label>
-                    <input type="text" value="Pengadaan Test Full Payment" readonly>
-                    <label>Nomor Nota Intern</label>
-                    <input type="text" value="Pengadaan Test Full Payment" readonly>
-                    <label>Jenis Pengadaan</label>
-                    <input type="text" value="Barang" readonly>
-                    <label>Tanggal SPK</label>
-                    <input type="text" readonly>
-                    <label>Nomor SPK</label>
-                    <input type="text" readonly>
-                    <label>Pemilik Anggaran</label>
-                    <input type="text" readonly>
-                    <label>User</label>
-                    <input type="text" readonly>
-                    <label>Jangka Waktu</label>
-                    <input type="text" value="09/05/2017 - 09/05/2017" readonly>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header  primary-color">Dokumen Pengadaan</div>
-            </div>
-            <div class="section">
-                <div class="section-header  primary-color">Rincian Perolehan Item</div>
-            </div>
-            <div class="section">
-                <div class="section-header  primary-color">Total Harga Perolehan</div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Data Rekanan</div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Jaminan</div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Data Permintaan</div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Data Kontrak</div>
-                <div class="section-content">
-                    <label>Tanggal Draft Kontrak</label>
-                    <input type="text" value="09/05/2017" readonly>
-                    <label>Nomor Draft Kontrak</label>
-                    <input type="text" value="KontrakFULLPAYMENT" readonly>
-                    <label>Template Generate Kontrak</label>
-                    <select>
-                        <option>Kontrak Baru</option>
-                    </select>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Tahapan Pengadaan</div>
-                <div class="section-content table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="primary-color">No</th>
-                                <th class="primary-color">Tanggal Awal</th>
-                                <th class="primary-color">Tanggal Akhir</th>
-                                <th class="primary-color">Nama Tahapan</th>
-                                <th class="primary-color">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>05/09/2017</td>
-                                <td>05/09/2017</td>
-                                <td>tahap1</td>
-                                <td>tahap1</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Termin Pembayaran</div>
-                <div class="section-content table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="primary-color">No</th>
-                                <th class="primary-color">Tahap Pengadaan</th>
-                                <th class="primary-color">Nama</th>
-                                <th class="primary-color">Kurs</th>
-                                <th class="primary-color">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>tahap1</td>
-                                <td>Pembayaran Termin 1</td>
-                                <td>10,000,000.00</td>
-                                <td>Belum Dibayar</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Syarat Penagihan</div>
-                <div class="section-content table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="primary-color">No</th>
-                                <th class="primary-color">Termin</th>
-                                <th class="primary-color">Nama Persyaratan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Pembayaran Termin 1</td>
-                                <td>Kuitansi</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header primary-color">Pilih Termin Pembayaran</div>
-                <div class="section-content table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="primary-color">No</th>
-                                <th class="primary-color">Nama Pembayaran</th>
-                                <th class="primary-color">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="highlight">
-                                <td>1</td>
-                                <td>Pembayaran Termin 1</td>
-                                <td><i class="fas fa-pencil-alt"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="button-container">
-                <button class="primary-color" onclick="location.href='./vendor-payment-list.html'">Kembali</button>
-            </div>
+  <div class="main">
+    <iframe src="./sidebar.html" style="border: none;">
+    </iframe>
+    <div style="flex-grow: 1; height: 100vh; overflow: auto;">
+
+      <div class="content">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <a href="./vendor-payment-list.html">
+            <i class="fa fa-arrow-left"></i>
+          </a>
+          <h2>Pembayaran Vendor</h2>
         </div>
+        <div class="section">
+          <div class="section-header primary-color">Purchase Order</div>
+          <div class="section-content">
+            <label>Purchase Order Number</label>
+            <input type="text" value="PO/2017-05-09/AI/8408" readonly>
+            <label>Purchase Order Date</label>
+            <input type="text" value="05/09/2017" readonly>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Data Pengadaan</div>
+          <div class="section-content">
+            <label>Jenis Permintaan</label>
+            <input type="text" value="Semua jenis kontrak" readonly>
+            <label>Nama Pengadaan</label>
+            <input type="text" value="Pengadaan Test Full Payment" readonly>
+            <label>Nomor Nota Intern</label>
+            <input type="text" value="Pengadaan Test Full Payment" readonly>
+            <label>Jenis Pengadaan</label>
+            <input type="text" value="Barang" readonly>
+            <label>Tanggal SPK</label>
+            <input type="text" readonly>
+            <label>Nomor SPK</label>
+            <input type="text" readonly>
+            <label>Pemilik Anggaran</label>
+            <input type="text" readonly>
+            <label>User</label>
+            <input type="text" readonly>
+            <label>Jangka Waktu</label>
+            <input type="text" value="09/05/2017 - 09/05/2017" readonly>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header  primary-color">Dokumen Pengadaan</div>
+        </div>
+        <div class="section">
+          <div class="section-header  primary-color">Rincian Perolehan Item</div>
+        </div>
+        <div class="section">
+          <div class="section-header  primary-color">Total Harga Perolehan</div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Data Rekanan</div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Jaminan</div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Data Permintaan</div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Data Kontrak</div>
+          <div class="section-content">
+            <label>Tanggal Draft Kontrak</label>
+            <input type="text" value="09/05/2017" readonly>
+            <label>Nomor Draft Kontrak</label>
+            <input type="text" value="KontrakFULLPAYMENT" readonly>
+            <label>Template Generate Kontrak</label>
+            <select>
+              <option>Kontrak Baru</option>
+            </select>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Tahapan Pengadaan</div>
+          <div class="section-content table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th class="primary-color">No</th>
+                  <th class="primary-color">Tanggal Awal</th>
+                  <th class="primary-color">Tanggal Akhir</th>
+                  <th class="primary-color">Nama Tahapan</th>
+                  <th class="primary-color">Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>05/09/2017</td>
+                  <td>05/09/2017</td>
+                  <td>tahap1</td>
+                  <td>tahap1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Termin Pembayaran</div>
+          <div class="section-content table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th class="primary-color">No</th>
+                  <th class="primary-color">Tahap Pengadaan</th>
+                  <th class="primary-color">Nama</th>
+                  <th class="primary-color">Kurs</th>
+                  <th class="primary-color">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>tahap1</td>
+                  <td>Pembayaran Termin 1</td>
+                  <td>10,000,000.00</td>
+                  <td>Belum Dibayar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Syarat Penagihan</div>
+          <div class="section-content table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th class="primary-color">No</th>
+                  <th class="primary-color">Termin</th>
+                  <th class="primary-color">Nama Persyaratan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Pembayaran Termin 1</td>
+                  <td>Kuitansi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-header primary-color">Pilih Termin Pembayaran</div>
+          <div class="section-content table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th class="primary-color">No</th>
+                  <th class="primary-color">Nama Pembayaran</th>
+                  <th class="primary-color">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight">
+                  <td>1</td>
+                  <td>Pembayaran Termin 1</td>
+                  <td><i class="fas fa-pencil-alt"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="primary-color" onclick="location.href='./vendor-payment-list.html'">Kembali</button>
+        </div>
+      </div>
     </div>
+  </div>
+
 </body>
 
 </html>

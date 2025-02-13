@@ -173,6 +173,13 @@
             cursor: not-allowed;
         }
 
+        .subheader {
+          background-color: #976841;
+          color: white; 
+          padding: 10px; 
+          margin: 0;
+        }
+
   </style>
 </head>
 
@@ -183,7 +190,6 @@
     <div style="flex-grow: 1; width: 100vw; height: 100vh; overflow-y: auto;">
       <div class="container" >
         <div class="header">
-          <i class="bi bi-hammer" style="padding-right: 10px; font-size: 1.25rem;"></i>
           <h1>Vendor Information</h1>
         </div>
         <div class="nav">
@@ -202,8 +208,8 @@
 
           </div> -->
           <div class="section">
-            <h2 class="primary-color">DATA PERUSAHAAN</h2>
-            <div class="form-group">
+            <h2 class="primary-color" style="color: white; padding: 10px; margin: 0;">DATA PERUSAHAAN</h2>
+            <div class="form-group" style="margin-top: 10px;">
                 <label>PKP / Non PKP</label>
                 <div class="radio-group">
                     <label><input type="radio" name="pkp" value="pkp"> PKP</label>
@@ -233,7 +239,7 @@
             <div class="form-group">
                 <label>NPWP Perusahaan</label>
                 <input type="text" value="2039382938202936">
-                <button class="btn primary-color">Check NPWP</button>
+                <button class="app-button2 primary-color" style="margin-top: 5px; color: white;">Check NPWP</button>
             </div>
             <div class="form-group">
                 <label>Alamat NPWP</label>
@@ -257,30 +263,14 @@
             </div>
             <div class="form-group">
                 <label>Deskripsi</label>
-                <textarea>Deskripsi</textarea>
-            </div>
-            <div class="form-group pagination">
-                <button class="disabled">&lt;&lt;</button>
-                <button class="disabled">&lt;</button>
-                <button class="active">1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>10</button>
-                <button>&gt;</button>
-                <button>&gt;&gt;</button>
+                <textarea style="width: 100%; padding: 5px;">Deskripsi</textarea>
             </div>
           </div>
           <div class="section">
-            <h2 class="primary-color">Alamat Perusahaan</h2>
-            <div class="form-group">
+            <h2 class="primary-color" style="margin: 0; padding: 10px; color: white;">Alamat Perusahaan</h2>
+            <div class="form-group" style="margin-top: 10px;">
                 <label>Alamat Perusahaan</label>
-                <textarea>jalan</textarea>
+                <textarea style="width: 100%; padding: 5px;">jalan</textarea>
             </div>
             <div class="form-group">
                 <label>Provinsi</label>
